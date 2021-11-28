@@ -33,7 +33,7 @@ function supprimerreponse($id_reclamation){
     $sql="DELETE FROM reponse WHERE id_reclamation=:id_reclamation";
     $db = config::getConnexion();
     $req=$db->prepare($sql);
-    $req->bindValue(':id_reclamation', $id_rec);
+    $req->bindValue(':id_reclamation', $id_reclamation);
     try{
         $req->execute();
     }
