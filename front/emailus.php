@@ -280,31 +280,50 @@ $listereponse=$reponseC->afficherreponse();
         <section class="col-main col-sm-9">
           <div class="page-title">
           <div class="content">
-                  <p>Consult reclamations</p><br><br>
-  
-          <div class="buttons-set">
-          
-                    <button class="button reclamation_form" ><a href="product.php">Product reclamations</a></button>
-                    <button class="button reclamation_form" ><a href="shipping.php">Shipping reclamations</a></button>
-                    <button class="button reclamation_form" ><a href="rating.php">Rating reclamations</a></button>
-                  </div>
-</div>
-            <br>  <br>  <br>  <br>  <br>
-            <fieldset class="col2-set">
-              <div class="col-1 new-users">
-                <div class="content">
-                  <p>To add reclamation in our website please click on the button</p><br><br>
-                  <div class="buttons-set">
-                    <button class="button reclamation_form" ><a href="contact_us.php">Add reclamation</a></button>
-                    <button class="button reclamation_form" ><a href="emailus.php">Send email</a></button>
-                 
-                  </div>
-                </div>
-              </div>
-            </fieldset>
-        </div>
+          <div class="static-contain">
+            <fieldset class="group-select">
+              <ul>
+                <li id="billing-new-address-form">
+                  <fieldset>
+          <form action="https://postmail.invotes.com/send"
+    method="post" id="email_form">
 
-    </section>
+    <input type="text" name="subject" placeholder="Subject" />
+    
+    <tr>
+            <td>
+            <label for='message'>Message:
+            </label>
+            </td>
+            <td><textarea name="text" id='message'placeholder="Message" ></textarea></td>
+           
+        </tr>
+    <!-- replace value with your access token -->
+    <input type="hidden" name="access_token" value="ncswu5h9tlri2ck7hn4xn1kt" />
+
+    <input type="hidden" name="success_url"
+      value=".?message=Email+Successfully+Sent%21&isError=0" />
+    <input type="hidden" name="error_url"
+      value=".?message=Email+could+not+be+sent.&isError=1" />
+
+    
+
+      </fieldset>
+                </li><div class="buttons-set">
+                  <button type="submit" title="Submit" class="button submit"> <span> Send </span> </button>
+                  <button type="Reset" title="reset" class="button reset"> <span> Reset </span> </button>
+               
+                </div>
+                  </div>         
+</div>  
+</li>
+              </ul>
+            </form>
+            </fieldset>
+          </div>
+        </section>
+
+
 </div>
     <aside class="col-right sidebar col-sm-3">
         <div class="block block-company">
@@ -562,5 +581,6 @@ $listereponse=$reponseC->afficherreponse();
     <script type="text/javascript" src="js/owl.carousel.min.js"></script> 
     <script type="text/javascript" src="js/jquery.mobile-menu.min.js"></script> 
     <script type="text/javascript" src="js/cloud-zoom.js"></script>
-    </body>
+        
+</body>
     </html>
