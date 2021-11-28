@@ -33,6 +33,7 @@ $listeclient=$clientC->afficherclient();
   <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- CSS Files -->
   <link id="pagestyle" href="../assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />
+  
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">
@@ -396,25 +397,7 @@ $listeclient=$clientC->afficherclient();
         <td>Client name</td>
         <td><?php echo  $client['Nom']; ?></td>
         </tr> 
-      <tr> 
-        <td>Client surname</td>
-        <td><?php echo  $client['Prenom']; ?></td>
-        </tr> 
-      <tr> 
-        <td>Client email</td> 
-        <td><?php echo  $client['email']; ?></td>
-        </tr> 
       
-        <td>Client adresse</td> 
-        <td><?php echo  $client['adresse']; ?></td>
-        </tr> 
-      <tr> 
-        <td>Client phone number</td>
-        <td><?php echo  $client['Tel']; ?></td> 
-       
-</tr>
-     
-    
       <tr>  
 
         <td>Comment</td>
@@ -428,7 +411,7 @@ $listeclient=$clientC->afficherclient();
         <td>Type</td> 
         <td><?php echo  $reclamation['typer']; ?></td>
         </tr> 
-      <tr> 
+        <tr> 
         <td>Etat</td>
         <td><?php echo  $reclamation['etat']; ?></td> 
        
@@ -444,12 +427,29 @@ $listeclient=$clientC->afficherclient();
 <?php
 } else{
 ?><tr> 
-<td>Pas de response</td>
+<td>No response</td>
 
 </tr>
 <?php
 }
 ?>
+<tr id="more" style="visibility:collapse;">
+        <td> Client surname </td>
+        <td><?php echo  $client['Prenom']; ?></td>
+        </tr> 
+        <tr id="more1" style="visibility:collapse;">
+        <td>Client email</td> 
+        <td><?php echo  $client['email']; ?></td>
+        </tr> 
+        <tr id="more2" style="visibility:collapse;">
+        <td>Client adresse</td> 
+        <td><?php echo  $client['adresse']; ?></td>
+        </tr> 
+        <tr id="more3" style="visibility:collapse;">
+        <td>Client phone number</td>
+        <td><?php echo  $client['Tel']; ?></td> 
+       
+</tr>
 </thead>
 <tbody>
 <?php if ($reclamation['etat']!='treated')
@@ -471,9 +471,10 @@ $listeclient=$clientC->afficherclient();
 </tr>
 <tbody>
 </table>
+<span id="dots">...</span>
+<button onclick="myFunction()" id="myBtn">Read more</button>
 
-
-              </div>
+      </div>
             </div>
           </div>
         </div>
@@ -596,6 +597,35 @@ $listeclient=$clientC->afficherclient();
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.3"></script>
+ 
+<script>
+function myFunction() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var moreText1 = document.getElementById("more1");
+  var moreText2= document.getElementById("more2");
+  var moreText3 = document.getElementById("more3");
+  var btnText = document.getElementById("myBtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.visibility= "collapse";
+    moreText1.style.visibility= "collapse";
+    moreText2.style.visibility= "collapse";
+    moreText3.style.visibility= "collapse";
+    
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.visibility= "visible";
+    moreText1.style.visibility= "visible";
+    moreText2.style.visibility= "visible";
+    moreText3.style.visibility= "visible";
+  }
+}
+</script>
+
 </body>
 
 </html>
