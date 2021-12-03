@@ -2,7 +2,16 @@
  include_once 'reclamationp.php';
     include_once 'reclamationC.php';
 
-   
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\SMTP;
+    use PHPMailer\PHPMailer\Exception;
+    
+    require_once  'front\PHPMailer-master\src\Exception.php';
+    require_once 'front\PHPMailer-master\src\PHPMailer.php';
+    require_once 'front\PHPMailer-master\src\SMTP.php';
+    
+    // passing true in constructor enables exceptions in PHPMailer
+    $mail = new PHPMailer(true);
 
     $error = "";
 
@@ -27,7 +36,36 @@
                       $_POST['etat']
             );
             $reclamationC->modifierreclamation($reclamation, $_POST["id_rec"]);
-            header('Location:reclamation.php');
+          header('Location:reclamation.php');
+          try {
+            // Server settings
+            $mail->SMTPDebug = SMTP::DEBUG_SERVER; // for detailed debug output
+            $mail->isSMTP();
+            $mail->Host = 'smtp.gmail.com';
+            $mail->SMTPAuth = true;
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->Port = 587;
+        
+            $mail->Username = 'samar05.hamdi@gmail.com'; // YOUR gmail email
+            $mail->Password = 'amoursucre05072001'; // YOUR gmail password
+        
+            // Sender and recipient settings
+            $mail->setFrom('samar.hamdi@esprit.com', 'Buyteck');
+            $mail->addAddress('samar05.hamdi@gmail.com', 'TEST');
+            $mail->addReplyTo('samar05.hamdi@gmail.com', 'Sender Name'); // to set the reply to
+        
+            // Setting the email content
+            $mail->IsHTML(true);
+            $mail->Subject = "Reclamation ";
+            $mail->Body = 'Your reclamation have been treated : http://localhost/PW/back%20office/pages/front/afficherlistereclamationfront.php';
+            $mail->AltBody = 'test';
+        
+            $mail->send();
+            echo "Email message sent.";
+        } catch (Exception $e) {
+            echo "Error in sending email. Mailer Error: {$mail->ErrorInfo}";
+        }
+         
         }
         else
             $error = "Missing information";
@@ -421,11 +459,12 @@
       </div>
     </nav>
     <!-- End Navbar -->
-    <div class="container-fluid py-4">
-      <div class="row">
-        <div class="col-12">
-          <div class="card mb-4">
-         
+    <main class="main-content  mt-0">
+    <section>
+      <div class="page-header min-vh-75">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-4 col-lg-5 col-md-6 d-flex flex-column mx-auto">
           <fieldset class="group-select">
               <ul>
                 <li id="billing-new-address-form">
@@ -448,29 +487,23 @@
                           <label for="id_rec">Id reclamation:
                         </label> 
                         <br>
-                        <input type="text" name="id_rec" id="id_rec" value="<?php echo $reclamation['id_rec']; ?>">
+                        <input type="text" class="form-control" name="id_rec" id="id_rec" value="<?php echo $reclamation['id_rec']; ?>">
                         <td><input type='hidden' name='comment' id='coment' value= "<?php echo $reclamation['comment']; ?>" ></td>
             <td><input type='hidden' name='id' id='id' value="<?php echo $reclamation['id']; ?>"></td>
             <td><input type='hidden' name='date_rec' id='date_rec' value="<?php echo $reclamation['date_rec']; ?>"></td>
             <td><input type='hidden' name='typer' id='typer' value="<?php echo $reclamation['typer']; ?>"></td>
+            <td><input type='hidden' name='etat' id='etat' value="treated"></td>
           
                       </div>
                        
-                       <br>
-                       <label for="rec">Etat: 
-                    </label>
-                    <select name="etat" id="etat" >
-                        <option value="waiting">waiting</option>
-                        <option value="in progress">in progress</option>
-                        <option value="treated">treated</option>
-                    </select><br>
+                       
                     <form action="" method="POST">
                     <input type="hidden" name="id_reclamation" id="id_reclamation" value="<?php echo $reclamation['id_rec']; ?>">
                         
                         <label for='content'>response:
             </label>
             </td>
-            <td><textarea type='text' name='content' id='content'></textarea></td>
+            <td><textarea type='text'class="form-control"  name='content' id='content'></textarea></td>
            
                         </div>
                      
@@ -479,10 +512,10 @@
                     
                   </fieldset>
                 </li>
-               
+                <div class="text-center">
                   <input type="submit" title="Submit">  
                   <input type="reset" title="reset" >  
-                
+                  </div>
                 </div>
               </ul>
               </form>
@@ -494,6 +527,7 @@
           </div>
         </div>
       </div>
+      </div> </div> </div> </div> 
       <footer class="footer pt-3  ">
         <div class="container-fluid">
           <div class="row align-items-center justify-content-lg-between">

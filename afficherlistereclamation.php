@@ -398,6 +398,23 @@ $listeclient=$clientC->afficherclient();
         <td><?php echo  $client['Nom']; ?></td>
         </tr> 
       
+<tr id="more" style="visibility:collapse;">
+        <td> Client surname </td>
+        <td><?php echo  $client['Prenom']; ?></td>
+        </tr> 
+        <tr id="more1" style="visibility:collapse;">
+        <td>Client email</td> 
+        <td><?php echo  $client['email']; ?></td>
+        </tr> 
+        <tr id="more2" style="visibility:collapse;">
+        <td>Client adresse</td> 
+        <td><?php echo  $client['adresse']; ?></td>
+        </tr> 
+        <tr id="more3" style="visibility:collapse;">
+        <td>Client phone number</td>
+        <td><?php echo  $client['Tel']; ?></td> 
+       
+</tr>
       <tr>  
 
         <td>Comment</td>
@@ -433,23 +450,6 @@ $listeclient=$clientC->afficherclient();
 <?php
 }
 ?>
-<tr id="more" style="visibility:collapse;">
-        <td> Client surname </td>
-        <td><?php echo  $client['Prenom']; ?></td>
-        </tr> 
-        <tr id="more1" style="visibility:collapse;">
-        <td>Client email</td> 
-        <td><?php echo  $client['email']; ?></td>
-        </tr> 
-        <tr id="more2" style="visibility:collapse;">
-        <td>Client adresse</td> 
-        <td><?php echo  $client['adresse']; ?></td>
-        </tr> 
-        <tr id="more3" style="visibility:collapse;">
-        <td>Client phone number</td>
-        <td><?php echo  $client['Tel']; ?></td> 
-       
-</tr>
 </thead>
 <tbody>
 <?php if ($reclamation['etat']!='treated')
@@ -469,11 +469,13 @@ $listeclient=$clientC->afficherclient();
 }
 ?>
 </tr>
+
 <tbody>
 </table>
-<span id="dots">...</span>
-<button onclick="myFunction()" id="myBtn">Read more</button>
 
+<span id="dots">...</span>
+<a onclick="myFunction()" id="myBtn" style="font_size: 40;
+color:violet;">Read more</a>
       </div>
             </div>
           </div>
