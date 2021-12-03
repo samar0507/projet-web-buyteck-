@@ -1,14 +1,20 @@
 <?php
     include_once '../reclamationp.php';
     include_once '../reclamationC.php';
-
-  
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\SMTP;
+    use PHPMailer\PHPMailer\Exception;
+    
+    require_once  'PHPMailer-master\src\Exception.php';
+    require_once 'PHPMailer-master\src\PHPMailer.php';
+    require_once 'PHPMailer-master\src\SMTP.php';
+    
+    // passing true in constructor enables exceptions in PHPMailer
+    $mail = new PHPMailer(true);
     $error = "";
 
-    // create adherent
     $reclamationC= null;
 
-    // create an instance of the controller
     $reclamationC = new reclamationC();
     if (		
         isset($_POST["comment"]) &&
@@ -26,10 +32,42 @@
                 $_POST['etat']
             );
             $reclamationC->ajouterreclamation($reclamation);
-            header('Location:afficherlistereclamationfront.php');
+            try {
+              // Server settings
+              $mail->SMTPDebug = SMTP::DEBUG_SERVER; // for detailed debug output
+              $mail->isSMTP();
+              $mail->Host = 'smtp.gmail.com';
+              $mail->SMTPAuth = true;
+              $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+              $mail->Port = 587;
+          
+              $mail->Username = 'samar05.hamdi@gmail.com'; // YOUR gmail email
+              $mail->Password = 'amoursucre05072001'; // YOUR gmail password
+          
+              // Sender and recipient settings
+              $mail->setFrom('samar.hamdi@esprit.com', 'Client');
+              $mail->addAddress('samar05.hamdi@gmail.com', 'TEST');
+              $mail->addReplyTo('samar05.hamdi@gmail.com', 'Sender Name'); // to set the reply to
+          
+              // Setting the email content
+              $mail->IsHTML(true);
+              $mail->Subject = "NEW reclamation";
+              $mail->Body = 'You have a new reclamation please consult :http://localhost/PW/back%20office/pages/reclamation.php';
+              $mail->AltBody = 'test';
+          
+              $mail->send();
+              echo "Email message sent.";
+          } catch (Exception $e) {
+              echo "Error in sending email. Mailer Error: {$mail->ErrorInfo}";
+          }
+          
+header('Location:afficherlistereclamationfront.php');
+       
+         
         }
         else
             $error = "Missing information";
+
     }
 
     $date = date('y-m-d');
@@ -316,17 +354,16 @@
               <ul>
                 <li id="billing-new-address-form">
                   <fieldset>
-                    <form action="" method="POST">
-  
+                  <form action="" method="POST" >
             <tr>
             <td><input type='hidden' name='id' id='id' value="5"></td>
             <td><input type='hidden' name='date_rec' id='date_rec' value='<?php echo $date?>'></td>
             <td><input type='hidden' name='etat' id='etat' value=' waiting'></td>
-          
+        
             <td>
-            <label for="rec">Type: 
+            <label for="rec">Type : 
                     </label>
-                    <select name="typer" id="typer">
+                    <select name="typer" id="typer" >
                         <option value="shipping">shipping</option>
                         <option value="product">product</option>
                         <option value="rating">rating</option>
@@ -336,16 +373,14 @@
            
             <tr>
             <td>
-            <label for='comment'>comment:
+            <label for='comment'>comment :
             </label>
             </td>
-            <td><textarea name='comment' id='comment' ></textarea></td>
-           
+            <td><textarea name='comment' id='comment' requiered ></textarea></td>
         </tr>
             <br>
             <tr>
-
-                  </fieldset>
+           </fieldset>
                 </li>
                 <span class="require"><em class="required">* </em>Required Fields</span>
                 <div class="buttons-set">
@@ -355,7 +390,8 @@
                 </div>
             </li>
               </ul>
-            </form>
+            </form> 
+           
             </fieldset>
           </div>
         </section>
@@ -614,5 +650,6 @@
 <script type="text/javascript" src="js/owl.carousel.min.js"></script> 
 <script type="text/javascript" src="js/jquery.mobile-menu.min.js"></script> 
 <script type="text/javascript" src="js/cloud-zoom.js"></script>
+
 </body>
 </html>

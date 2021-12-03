@@ -296,9 +296,7 @@ $listereponse=$reponseC->afficherreponse();
                   <p>To add reclamation in our website please click on the button</p><br><br>
                   <div class="buttons-set">
                     <button class="button reclamation_form" ><a href="contact_us.php">Add reclamation</a></button>
-                    <button class="button reclamation_form" ><a href="emailus.php">Send email</a></button>
-                 
-                  </div>
+                    </div>
                 </div>
               </div>
             </fieldset>
