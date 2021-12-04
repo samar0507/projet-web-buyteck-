@@ -1,3 +1,5 @@
+<?php
+ header("Content-type: text/css; charset: UTF-8");
 .heade-chart
 {
     text-align: left;
@@ -61,6 +63,7 @@
   }
   #pieSlice4 .pie {
     background-color:  rgb(108, 0, 170);
+    transform:rotate(0deg);
   }
   .innerCircle {
     position: absolute;
@@ -71,13 +74,15 @@
     top: 15px;
     left: 15px; 
     box-shadow: 0px 0px 8px rgba(140, 0, 255, 0.5) inset;
-    color: rgb(108, 0, 170);
+    color: white;
   }
   .innerCircle .content {
-position: relative;
+    position: absolute;
+    display: block;
     width: 120px;
     top: 30px;
-    left: 0px;
+    left: 0;
     text-align: center;
     font-size: 14px;
   }
+  ?>

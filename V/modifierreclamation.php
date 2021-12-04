@@ -1,14 +1,14 @@
  <?php
- include_once 'reclamationp.php';
-    include_once 'reclamationC.php';
+ include_once '../M/reclamationp.php';
+    include_once '../C/reclamationC.php';
 
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\SMTP;
     use PHPMailer\PHPMailer\Exception;
     
-    require_once  'front\PHPMailer-master\src\Exception.php';
-    require_once 'front\PHPMailer-master\src\PHPMailer.php';
-    require_once 'front\PHPMailer-master\src\SMTP.php';
+    require_once  'PHPMailer-master\src\Exception.php';
+    require_once 'PHPMailer-master\src\PHPMailer.php';
+    require_once 'PHPMailer-master\src\SMTP.php';
     
     // passing true in constructor enables exceptions in PHPMailer
     $mail = new PHPMailer(true);
@@ -72,8 +72,8 @@
     }    
 ?>
 <?php
- include_once 'reponse.php';
- include_once 'reponseC.php';
+ include_once '../M/reponse.php';
+ include_once '../C/reponseC.php';
 
  $error1 = "";
 
@@ -136,7 +136,7 @@
     <div class="collapse navbar-collapse  w-auto  max-height-vh-100 h-100" id="sidenav-collapse-main">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link  " href="../pages/dashboard.html">
+          <a class="nav-link  " href="dashboard.html">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 45 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>shop </title>

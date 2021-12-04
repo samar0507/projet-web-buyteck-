@@ -1,10 +1,15 @@
 
 <?php
 include '../C/reclamationC.php';
-$reclamationC=new reclamationC();
-$listereclamation=$reclamationC->afficherreclamation();
-?>
+$reclamation= new reclamationC;
+$total=$reclamation->totalreclamation();
+$totaltreated=$reclamation->totalreclamationetat('etat');
+$totalwaiting=$total-$totaltreated;
+$pourcentage=$totaltreated/$total*100;
+$angle=$pourcentage*3.6;
 
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,6 +31,33 @@ $listereclamation=$reclamationC->afficherreclamation();
   <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- CSS Files -->
   <link id="pagestyle" href="../assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />
+  <link rel="stylesheet" href="reclamationchart.css">
+  
+ <style>
+   <?php
+            if ($pourcentage<=50)
+            {
+              ?>
+               #pieSlice3 .pie {
+                transform:rotate(<?php echo ($angle)?>deg);
+              }
+              #pieSlice4 .pie {
+                transform:rotate(0deg);
+              }
+              <?php
+            }
+            else
+            { ?>
+#pieSlice3 .pie {
+                transform:rotate(180deg);
+              }
+              #pieSlice4 .pie {
+                transform:rotate(<?php echo ($angle-180)?>deg);
+              }
+<?php 
+}
+?>
+   </style>
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">
@@ -254,9 +286,9 @@ $listereclamation=$reclamationC->afficherreclamation();
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
             <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a></li>
-            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Reclamation</li>
+            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Dashboard</li>
           </ol>
-          <h6 class="font-weight-bolder mb-0">Tables</h6>
+          <h6 class="font-weight-bolder mb-0">Charts</h6>
         </nav>
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
@@ -370,48 +402,33 @@ $listereclamation=$reclamationC->afficherreclamation();
       <div class="row">
         <div class="col-12">
           <div class="card mb-4">
-          <h6>  Reclamatio's list</h6>
-            
+          <h6>  Reclamation's chart</h6>
+
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
               <table class="table align-items-center mb-0">
                   <thead>
-              
-    <tr>
-        <th>Date reclamation</th> 
-        <th>Type</th> 
-        <th>Etat</th> 
-        <th>consulter</th>
-       
-</tr>
-</thead>
-<tbody>
-<?php
-foreach($listereclamation as $reclamation){
-?>
-<tr>
+                  
+                <div class="pieContainer">
+              <div class="pieBackground"></div>
+              <div id="pieSlice1" class="hold"><div class="pie"></div></div>
+              <div id="pieSlice2" class="hold"><div class="pie"></div></div>
+              <div id="pieSlice3" class="hold"><div class="pie"></div></div>
+              <div id="pieSlice4" class="hold"><div class="pie" ></div></div>
+              <div class="innerCircle"><div class="content"><b><?php echo (bcdiv($pourcentage,1,2))?>%</b><br>treated<sup></sup> Reclamations</div></div>
    
-    <td><?php echo  $reclamation['date_rec']; ?></td>
-    <td><?php echo  $reclamation['typer']; ?></td>
-    <td><?php echo  $reclamation['etat']; ?></td>
-    <td>
-        <form method="POST" action="afficherlistereclamation.php">
-            <input type="submit" name="Treat" value="consult">
-            <input type="hidden" value=<?php echo $reclamation['id_rec']; ?>
-            name="id_rec">
-</form>
-</td>
-<td>
-					<a href="supprimerreclamation.php?id_rec=<?php echo $reclamation['id_rec']; ?>">delete</a>
-				</td>
-</tr>
-<?php } ?>
-<tbody>
+            </div>  
+           
+</thead>
 </table>
+
+
               </div>
             </div>
           </div>
           </div>
+</div> 
+</div>
       <footer class="footer pt-3  ">
         <div class="container-fluid">
           <div class="row align-items-center justify-content-lg-between">
@@ -513,24 +530,7 @@ foreach($listereclamation as $reclamation){
     </div>
   </div>
   <!--   Core JS Files   -->
-  <script src="../assets/js/core/popper.min.js"></script>
-  <script src="../assets/js/core/bootstrap.min.js"></script>
-  <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
-  <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
-  <script>
-    var win = navigator.platform.indexOf('Win') > -1;
-    if (win && document.querySelector('#sidenav-scrollbar')) {
-      var options = {
-        damping: '0.5'
-      }
-      Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
-    }
-  </script>
-  <!-- Github buttons -->
-  <script async defer src="https://buttons.github.io/buttons.js"></script>
-  <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.3"></script>
-  
+ 
   </body>
 
 </html>
