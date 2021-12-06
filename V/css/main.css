@@ -1,0 +1,111 @@
+
+button {
+    background-color: #9f2fb6; 
+    padding: 12px 30px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px; 
+     display: inline-block;
+    color: rgb(255, 255, 255);
+    border-radius: 8px;
+  }
+  textarea {
+    display: block;
+    outline: none;
+  }
+  
+  textarea:focus, input:focus {
+    border-color: transparent !important;
+  }
+  table {
+    border-spacing: 1;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;  border-collapse: collapse;
+
+  }
+
+  table td, table th {
+    padding-left: 50px;
+  }
+  table thead tr {
+    height: 60px;
+    background: #ffffff;
+  }
+  table tbody tr {
+    height: 50px;
+  }
+  table tbody tr:last-child {
+    border: 0;
+  }
+
+  h3{color: #000000;
+    font-family:Georgia, serif;
+  }
+  h4{
+    font-family: cursive;
+  }
+  
+.submit,.reset{color: rgb(0, 0, 0);
+ }
+  input[type=text1] {
+    width: 100%;
+    padding: 10px 20px;
+    margin: 11px -2px;
+    box-sizing: border-box;
+    background-color: rgba(199, 199, 199, 0.719);
+
+  }
+  input[type=text] {
+    width: 60%;
+    padding: 7px 20px;
+    margin: 11px -2px;
+    box-sizing: border-box;
+    background-color: rgb(199, 199, 199);
+  }
+  input {
+    display: block;
+    outline: none;
+    border: none !important;
+    border-radius:6px;
+  }
+  input[type=number] {
+    width: 60%;
+    padding: 7px 20px;
+    margin: 11px -2px;
+    box-sizing: border-box;
+    background-color: rgb(199, 199, 199);
+  }
+  .delete {
+    background-color: white; 
+    color: black; 
+    background-color: #ff0000; 
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px 2px;
+    cursor: pointer;
+  }
+  .lien {
+    background-color: white; 
+    color: black; 
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px 5px;
+    cursor: pointer;
+    border-radius: 8px;
+  }
