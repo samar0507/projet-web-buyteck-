@@ -1,0 +1,83 @@
+let nom_cat=document.getElementById("nom_cat");
+let nom=document.getElementById("nom");
+let description=document.getElementById("description");
+let prix=document.getElementById("prix");
+let quantite=document.getElementById("quantite");
+let disponibilite=document.getElementById("disponibilite");
+let form=document.querySelector("form");
+function validateInput(){
+    //check nom_cat is empty 
+    if(nom_cat.value.trim()===""){
+       onError(nom_cat,"Le champ nom_cat ne doit pas etre vide");
+    }else 
+    { if(!startsWithCapital(nom_cat.value.trim())){
+     onError(nom_cat,"Le champ Nom  doit commencer par une majuscule");
+    }else{
+        onSuccess(nom_cat);
+    }
+}
+     //check nom is empty 
+     if(nom.value.trim()===""){
+           onError(nom,"Le champ nom ne doit pas etre vide");
+     }else{
+            onSuccess(nom);
+        }
+    //check description is empty 
+        if(description.value.trim()===""){
+            onError(description,"Le champ email ne doit pas etre vide");
+        }else{
+            onSuccess(description);
+        }
+    //check prix is empty 
+    if(prix.value.trim()===""){
+        onError(prix,"Le champ email ne doit pas etre vide");
+    }else{
+        onSuccess(prix);
+    }    
+
+    //check disponibilite is empty 
+    if(disponibilite.value.trim()===""){
+        onError(disponibilite,"Le champ email ne doit pas etre vide");
+    }else{
+        onSuccess(disponibilite);
+    }    
+    
+   
+
+  }
+    document.querySelector("button")
+   .addEventListener("click",(event)=>{
+    event.preventDefault();
+    validateInput();
+});
+
+//     document.querySelector("button")
+// .addEventListener("click",(event)=>{
+//     event.preventDefault();
+//     validateInput();
+// });
+
+function onSuccess(input){
+    let parent=input.parentElement;
+    let messageEle=parent.querySelector("small");
+    messageEle.style.visibility="hidden"; 
+    parent.classList.remove("error");
+    parent.classList.add("success");  
+}
+function onError(input,message){
+    let parent=input.parentElement;
+    let messageEle=parent.querySelector("small");
+    messageEle.style.visibility="visible";
+    messageEle.innerText=message;  
+    parent.classList.add("error");
+    parent.classList.remove("success");
+
+}
+
+
+  function startsWithCapital(nom_cat){
+    return nom_cat.charAt(0) === nom_cat.charAt(0).toUpperCase()
+}
+// function encryptForm (){
+// document.pwd.value= CryptoJS.MD5(document.pwd.value)
+// }
