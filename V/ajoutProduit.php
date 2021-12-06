@@ -18,8 +18,7 @@ if (isset($_POST['nom']) and isset($_POST['int_cat']) and isset($_POST['descript
 {
   $produits=new produits($_POST['nom'],$_POST['int_cat'],$_POST['description'],$_POST['prix'],$_POST['quantite'],$_POST['disponibilite'],$_POST['image']);
   $ProduitsCore->ajouterProduits($produits);
- //header('Location:http://localhost/projet_web/web/back%20office/store/afficherProduits2.php'); 
- //header('location:http://localhost/projet_web/web/back%20office/V/produits.php')  ;
+ 
 header('location:produits.php')  ;
  
 }
@@ -61,7 +60,7 @@ $listeCategories=$CategoriesCore->afficherCategories();
     <div class="collapse navbar-collapse  w-auto  max-height-vh-100 h-100" id="sidenav-collapse-main">
       <ul class="navbar-nav">
         <li class="nav-item">
-        <a class="nav-link  " href="http://localhost/projet_web/web/back%20office/V/dashboard.php">
+        <a class="nav-link  " href="dashboard.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 45 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>shop </title>
@@ -81,7 +80,7 @@ $listeCategories=$CategoriesCore->afficherCategories();
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  active" href="http://localhost/projet_web/web/back%20office/pages/categories.html">
+          <a class="nav-link  active" href="categories.html">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>office</title>
@@ -101,7 +100,7 @@ $listeCategories=$CategoriesCore->afficherCategories();
           </a>
         </li>
         <li class="nav-item">
-        <a class="nav-link  active" href="http://localhost//projet_web/web/back%20office/V/produits.php">
+        <a class="nav-link  active" href="produits.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>office</title>
@@ -411,7 +410,7 @@ $listeCategories=$CategoriesCore->afficherCategories();
         </form> 
         <td><ul id="erreur"></ul></td>     
          </br>
-        <div align="center"><button onclick="location.href='http://localhost//projet_web/web/back%20office/V/produits.php'">Back to list products </button></div>
+        <div align="center"><button onclick="location.href='produits.php'">Back to list products </button></div>
         </br>
         </div>
         </div> </div>

@@ -47,7 +47,6 @@ foreach($categories as $row){
 </table>        
 <br>
 <br>
-<div align="center"><button onclick="location.href='//localhost/projet_web/web/back%20office/pages/categories.html'">Back to Categories Table </button></div>
 
 </div>
         </div> </div>
