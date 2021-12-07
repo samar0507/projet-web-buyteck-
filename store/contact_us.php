@@ -5,9 +5,9 @@
     use PHPMailer\PHPMailer\SMTP;
     use PHPMailer\PHPMailer\Exception;
     
-    require_once  'PHPMailer-master\src\Exception.php';
-    require_once 'PHPMailer-master\src\PHPMailer.php';
-    require_once 'PHPMailer-master\src\SMTP.php';
+    require_once  '..\V\PHPMailer-master\src\Exception.php';
+    require_once '..\V\PHPMailer-master\src\PHPMailer.php';
+    require_once '..\V\PHPMailer-master\src\SMTP.php';
     
     // passing true in constructor enables exceptions in PHPMailer
     $mail = new PHPMailer(true);
