@@ -312,19 +312,21 @@ foreach($listereclamation as $reclamation){
     <td><?php echo  $reclamation['date_rec']; ?></td>
     <td><?php echo  $reclamation['typer']; ?></td>
     <td><?php echo  $reclamation['etat']; ?></td>
-    <?php if  (!empty($reponse['content']) )
-{ 
-?>
+ 
 <?php
-foreach($listereponse as $reponse){
+
+$reponse = $reponseC->recupererreponse($reclamation['id_rec']);
+  if  (!empty($reponse['content']) )
+  { 
 ?>
     <td><?php echo  $reponse['content']; ?></td>
 
-<?php } }else {?>
+<?php } else {?>
 <td>No response</td>
 
-<?php } ?>
-<?php }} ?>
+<?php }}?>
+<?php  }?>
+</tr>
 <tbody>
 </table>
               </div>
