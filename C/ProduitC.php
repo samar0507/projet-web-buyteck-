@@ -171,8 +171,8 @@ function triPrix(){
 	//////////////////////////
 
 
-	function modifierProduits($idprod,$nom,$int_cat,$description,$prix,$quantite,$disponibilite,$image){
-		$sql="UPDATE produits SET idprod='$idprod',nom='$nom',int_cat='$int_cat',description='$description',prix='$prix',quantite='$quantite',disponibilite='$disponibilite' ,image='$image'  WHERE idprod='$idprod'";
+	function modifierProduits($idprod,$nom,$int_cat,$description,$prix,$quantite,$disponibilite){
+		$sql="UPDATE produits SET idprod='$idprod',nom='$nom',int_cat='$int_cat',description='$description',prix='$prix',quantite='$quantite',disponibilite='$disponibilite'  WHERE idprod='$idprod'";
 		
 		$db = config::getConnexion();
 		try{
