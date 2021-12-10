@@ -430,7 +430,7 @@ $listeProduits=$ProduitsCore->triNom();
 </div></div>
 </div></div>
 </div>
-<a href="http://localhost/projet_web/web/back%20office/store/afficherProduits2.php">Go to the front office</a>
+<a href="..\store\afficherProduits2.php">Go to the front office</a>
 </form>
 <br>
 </div>

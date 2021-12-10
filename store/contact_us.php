@@ -231,7 +231,7 @@ header('Location:afficherlistereclamationfront.php');
             </li>
             <li class="level0 parent drop-menu"><a href="#"><span>Pages</span> </a>
                 <ul class="level1" style="display: none;">
-                    <li class="level1 first"><a href="grid.html"><span>Grid</span></a></li>
+                    <li class="level1 first"><a href="grid.php"><span>Grid</span></a></li>
                     <li class="level1 nav-10-2"> <a href="list.html"> <span>List</span> </a> </li>
                     <li class="level1 nav-10-3"> <a href="product_detail.html"> <span>Product Detail</span> </a> </li>
                     <li class="level1 nav-10-4"> <a href="shopping_cart.php"> <span>Shopping Cart</span> </a> </li>
@@ -272,7 +272,7 @@ header('Location:afficherlistereclamationfront.php');
 
         </ul>
         <ul class="nav hidden-xs menu-item menu-item-right">
-            <li class="mega-menu"><a href="grid.html" class="level-top"><span>Categories</span></a>
+            <li class="mega-menu"><a href="grid.php" class="level-top"><span>Categories</span></a>
                 <div style="left: 0px; display: none;" class="level0-wrapper dropdown-6col">
                     <div class="container">
                         <div class="level0-wrapper2">
@@ -563,7 +563,7 @@ header('Location:afficherlistereclamationfront.php');
     </li>
     <li><a href="#">Pages</a>
       <ul>
-        <li><a href="grid.html">Grid</a> </li>
+        <li><a href="grid.php">Grid</a> </li>
         <li> <a href="list.html">List</a> </li>
         <li> <a href="product_detail.html">Product Detail</a> </li>
         <li> <a href="shopping_cart.html">Shopping Cart</a> </li>
@@ -575,7 +575,7 @@ header('Location:afficherlistereclamationfront.php');
         <li><a href="contact_us.html">Contact us</a> </li>
       </ul>
     </li>
-    <li class="mega-menu"><a href="grid.html" class="level-top"><span>Categories</span></a>
+    <li class="mega-menu"><a href="grid.php" class="level-top"><span>Categories</span></a>
       <div style="left: 0px; display: none;" class="level0-wrapper dropdown-6col">
           <div class="container">
               <div class="level0-wrapper2">
