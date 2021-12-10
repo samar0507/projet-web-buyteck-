@@ -436,7 +436,7 @@ $reponse = $reponseC->recupererreponse($reclamation['id_rec']);
                   <li><a href="#" title="Blog">Blog</a></li>
                   <li><a href="#" title="Company">Company</a></li>
                   <li><a href="#" title="Investor Relations">Investor Relations</a></li>
-                  <li class=" last"><a href="contact-us.html" title="Suppliers">Contact Us</a></li>
+                  <li class=" last"><a href="fficherlistereclamationfront.php" title="Suppliers">Contact Us</a></li>
                 </ul>
               </div>
             </div>
@@ -567,7 +567,7 @@ $reponse = $reponseC->recupererreponse($reclamation['id_rec']);
           </ul>
         </li>
        
-        <li><a href="contact-us.html">Contact Us</a> </li>
+        <li><a href="fficherlistereclamationfront.php">Contact Us</a> </li>
       </ul>
       <div class="dropdown block-language-wrapper">
                     <ul>

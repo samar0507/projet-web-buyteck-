@@ -1173,7 +1173,7 @@ include "Navbar.php";
                 <li><a href="#" title="Blog">Blog</a></li>
                 <li><a href="#" title="Company">Company</a></li>
                 <li><a href="#" title="Investor Relations">Investor Relations</a></li>
-                <li class=" last"><a href="contact-us.html" title="Suppliers">Contact Us</a></li>
+                <li class=" last"><a href="afficherlistereclamationfront.php" title="Suppliers">Contact Us</a></li>
               </ul>
             </div>
           </div>
@@ -1243,10 +1243,10 @@ include "Navbar.php";
     </li>
     <li><a href="#">Pages</a>
       <ul>
-        <li><a href="grid.html">Grid</a> </li>
-        <li> <a href="list.html">List</a> </li>
-        <li> <a href="product_detail.html">Product Detail</a> </li>
-        <li> <a href="shopping_cart.html">Shopping Cart</a> </li>
+        <li><a href="grid.php">Grid</a> </li>
+        <li> <a href="list.php">List</a> </li>
+        <li> <a href="product_detail.php">Product Detail</a> </li>
+        <li> <a href="shopping_cart.php">Shopping Cart</a> </li>
         <li><a href="checkout.html">Checkout</a>
           <ul>
             <li><a href="checkout_method.html">Checkout Method</a> </li>
@@ -1259,7 +1259,7 @@ include "Navbar.php";
         <li><a href="blog.html">Blog</a>
           <ul> <li><a href="blog-detail.html">Blog Detail</a> </li> </ul>
         </li>
-        <li><a href="contact_us.html">Contact us</a> </li>
+        <li><a href="afficherlistereclamationfront.php">Contact us</a> </li>
        <li><a href="404error.html">404 Error Page</a> </li>
       </ul>
     </li>

@@ -166,9 +166,9 @@ $listereponse=$reponseC->afficherreponse();
             </li>
             <li class="level0 parent drop-menu"><a href="#"><span>Pages</span> </a>
                 <ul class="level1" style="display: none;">
-                    <li class="level1 first"><a href="grid.html"><span>Grid</span></a></li>
-                    <li class="level1 nav-10-2"> <a href="list.html"> <span>List</span> </a> </li>
-                    <li class="level1 nav-10-3"> <a href="product_detail.html"> <span>Product Detail</span> </a> </li>
+                    <li class="level1 first"><a href="grid.php"><span>Grid</span></a></li>
+                    <li class="level1 nav-10-2"> <a href="list.php"> <span>List</span> </a> </li>
+                    <li class="level1 nav-10-3"> <a href="product_detail.php"> <span>Product Detail</span> </a> </li>
                     <li class="level1 nav-10-4"> <a href="shopping_cart.php"> <span>Shopping Cart</span> </a> </li>
                     <li class="level1 first parent"><a href="checkout.html"><span>Checkout</span></a>
                         <!--sub sub category-->
@@ -178,7 +178,7 @@ $listereponse=$reponseC->afficherreponse();
                         </ul>
                         <!--sub sub category-->
                     </li>
-                    <li class="level1 nav-10-4"> <a href="wishlist.html"> <span>Wishlist</span> </a> </li>
+                    <li class="level1 nav-10-4"> <a href="wishlist.php"> <span>Wishlist</span> </a> </li>
                     <li class="level1 first parent"><a href="dashboard.html"><span>Dashboard</span></a>
                         <!--sub sub category-->
                         <ul class="level2 right-sub" style="top: 0px; left: 165px; display: none;">
@@ -207,7 +207,7 @@ $listereponse=$reponseC->afficherreponse();
 
         </ul>
         <ul class="nav hidden-xs menu-item menu-item-right">
-            <li class="mega-menu"><a href="grid.html" class="level-top"><span>Categories</span></a>
+            <li class="mega-menu"><a href="grid.php" class="level-top"><span>Categories</span></a>
                 <div style="left: 0px; display: none;" class="level0-wrapper dropdown-6col">
                     <div class="container">
                         <div class="level0-wrapper2">
@@ -436,7 +436,7 @@ $reponse = $reponseC->recupererreponse($reclamation['id_rec']);
                   <li><a href="#" title="Blog">Blog</a></li>
                   <li><a href="#" title="Company">Company</a></li>
                   <li><a href="#" title="Investor Relations">Investor Relations</a></li>
-                  <li class=" last"><a href="contact-us.html" title="Suppliers">Contact Us</a></li>
+                  <li class=" last"><a href="fficherlistereclamationfront.php" title="Suppliers">Contact Us</a></li>
                 </ul>
               </div>
             </div>
@@ -506,7 +506,7 @@ $reponse = $reponseC->recupererreponse($reclamation['id_rec']);
         </li>
         <li><a href="#">Pages</a>
           <ul>
-            <li><a href="grid.html">Grid</a> </li>
+            <li><a href="grid.php">Grid</a> </li>
             <li> <a href="list.html">List</a> </li>
             <li> <a href="product_detail.html">Product Detail</a> </li>
             <li> <a href="shopping_cart.html">Shopping Cart</a> </li>
@@ -518,7 +518,7 @@ $reponse = $reponseC->recupererreponse($reclamation['id_rec']);
             <li><a href="reclamation.html">reclamatin</a> </li>
           </ul>
         </li>
-        <li class="mega-menu"><a href="grid.html" class="level-top"><span>Categories</span></a>
+        <li class="mega-menu"><a href="grid.php" class="level-top"><span>Categories</span></a>
           <div style="left: 0px; display: none;" class="level0-wrapper dropdown-6col">
               <div class="container">
                   <div class="level0-wrapper2">
@@ -567,7 +567,7 @@ $reponse = $reponseC->recupererreponse($reclamation['id_rec']);
           </ul>
         </li>
        
-        <li><a href="contact-us.html">Contact Us</a> </li>
+        <li><a href="fficherlistereclamationfront.php">Contact Us</a> </li>
       </ul>
       <div class="dropdown block-language-wrapper">
                     <ul>
