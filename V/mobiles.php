@@ -168,7 +168,7 @@ include "Navbar.php";
                   </div>
                   <div class="item-info">
                     <div class="info-inner">
-                      <div class="item-title"><a href="#" title="Retis lapen casen">TÉLÉPHONE PORTABLE OPPO A15 <p>  4G / DOUBLE SIM / NOIR </p></a> </div>
+                      <div class="item-title"><a href="#" title="Retis lapen casen">TELEPHONE PORTABLE OPPO A15 <p>  4G / DOUBLE SIM / NOIR </p></a> </div>
                       <div class="item-content">
                         <div class="item-price">
                           <div class="price-box"><span class="regular-price"><span class="price">449,000 DT</span> </span> </div>
@@ -202,7 +202,7 @@ include "Navbar.php";
                   </div>
                   <div class="item-info">
                     <div class="info-inner">n
-                      <div class="item-title"><a href="#" title="Retis lapen casen">TÉLÉPHONE PORTABLE OPPO <p>RENO 5 </p><p> / 4G / DOUBLE SIM / NOIR</p></a> </div>
+                      <div class="item-title"><a href="#" title="Retis lapen casen">TELEPHONE PORTABLE OPPO <p>RENO 5 </p><p> / 4G / DOUBLE SIM / NOIR</p></a> </div>
                       <div class="item-content">
                         <div class="item-price">
                           <div class="price-box"><span class="regular-price"><span class="price">1 149,000 DT</span> </span> </div>

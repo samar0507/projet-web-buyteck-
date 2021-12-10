@@ -370,7 +370,7 @@ $listereclamation=$reclamationC->afficherreclamation();
       <div class="row">
         <div class="col-12">
           <div class="card mb-4">
-          <h6>  Reclamatio's list</h6>
+          <h6>  Reclamation's list</h6>
             
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
