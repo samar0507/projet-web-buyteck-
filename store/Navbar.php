@@ -28,7 +28,7 @@
                         </ul>
                         <!--sub sub category-->
                     </li>
-                    <li class="level1 nav-10-4"> <a href="wishhttp://localhost//projet_web/web/back%20office/store/list.php"> <span>Wishlist</span> </a> </li>
+                    <li class="level1 nav-10-4"> <a href="list.php"> <span>Wishlist</span> </a> </li>
                     <li class="level1 first parent"><a href="dashboard.html"><span>Dashboard</span></a>
                         <!--sub sub category-->
                         <ul class="level2 right-sub" style="top: 0px; left: 165px; display: none;">
