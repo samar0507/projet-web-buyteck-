@@ -7,7 +7,11 @@ $totaltreated=$reclamation->totalreclamationetat('etat');
 $totalwaiting=$total-$totaltreated;
 $pourcentage=$totaltreated/$total*100;
 $angle=$pourcentage*3.6;
-
+include_once "../C/ProduitC.php";
+ include_once "../M/Produit.php";
+ include_once "../config.php";
+ $ProduitsCore=new ProduitsCore();
+ $listeProduits=$ProduitsCore->calcul();
 
 ?>
 <!DOCTYPE html>
@@ -410,9 +414,7 @@ $angle=$pourcentage*3.6;
             <div class="card-header pb-0">
             <br>
             <h4>Reclamation's chart</h4>
-            <div class="card-body px-0 pt-0 pb-2">
-              <div class="table-responsive p-0">
-              <table class="table align-items-center mb-0">
+            
                   <thead>
                   
                 <div class="pieContainer">
@@ -424,7 +426,9 @@ $angle=$pourcentage*3.6;
               <div class="innerCircle"><div class="content"><b><?php echo (bcdiv($pourcentage,1,2))?>%</b><br>treated<sup></sup> Reclamations</div></div>
    
             </div>  
-           
+           <br>
+           <br>
+           <br>
 </thead>
 </table>
 
@@ -434,15 +438,8 @@ $angle=$pourcentage*3.6;
           </div>
           </div>
 </div> 
-</div>
 <!-- stat -->
-<?php 
- include_once "../C/ProduitC.php";
- include_once "../M/Produit.php";
- include_once "../config.php";
- $ProduitsCore=new ProduitsCore();
- $listeProduits=$ProduitsCore->calcul();
-?>
+
 <!DOCTYPE html>
 <html>
 <body>
@@ -452,7 +449,7 @@ $angle=$pourcentage*3.6;
           <div class="card mb-4">
             <div class="card-header pb-0">
             <br>
-            <h4>Statistics</h4> 
+            <h4>Product's chart</h4> 
               <div class="table-responsive p-0">
            <div class="wrap-table100">
     <table class="table align-items-center mb-0"> 
