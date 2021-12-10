@@ -31,7 +31,7 @@
                 <li><a href="#" title="Blog">Blog</a></li>
                
             
-                <li class=" last"><a href="contact-us.html" title="Suppliers">Contact Us</a></li>
+                <li class=" last"><a href="afficherlistereclamation.php" title="Suppliers">Contact Us</a></li>
               </ul>
             </div>
           </div>

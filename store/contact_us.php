@@ -564,9 +564,9 @@ header('Location:afficherlistereclamationfront.php');
     <li><a href="#">Pages</a>
       <ul>
         <li><a href="grid.php">Grid</a> </li>
-        <li> <a href="list.html">List</a> </li>
-        <li> <a href="product_detail.html">Product Detail</a> </li>
-        <li> <a href="shopping_cart.html">Shopping Cart</a> </li>
+        <li> <a href="list.php">List</a> </li>
+        <li> <a href="product_detail.php">Product Detail</a> </li>
+        <li> <a href="shopping_cart.php">Shopping Cart</a> </li>
         <li><a href="blog.html">Blog</a>
           <ul>
             <li><a href="blog-detail.html">Blog Detail</a> </li>
@@ -624,7 +624,7 @@ header('Location:afficherlistereclamationfront.php');
       </ul>
     </li>
    
-    <li><a href="contact-us.html">Contact Us</a> </li>
+    <li><a href="afficherlistereclamation.php">Contact Us</a> </li>
   </ul>
   <div class="dropdown block-language-wrapper">
                 <ul>
