@@ -4,10 +4,10 @@ class categories{
 	private $nom_cat;
 	
 	
-	function __construct( $int_cat,$nom_cat){
+	function __construct( $nom_cat){
 
 		
-		$this->int_cat=$int_cat;$this->nom_cat=$nom_cat;
+		$this->nom_cat=$nom_cat;
 	
 	}
 	

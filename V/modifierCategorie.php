@@ -1,32 +1,45 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="en">
-<?PHP
-include_once "../M/Categorie.php";
+<?PHP 
+
 include_once "../C/CategorieC.php";
+include_once "../M/Categorie.php";
 include '../C/reclamationC.php';
 $reclamation= new reclamationC;
 $total=$reclamation->totalreclamation();
 $totaltreated=$reclamation->totalreclamationetat('etat');
 $totalwaiting=$total-$totaltreated;
-$error = "";
-$CategoriesCore = new CategoriesCore();
-if (
-    isset($_POST["int_cat"]) &&
-isset($_POST["nom_cat"])
-) {
-    if (!empty($_POST["int_cat"]) && !empty($_POST['nom_cat']) )
-      { $categories = new categories( $_POST['int_cat'],$_POST['nom_cat']);
-        $CategoriesCore->modifierCategorie($categories, $_POST["int_cat"]);
-  header('Location:categories.php');
-    }
-    else
-        $error = "Missing information";
-} 
+  
+
+if (isset($_GET['int_cat'])) 
+{
+    $CategoriesCore=new CategoriesCore();
+    $result=$CategoriesCore-> recupererCategorie($_GET['int_cat']);
+    foreach($result as $row)
+    {
+        $int_cat=$row['int_cat'];
+        $nom_cat=$row['nom_cat'];
+              
+    ?>
+    <?php
+   if (isset($_POST['Update'])) {
+  
+    $int_cat=$_POST['int_cat'] ;
+    $nom_cat=$_POST['nom_cat'];
+
+    $CategoriesCore=new CategoriesCore();
+    $CategoriesCore->modifierCategorie($int_cat,$nom_cat);
+     
+  header("Location:categories.php");
+  }
+}
 ?>
+
+
 <head>
  <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modify </title>
+    <title>Update  </title>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
   <!-- Nucleo Icons -->
@@ -38,8 +51,6 @@ isset($_POST["nom_cat"])
   <!-- CSS Files -->
   <link id="pagestyle" href="../assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />
   <link href="../assets/css/main.css" rel="stylesheet" />
-  <link rel="stylesheet" href="reclamationchart.css">
-  
 </head>
 <body class="g-sidenav-show  bg-gray-100">
   <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 " id="sidenav-main">
@@ -135,11 +146,7 @@ isset($_POST["nom_cat"])
         </li>
         <li class="nav-item">
           <a class="nav-link  " href="reclamation.php">
-          <?php if ($totalwaiting!= '0'){?>
-              <span class="badge" ><?php echo ($totalwaiting)?></span>     
-              <?php 
-              }
-              ?>
+        
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>box-3d-50</title>
@@ -157,9 +164,14 @@ isset($_POST["nom_cat"])
               </svg>
             </div>
             <span class="nav-link-text ms-1">Reclamation</span>
+            <?php if ($totalwaiting!= '0'){?>
+              <span class="badge" ><?php echo ($totalwaiting)?></span>     
+              <?php 
+              }
+              ?>
           </a>
         </li>
-   
+       
         <li class="nav-item">
           <a class="nav-link  " href="../pages/rtl.html">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -266,7 +278,7 @@ isset($_POST["nom_cat"])
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
             <div class="input-group">
               <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
-              <input type="text" class="form-control" placeholder="Type here...">
+              <input type="text4" class="form-control" placeholder="Type here...">
             </div>
           </div>
           <ul class="navbar-nav  justify-content-end">
@@ -364,35 +376,31 @@ isset($_POST["nom_cat"])
         <div class="col-12">
           <div class="card mb-4">
             <div class="card-header pb-0">
-              <h3 align="center" >Modify Category</h3>
-              <div id="error">
-                 <?php echo $error; ?>
-              </div>
-			<form action="" method="POST"> 
+             <h3 align="center" >Modify Category</h3>
+             <form action="" method="POST"> 
              <div class="wrap-table1000">  
                    <table border="1" align="center"> 
-    <center>     <div>
-        <label>Id category :</label></br>
-        <input class="controle" type="number" name="int_cat" value="<?php $categories['int_cat'];?>" disabled>
+    <center>
+        <div>
+        <label>Id Category</label></br>
+        <input class="controle" type="number" name="int_cat" value="<?php echo $int_cat; ?>" disabled>
         <input type="hidden" name="int_cat"  value="<?PHP echo $int_cat ?>">
         </div>  
          <div>
-        <label> Name of category :</label></br>
-        <input   class="controle"  type="text" id="nom_cat" name="nom_cat" value="<?php $categories['nom_cat']; ?>">
-         </div></br>
-         <input align="center" class="button" type="submit" name="Update" id="Update" value="Update" >
-   <br>
-   <input align="center" type="reset" value="Reset"></td> </tr>
-   </br></table> 
-
+        <label> Name of Category</label></br>
+        <input   class="controle"  type="text" id= "nom_cat" name="nom_cat" value="<?php echo $nom_cat ?>">
+         </div> 
+         <input type="submit" name="Update" id="Update" value="Update" href="categories.php" >
+   <br><input type="reset" value="Reset"> 
+   
+</br>
+</table>
     </center>
-    </form>
- 
-    </div>
-  </div>                
-  <div align="center"><button onclick="location.href='categories.php'">Back to list categories </button></div>
-
-</div> </div> 
+   </form>     
+    <?php
+     }
+   ?>
+                 </div> </div>   <br></div> </div> 
                 </div> </div> 
                  <footer class="footer pt-3  ">
                  <div class="container-fluid">
@@ -438,8 +446,5 @@ isset($_POST["nom_cat"])
            </script>
          
            <script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.3"></script>
-  
-           
          </body>
          </html>
-

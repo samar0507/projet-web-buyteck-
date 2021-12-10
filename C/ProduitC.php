@@ -125,7 +125,7 @@ function rechercherListeProduits($nom){
         }
 	}
 	function rechercherAVANCER($char){
-		$sql=" SELECT *  From produits inner join categories on produits.int_cat=categories.int_cat where nom LIKE '$char%'";
+		$sql=" SELECT *  From produits inner join categories on produits.int_cat=categories.int_cat where nom LIKE '%$char%'";
 		$db = config::getConnexion();
 		try{
 		$liste=$db->query($sql);
@@ -171,8 +171,8 @@ function triPrix(){
 	//////////////////////////
 
 
-	function modifierProduits($idprod,$nom,$description,$prix,$quantite,$disponibilite){
-		$sql="UPDATE produits SET idprod='$idprod',nom='$nom'='',description='$description',prix='$prix',quantite='$quantite',disponibilite='$disponibilite' WHERE idprod='$idprod'";
+	function modifierProduits($idprod,$nom,$int_cat,$description,$prix,$quantite,$disponibilite,$image){
+		$sql="UPDATE produits SET idprod='$idprod',nom='$nom',int_cat='$int_cat',description='$description',prix='$prix',quantite='$quantite',disponibilite='$disponibilite' ,image='$image'  WHERE idprod='$idprod'";
 		
 		$db = config::getConnexion();
 		try{

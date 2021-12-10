@@ -7,6 +7,7 @@ $reclamation= new reclamationC;
 $total=$reclamation->totalreclamation();
 $totaltreated=$reclamation->totalreclamationetat('etat');
 $totalwaiting=$total-$totaltreated;
+
  $CategoriesCore=new CategoriesCore();
  $listecategories=$CategoriesCore->affichercategories();
 $categories=$CategoriesCore->triNom();
@@ -31,8 +32,6 @@ $categories=$CategoriesCore->triNom();
   <!-- CSS Files -->
   <link id="pagestyle" href="../assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />
   <link href="../assets/css/main.css" rel="stylesheet" />
-  <link rel="stylesheet" href="reclamationchart.css">
-  
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">
@@ -128,8 +127,7 @@ $categories=$CategoriesCore->triNom();
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="reclamation.php">
-          
+          <a class="nav-link  " href="reclamation.php"> 
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>box-3d-50</title>
@@ -146,7 +144,7 @@ $categories=$CategoriesCore->triNom();
                 </g>
               </svg>
             </div>
-            <span class="nav-link-text ms-1">Reclamation</span>
+            <span class="nav-link-text ms-1">Reclamations</span> 
             <?php if ($totalwaiting!= '0'){?>
               <span class="badge" ><?php echo ($totalwaiting)?></span>     
               <?php 
@@ -384,7 +382,7 @@ $categories=$CategoriesCore->triNom();
            <tr>
            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Id categorie</th>
            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Name of categorie</th>
-           <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Modify</th>
+           <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Update</th>
            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Delete</th>
             </tr>
            <?php       
@@ -394,9 +392,10 @@ $categories=$CategoriesCore->triNom();
             <td><?php echo $row['int_cat'];?></td>
            <td><?php echo $row['nom_cat'];?> </td>
 	</form>
-    <td align="center"><a  class="lien" href="modifierCategorie.php?int_cat=<?PHP echo $row['int_cat']; ?>">
-  	Update</a></td>
   
+  <div>
+ <td align="center"><a class="lien" href="modifierCategorie.php?int_cat=<?PHP echo $row['int_cat']; ?>" >Update</a></td>
+  </div>
 	<td align="center"><form method="POST"  action="supprimerCategorie.php">
 	<input type="submit" class="delete" name="Delete" value="Delete">
 	<input type="hidden" value="<?PHP echo $row['int_cat']; ?>" name="int_cat">

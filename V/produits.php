@@ -37,8 +37,6 @@ $listeProduits=$ProduitsCore->triNom();
   <!-- CSS Files -->
   <link id="pagestyle" href="../assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />
   <link href="../assets/css/main.css" rel="stylesheet" />
-  <link rel="stylesheet" href="reclamationchart.css">
-  
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">
@@ -134,8 +132,7 @@ $listeProduits=$ProduitsCore->triNom();
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="reclamation.php">
-          
+          <a class="nav-link  " href="reclamation.php"> 
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>box-3d-50</title>
@@ -152,7 +149,7 @@ $listeProduits=$ProduitsCore->triNom();
                 </g>
               </svg>
             </div>
-            <span class="nav-link-text ms-1">Reclamation</span>
+            <span class="nav-link-text ms-1">Reclamations</span> 
             <?php if ($totalwaiting!= '0'){?>
               <span class="badge" ><?php echo ($totalwaiting)?></span>     
               <?php 
@@ -392,7 +389,7 @@ $listeProduits=$ProduitsCore->triNom();
            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps">Id product</th>
            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2"> Name of product</th>
            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps">Name Categorie </th>
-           <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-7">Description</th>
+           <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps">Description</th>
            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps">Price</th>
            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps">Amount</th>
            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps">Availablity</th>
@@ -433,7 +430,7 @@ $listeProduits=$ProduitsCore->triNom();
 </div></div>
 </div></div>
 </div>
-<a href="..\store\afficherProduits2.php">Go to the front office</a>
+<a href="afficherProduits2.php">Go to the front office</a>
 </form>
 <br>
 </div>

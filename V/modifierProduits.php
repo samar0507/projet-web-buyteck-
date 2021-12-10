@@ -24,6 +24,7 @@ if (isset($_GET['idprod']))
         $prix=$row['prix'];
         $quantite=$row['quantite'];
         $disponibilite=$row['disponibilite'];
+        $image=$row['image'];
        
     ?>
     <?php
@@ -31,19 +32,18 @@ if (isset($_GET['idprod']))
   
     $idprod=$_POST['idprod'] ;
     $nom=$_POST['nom'];
+    $int_cat=$_POST['int_$int_cat'];
     $description=$_POST['description'];
     $prix=$_POST['prix'];
     $quantite=$_POST['quantite'] ;
     $disponibilite=$_POST['disponibilite'];
+    $image=$row['iage$image'];
     $ProduitsCore=new ProduitsCore();
-    $ProduitsCore->modifierProduits($idprod,$nom,$description,$prix,$quantite,$disponibilite);
+    $ProduitsCore->modifierProduits($idprod,$nom,$int_cat,$description,$prix,$quantite,$disponibilite,$image);
      
-    header("Location: produits.php");
+  header("Location:produits.php");
   }
-    else{
-   echo "";
-        }
-} 
+}
 ?>
 <?PHP
 include "../C/CategorieC.php";
@@ -67,8 +67,6 @@ $listeCategories=$CategoriesCore->afficherCategories();
   <!-- CSS Files -->
   <link id="pagestyle" href="../assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />
   <link href="../assets/css/main.css" rel="stylesheet" />
-  <link rel="stylesheet" href="reclamationchart.css">
-  
 </head>
 <body class="g-sidenav-show  bg-gray-100">
   <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 " id="sidenav-main">
@@ -164,7 +162,11 @@ $listeCategories=$CategoriesCore->afficherCategories();
         </li>
         <li class="nav-item">
           <a class="nav-link  " href="reclamation.php">
-         
+          <?php if ($totalwaiting!= '0'){?>
+              <span class="badge" ><?php echo ($totalwaiting)?></span>     
+              <?php 
+              }
+              ?>
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>box-3d-50</title>
@@ -182,11 +184,6 @@ $listeCategories=$CategoriesCore->afficherCategories();
               </svg>
             </div>
             <span class="nav-link-text ms-1">Reclamation</span>
-            <?php if ($totalwaiting!= '0'){?>
-              <span class="badge" ><?php echo ($totalwaiting)?></span>     
-              <?php 
-              }
-              ?>
           </a>
         </li>
        
@@ -398,7 +395,6 @@ $listeCategories=$CategoriesCore->afficherCategories();
              <form action="" method="POST"> 
              <div class="wrap-table1000">  
                    <table border="1" align="center"> 
-    
     <center>
         <div>
         <label>Id product</label></br>
@@ -409,7 +405,7 @@ $listeCategories=$CategoriesCore->afficherCategories();
         <label> Name of product</label></br>
         <input   class="controle"  type="text" id= "nom" name="nom" value="<?php echo $nom ?>">
          </div>
-         <label>Categorie </label></br>
+         <label>Category </label></br>
          <select class="controle"  name="int_cat"  >
             <?PHP
             foreach($listeCategories as $row){
@@ -425,31 +421,31 @@ $listeCategories=$CategoriesCore->afficherCategories();
         </div>
         <div>
         <label>Price</label></br>
-        <input   class="controle" type="text" min="1" max="5000" type="number" name="prix" id="prix" value="<?php echo $prix ?>">
+        <input   class="controle"  type="number" name="prix" id="prix" value="<?php echo $prix ?>">
         </div>
         <div>
         <label>Amount</label></br>
-        <input   class="controle" type="text" min="0" max="1000"  type="number" name="quantite" id="quantite" value="<?php echo $quantite ?>">
+        <input   class="controle"  type="number" name="quantite" id="quantite" value="<?php echo $quantite ?>">
         </div>
         <div>
         <label>Availablity</label></br>
         <input  class="controle"  type="text" name="disponibilite" id="disponibilite" value="<?php echo $disponibilite ?>">
         </div>
         <div>
-        <label>Upload picture</label></br>
-        <input   class="controle" type="file" name="image" id="image" value="upload" disabled>
+        <label>Picture</label></br>
+        <input  class="controle"  type="file" name="image" id="image" value="<?php echo $image ?>" disabled>
         </div>
-
-</br>
-   <input class="button" type="submit" name="Update " id="Update " value="Update " >
-   <br><input type="reset" value="Reset"></td> </tr>
+       
+        </br>
+        <input type="submit" name="Update" id="Update" value="Update" href="produits.php"  >
+   <br><input type="reset" value="Reset">
    
 </br>
 </table>
-    </center></form><?php } ?>
-                 </div> </div>        
-                  <div align="center"><button onclick="location.href='produits.php'">Back to list products </button></div>
-                  <br></div> </div> 
+    </center>
+  </form>    
+      <?php } ?>
+                 </div> </div> <br></div> </div> 
                 </div> </div> 
                  <footer class="footer pt-3  ">
                  <div class="container-fluid">

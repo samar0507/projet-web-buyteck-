@@ -21,9 +21,6 @@ $totalwaiting=$total-$totaltreated;
  <!-- CSS Files -->
  <link id="pagestyle" href="../assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />
  <link href="../assets/css/main.css" rel="stylesheet" />
- <link rel="stylesheet" href="reclamationchart.css">
-  
-
 </head>
 <body class="g-sidenav-show  bg-gray-100">
  <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 " id="sidenav-main">
@@ -117,9 +114,8 @@ $totalwaiting=$total-$totaltreated;
             <span class="nav-link-text ms-1">Billing</span>
           </a>
         </li>
-       <li class="nav-item">
-          <a class="nav-link  " href="reclamation.php">
-         
+        <li class="nav-item">
+          <a class="nav-link  " href="reclamation.php"> 
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>box-3d-50</title>
@@ -136,7 +132,7 @@ $totalwaiting=$total-$totaltreated;
                 </g>
               </svg>
             </div>
-            <span class="nav-link-text ms-1">Reclamation</span>
+            <span class="nav-link-text ms-1">Reclamations</span> 
             <?php if ($totalwaiting!= '0'){?>
               <span class="badge" ><?php echo ($totalwaiting)?></span>     
               <?php 
@@ -377,7 +373,6 @@ foreach($categories as $row){
 ?>
 </table>
 </div><br><br>
-<div align="center"><button onclick="location.href='categories.php'">Back </button></div>
 
 </div>
 </div>

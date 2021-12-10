@@ -8,7 +8,7 @@
 	}
 	
 	function ajouterCategorie($categories){
-		$sql="insert into categories (nom_cat) values ( :nom_cat)";
+		$sql="INSERT INTO categories (nom_cat) VALUES ( :nom_cat)";
 		$db = config::getConnexion();
 		try{
         $req=$db->prepare($sql);
@@ -24,7 +24,7 @@
 	}
 	
 	function afficherCategories(){
-		$sql="SElECT * From categories";
+		$sql="SELECT * From categories";
 		$db = config::getConnexion();
 		try{
 		$liste=$db->query($sql);
@@ -51,31 +51,26 @@
 		$sql="SELECT * from categories where int_cat=$int_cat";
 		$db = config::getConnexion();
 		try{
-			$query=$db->prepare($sql);
-			$query->execute();
-
-			$categories=$query->fetch();
-			return $categories;
+		$liste=$db->query($sql);
+		return $liste;
 		}
-		catch (Exception $e){
-			die('Erreur: '.$e->getMessage());
-		}
+        catch (Exception $e){
+            die('Erreur: '.$e->getMessage());
+        }
 	}
-	
-	function modifierCategorie($categories, $int_cat){
-		try {
-			$db = config::getConnexion();
-			$query = $db->prepare('UPDATE categories SET nom_cat= :nom_cat  WHERE int_cat= :int_cat'
-			);
-			$query->execute([
-				'nom_cat' => $categories->getnom_cat(),
-				'int_cat' => $int_cat
-			]);
-			echo $query->rowCount() . " records UPDATED successfully <br>";
-		} catch (PDOException $e) {
-			$e->getMessage();
-		}
+	function modifierCategorie($int_cat,$nom_cat){
+		$sql="UPDATE categories SET int_cat='$int_cat',nom_cat='$nom_cat' WHERE int_cat='$int_cat'";
+		
+		$db = config::getConnexion();
+		try{
+				$db->query($sql);
+				
+        }
+        catch (Exception $e){
+            die('Erreur: '.$e->getMessage());
+        }
 	}
+			
 		
 	function rechercherListeCategorie($nom_cat){
 		$sql="SELECT * from categories  WHERE nom_cat='$nom_cat'";
@@ -100,7 +95,7 @@
         }
 	}
 	function imprimerCategories(){
-		$sql="SELECT * from categories where nom_cat LIKE '$char%'";
+		$sql="SELECT nom_cat From categories";
 		$db = config::getConnexion();
 		try{
 		$liste=$db->query($sql);
@@ -111,7 +106,7 @@
         }	
 	}
 	function rechercherAVANCER($char){
-		$sql=" SElECT nom_cat From  categories  where nom_cat LIKE '$char%'";
+		$sql=" SELECT nom_cat From  categories  where nom_cat LIKE '$char%'";
 		$db = config::getConnexion();
 		try{
 		$liste=$db->query($sql);
