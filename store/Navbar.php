@@ -16,9 +16,9 @@
             </li>
             <li class="level0 parent drop-menu"><a href="#"><span>Pages</span> </a>
                 <ul class="level1" style="display: none;">
-                    <li class="level1 first"><a href="http://localhost//projet_web/web/back%20office/store/grid.php#"><span>Grid</span></a></li>
-                    <li class="level1 nav-10-2"> <a href="http://localhost//projet_web/web/back%20office/store/list.php"> <span>List</span> </a> </li>
-                    <li class="level1 nav-10-3"> <a href="http://localhost//projet_web/web/back%20office/store/product_detail.php"> <span>Product Detail</span> </a> </li>
+                    <li class="level1 first"><a href="grid.php"><span>Grid</span></a></li>
+                    <li class="level1 nav-10-2"> <a href="list.php"> <span>List</span> </a> </li>
+                    <li class="level1 nav-10-3"> <a href="product_detail.php"> <span>Product Detail</span> </a> </li>
                     <li class="level1 nav-10-4"> <a href="shopping_cart.php"> <span>Shopping Cart</span> </a> </li>
                     <li class="level1 first parent"><a href="checkout.html"><span>Checkout</span></a>
                         <!--sub sub category-->
@@ -57,7 +57,7 @@
 
         </ul>
         <ul class="nav hidden-xs menu-item menu-item-right">
-            <li class="mega-menu"><a href="http://localhost//projet_web/web/back%20office/store/grid.php#" class="level-top"><span>Categories</span></a>
+            <li class="mega-menu"><a href="grid.php" class="level-top"><span>Categories</span></a>
                 <div style="left: 0px; display: none;" class="level0-wrapper dropdown-6col">
                     <div class="container">
                         <div class="level0-wrapper2">
