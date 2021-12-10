@@ -7,6 +7,21 @@ include "Header.php";
 include "Navbar.php";
 
 ?>
+              <?php
+include_once "../C/CategorieC.php";
+include_once "../M/Categorie.php";
+ $CategoriesCore=new CategoriesCore();
+ $listecategories=$CategoriesCore->affichercategories();
+?>
+<?PHP  
+
+include_once "../C/ProduitC.php";
+include_once "../M/Produit.php";
+
+$ProduitsCore=new ProduitsCore();
+$listeProduits=$ProduitsCore->afficherProduits();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,7 +59,7 @@ include "Navbar.php";
               <li class="item col-lg-4 col-md-3 col-sm-4 col-xs-6">
                 <div class="item-inner">
                   <div class="item-img">
-                    <div class="item-img-info1"><a href="http://localhost/projet_web/web/back%20office/store/product_detail.php" title="Retis lapen casen" class="product-image"><img src="products/product1.jpg" alt="Retis lapen casen"></a>
+                    <div class="item-img-info1"><a href="product_detail.php" title="Retis lapen casen" class="product-image"><img src="products/product1.jpg" alt="Retis lapen casen"></a>
                       <div class="new-label new-top-left">New</div>
                       <div class="actions">
                         <div class="quick-view-btn"><a href="#" data-toggle="tooltip" data-placement="right" title="" data-original-title="Quick View"> <span>Quick View</span></a></div>
@@ -66,7 +81,7 @@ include "Navbar.php";
                   </div>
                   <div class="item-info">
                     <div class="info-inner">
-                      <div class="item-title"><a href="http://localhost/projet_web/web/back%20office/store/product_detail.php" title="Retis lapen casen">IPHONE 12 PRO MAX 128 GO<</a> </div>
+                      <div class="item-title"><a href="product_detail.php" title="Retis lapen casen">IPHONE 12 PRO MAX 128 GO<</a> </div>
                       <div class="item-content">
                         <div class="item-price">
                           <div class="price-box"><span class="regular-price"><span class="price">5 000,000 DT</span> </span> </div>
@@ -110,246 +125,7 @@ include "Navbar.php";
                   </div>
                 </div>
               </li>
-              <li class="item col-lg-4 col-md-3 col-sm-4 col-xs-6">
-                <div class="item-inner">
-                  <div class="item-img">
-                    <div class="item-img-info3"><a href="#" title="Retis lapen casen" class="product-image"><img src="products/product6.png" alt="Retis lapen casen"></a>
-                      <div class="actions">
-                        <div class="quick-view-btn"><a href="#" data-toggle="tooltip" data-placement="right" title="" data-original-title="Quick View"> <span>Quick View</span></a></div>
-                        <div class="link-wishlist"><a href="#" data-toggle="tooltip" data-placement="right" title="" data-original-title="Wishlist"><span>Add to Wishlist</span></a></div>
-                        <div class="link-compare"><a href="#" data-toggle="tooltip" data-placement="right" title="" data-original-title="Compare"><span>Add to Compare</span></a></div>
-                        <div class="add_cart">
-                          <button class="button btn-cart" type="button" data-toggle="tooltip" data-placement="right" title="" data-original-title="Add to Cart"><span>Add to Cart</span></button>
-                        </div>
-                      </div>
-                      <div class="rating">
-                        <div class="ratings">
-                          <div class="rating-box">
-                            <div class="rating" style="width:80%"></div>
-                          </div>
-                          <p class="rating-links"><a href="#">1 Review(s)</a> <span class="separator">|</span> <a href="#">Add Review</a> </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item-info">
-                    <div class="info-inner">
-                      <div class="item-title"><a href="#" title="Retis lapen casen">IPHONE 11 64 GO - NOIR (MHDA3AA-A)</a> </div>
-                      <div class="item-content">
-                        <div class="item-price">
-                          <div class="price-box"><span class="regular-price"><span class="price">2 599,000 DT</span> </span> </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="item col-lg-4 col-md-3 col-sm-4 col-xs-6">
-                <div class="item-inner">
-                  <div class="item-img">
-                    <div class="item-img-info4"><a href="#" title="Retis lapen casen" class="product-image"><img src="products/product12.png"  alt="Retis lapen casen" width="10"></a>
-                      <div class="actions">
-                        <div class="quick-view-btn"><a href="#" data-toggle="tooltip" data-placement="right" title="" data-original-title="Quick View"> <span>Quick View</span></a></div>
-                        <div class="link-wishlist"><a href="#" data-toggle="tooltip" data-placement="right" title="" data-original-title="Wishlist"><span>Add to Wishlist</span></a></div>
-                        <div class="link-compare"><a href="#" data-toggle="tooltip" data-placement="right" title="" data-original-title="Compare"><span>Add to Compare</span></a></div>
-                        <div class="add_cart">
-                          <button class="button btn-cart" type="button" data-toggle="tooltip" data-placement="right" title="" data-original-title="Add to Cart"><span>Add to Cart</span></button>
-                        </div>
-                      </div>
-                      <div class="rating">
-                        <div class="ratings">
-                          <div class="rating-box">
-                            <div class="rating" style="width:80%"></div>
-                          </div>
-                          <p class="rating-links"><a href="#">1 Review(s)</a> <span class="separator">|</span> <a href="#">Add Review</a> </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item-info">
-                    <div class="info-inner">
-                      <div class="item-title"><a href="#" title="Retis lapen casen">TELEPHONE PORTABLE OPPO A15 <p>  4G / DOUBLE SIM / NOIR </p></a> </div>
-                      <div class="item-content">
-                        <div class="item-price">
-                          <div class="price-box"><span class="regular-price"><span class="price">449,000 DT</span> </span> </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="item col-lg-4 col-md-3 col-sm-4 col-xs-6">
-                <div class="item-inner">
-                  <div class="item-img">
-                    <div class="item-img-info5"><a href="#" title="Retis lapen casen" class="product-image"><img src="products/product13.png" alt="Retis lapen casen"></a>
-                      <div class="actions">
-                        <div class="quick-view-btn"><a href="#" data-toggle="tooltip" data-placement="right" title="" data-original-title="Quick View"> <span>Quick View</span></a></div>
-                        <div class="link-wishlist"><a href="#" data-toggle="tooltip" data-placement="right" title="" data-original-title="Wishlist"><span>Add to Wishlist</span></a></div>
-                        <div class="link-compare"><a href="#" data-toggle="tooltip" data-placement="right" title="" data-original-title="Compare"><span>Add to Compare</span></a></div>
-                        <div class="add_cart">
-                          <button class="button btn-cart" type="button" data-toggle="tooltip" data-placement="right" title="" data-original-title="Add to Cart"><span>Add to Cart</span></button>
-                        </div>
-                      </div>
-                      <div class="rating">
-                        <div class="ratings">
-                          <div class="rating-box">
-                            <div class="rating" style="width:80%"></div>
-                          </div>
-                          <p class="rating-links"><a href="#">1 Review(s)</a> <span class="separator">|</span> <a href="#">Add Review</a> </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item-info">
-                    <div class="info-inner">n
-                      <div class="item-title"><a href="#" title="Retis lapen casen">TELEPHONE PORTABLE OPPO <p>RENO 5 </p><p> / 4G / DOUBLE SIM / NOIR</p></a> </div>
-                      <div class="item-content">
-                        <div class="item-price">
-                          <div class="price-box"><span class="regular-price"><span class="price">1 149,000 DT</span> </span> </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="item col-lg-4 col-md-3 col-sm-4 col-xs-6">
-                <div class="item-inner">
-                  <div class="item-img">
-                    <div class="item-img-info6"><a href="#" title="Retis lapen casen" class="product-image"><img src="products/product14.png" alt="Retis lapen casen"></a>
-                      <div class="actions">
-                        <div class="quick-view-btn"><a href="#" data-toggle="tooltip" data-placement="right" title="" data-original-title="Quick View"> <span>Quick View</span></a></div>
-                        <div class="link-wishlist"><a href="#" data-toggle="tooltip" data-placement="right" title="" data-original-title="Wishlist"><span>Add to Wishlist</span></a></div>
-                        <div class="link-compare"><a href="#" data-toggle="tooltip" data-placement="right" title="" data-original-title="Compare"><span>Add to Compare</span></a></div>
-                        <div class="add_cart">
-                          <button class="button btn-cart" type="button" data-toggle="tooltip" data-placement="right" title="" data-original-title="Add to Cart"><span>Add to Cart</span></button>
-                        </div>
-                      </div>
-                      <div class="rating">
-                        <div class="ratings">
-                          <div class="rating-box">
-                            <div class="rating" style="width:80%"></div>
-                          </div>
-                          <p class="rating-links"><a href="#">1 Review(s)</a> <span class="separator">|</span> <a href="#">Add Review</a> </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item-info">
-                    <div class="info-inner">
-                      <div class="item-title"><a href="#" title="Retis lapen casen">TÉLÉPHONE PORTABLE OPPO RENO 5 <p>/ 5G / DOUBLE SIM / SILVER</p></a> </div>
-                      <div class="item-content">
-                        <div class="item-price">
-                          <div class="price-box"><span class="regular-price"><span class="price">1 499,000 DT</span> </span> </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="item col-lg-4 col-md-3 col-sm-4 col-xs-6">
-                <div class="item-inner">
-                  <div class="item-img">
-                    <div class="item-img-info7"><a href="#" title="Retis lapen casen" class="product-image"><img src="products/product15.jpg" alt="Retis lapen casen"></a>
-                      <div class="actions">
-                        <div class="quick-view-btn"><a href="#" data-toggle="tooltip" data-placement="right" title="" data-original-title="Quick View"> <span>Quick View</span></a></div>
-                        <div class="link-wishlist"><a href="#" data-toggle="tooltip" data-placement="right" title="" data-original-title="Wishlist"><span>Add to Wishlist</span></a></div>
-                        <div class="link-compare"><a href="#" data-toggle="tooltip" data-placement="right" title="" data-original-title="Compare"><span>Add to Compare</span></a></div>
-                        <div class="add_cart">
-                          <button class="button btn-cart" type="button" data-toggle="tooltip" data-placement="right" title="" data-original-title="Add to Cart"><span>Add to Cart</span></button>
-                        </div>
-                      </div>
-                      <div class="rating">
-                        <div class="ratings">
-                          <div class="rating-box">
-                            <div class="rating" style="width:80%"></div>
-                          </div>
-                          <p class="rating-links"><a href="#">1 Review(s)</a> <span class="separator">|</span> <a href="#">Add Review</a> </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item-info">
-                    <div class="info-inner">
-                      <div class="item-title"><a href="#" title="Retis lapen casen">Galaxy A52 4G <p>+ Coque en Silicone </p> <p> + Film de protection Pro</p> </a> </div>
-                      <div class="item-content">
-                        <div class="item-price">
-                          <div class="price-box"><span class="regular-price"><span class="price">1 378 000 DT</span> </span> </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="item col-lg-4 col-md-3 col-sm-4 col-xs-6">
-                <div class="item-inner">
-                  <div class="item-img">
-                    <div class="item-img-info8"><a href="#" title="Retis lapen casen" class="product-image"><img src="products/product16.png" alt="Retis lapen casen"></a>
-                      <div class="actions">
-                        <div class="quick-view-btn"><a href="#" data-toggle="tooltip" data-placement="right" title="" data-original-title="Quick View"> <span>Quick View</span></a></div>
-                        <div class="link-wishlist"><a href="#" data-toggle="tooltip" data-placement="right" title="" data-original-title="Wishlist"><span>Add to Wishlist</span></a></div>
-                        <div class="link-compare"><a href="#" data-toggle="tooltip" data-placement="right" title="" data-original-title="Compare"><span>Add to Compare</span></a></div>
-                        <div class="add_cart">
-                          <button class="button btn-cart" type="button" data-toggle="tooltip" data-placement="right" title="" data-original-title="Add to Cart"><span>Add to Cart</span></button>
-                        </div>
-                      </div>
-                      <div class="rating">
-                        <div class="ratings">
-                          <div class="rating-box">
-                            <div class="rating" style="width:80%"></div>
-                          </div>
-                          <p class="rating-links"><a href="#">1 Review(s)</a> <span class="separator">|</span> <a href="#">Add Review</a> </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item-info">
-                    <div class="info-inner">
-                      <div class="item-title"><a href="#" title="Retis lapen casen">Package Samsung Galaxy Note20</a> </div>
-                      <div class="item-content">
-                        <div class="item-price">
-                          <div class="price-box"><span class="regular-price"><span class="price">3 888 000 DT</span> </span> </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="item col-lg-4 col-md-3 col-sm-4 col-xs-6">
-                <div class="item-inner">
-                  <div class="item-img">
-                    <div class="item-img-info9"><a href="#" title="Retis lapen casen" class="product-image"><img src="products/product17.png" alt="Retis lapen casen"></a>
-                      <div class="new-label new-top-left">New</div>
-                      <div class="actions">
-                        <div class="quick-view-btn"><a href="#" data-toggle="tooltip" data-placement="right" title="" data-original-title="Quick View"> <span>Quick View</span></a></div>
-                        <div class="link-wishlist"><a href="#" data-toggle="tooltip" data-placement="right" title="" data-original-title="Wishlist"><span>Add to Wishlist</span></a></div>
-                        <div class="link-compare"><a href="#" data-toggle="tooltip" data-placement="right" title="" data-original-title="Compare"><span>Add to Compare</span></a></div>
-                        <div class="add_cart">
-                          <button class="button btn-cart" type="button" data-toggle="tooltip" data-placement="right" title="" data-original-title="Add to Cart"><span>Add to Cart</span></button>
-                        </div>
-                      </div>
-                      <div class="rating">
-                        <div class="ratings">
-                          <div class="rating-box">
-                            <div class="rating" style="width:80%"></div>
-                          </div>
-                          <p class="rating-links"><a href="#">1 Review(s)</a> <span class="separator">|</span> <a href="#">Add Review</a> </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item-info">
-                    <div class="info-inner">
-                      <div class="item-title"><a href="#" title="Retis lapen casen">Galaxy S21 Ultra 5G</a> </div>
-                      <div class="item-content">
-                        <div class="item-price">
-                          <div class="price-box"><span class="regular-price"><span class="price">4 599 000 DT</span> </span> </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-             </ul>
+ </ul>
           </div>
         </article>
         <!--	///*///======    End article  ========= //*/// --> 
@@ -362,69 +138,26 @@ include "Navbar.php";
             <!-- BEGIN BOX-CATEGORY -->
             <div class="box-content box-category">
               <ul>
-                
-                <li> <a href="#.html">Electronics</a> <span class="subDropdown plus"></span>
-                   <ul class="level0_482" style="display:none">
-                    <li> <a href="#/mobiles.html"> Mobiles </a> <span class="subDropdown plus"></span>
-                      <ul class="level1" style="display:none">
-                        <li> <a href="#/mobiles/samsung.html"> Samsung </a> </li>
-                        <li> <a href="#/mobiles/apple.html"> IPhone </a> </li>
-                        <li> <a href="#/mobiles/blackberry.html"> Oppo </a> </li>
-       
-                        
-                      </ul>
-                       
-                    </li>
-                    <li> <a href="accesories.html"> Accesories </a> <span class="subDropdown plus"></span>
-                      <ul class="level1" style="display:none">
-                        <li> <a href="#/accesories/mobile-memory-cards.html">Mobile Memory Cards </a> </li>
-                        <li> <a href="#/accesories/cases-&amp-covers.html"> Cases &amp; Covers </a> </li>
-                        <li> <a href="#/accesories/mobile-headphones.html"> Mobile Headphones </a> </li>
-                        <li> <a href="#/accesories/bluetooth-headsets.html"> Bluetooth Headsets </a> </li>
-                        
-                      </ul>
+ <?php       
+                                     foreach($listecategories as $row){
+                                    ?>
+                                     <li> <a href="#.html">><?php echo $row['nom_cat'];?> </a> <span class="subDropdown plus"></span>
+                                      <?PHP foreach($listeProduits as $row){ ?>  
+                                        <ul class="level0_482" style="display:none">
 
-                    </li>
-                    <li> <a href="cameras.html"> Cameras </a> <span class="subDropdown plus"></span>
-                      <ul class="level1" style="display:none">
-                        <li> <a href="#/cameras/camcorders.html"> Camcorders </a> </li>
-                        <li> <a href="#/cameras/point-&amp;-shoot.html"> Point &amp; Shoot </a> </li>
-                        <li> <a href="#/cameras/digital-SLR.html"> Digital SLR </a> </li>
-                        <li> <a href="#/cameras/camera-accesories.html"> Camera Accesories </a> </li>
-                        
-                      </ul>
-
-                    </li>
+                                        <li> <a href="#/mobiles/blackberry.html"><?PHP echo $row['nom']; ?> </a> </li>
+                                        </ul>
+                                        <?PHP } ?>
+                                    <?php }?>
+                                </ul>
+                            </div>
+                        </div>
                     
-                    <!--level0--> 
-                   </li>
-                   <li> <a href="audio-&amp;-video.html"> Audio &amp; Video </a> <span class="subDropdown plus"></span>
-                      <ul class="level1" style="display:none">
-                        <li> <a href="#/audio-&amp;-video/MP3-players.html"> MP3 Players </a> </li>
-                        <li> <a href="#/audio-&amp;-video/IPods.html"> IPods </a> </li>
-                        <li> <a href="#/audio-&amp;-video/speakers.html"> Speakers </a> </li>
-                        <li> <a href="#/audio-&amp;-video/video-players.html"> Video Players </a> </li>
-                        
-                      </ul>
-
-                    </li>
+              
                    
-                   <!--level0--> 
-                    </li>
-                    <li> <a href="computer.html"> Computer </a> <span class="subDropdown plus"></span>
-                      <ul class="level1" style="display:none">
-                        <li> <a href="#/computer/external-hard-disk.html"> External Hard Disk </a> </li>
-                        <li> <a href="#/computer/pendrives.html"> Pendrives </a> </li>
-                        <li> <a href="#/computer/headphones.html"> Headphones </a> </li>
-                        <li> <a href="#/computer/PC-components.html"> PC Components </a> </li>
-                        
-                      </ul>
-                    </li>
-                  </ul>
-                  <!--level0--> 
+              
                 </li>
-                <li> <a href="reclamation.php">Reclamation </a> </li>
-              </ul>
+           </ul>
             </div>
             <!--box-content box-category--> 
           </div>
@@ -569,81 +302,7 @@ include "Navbar.php";
       </form>
     </div>
   </li>
-  <li>
-    <div class="home"><a href="#"><i class="icon-home"></i>Home</a> </div>
-  </li>
-  <li><a href="#">Pages</a>
-    <ul>
-      <li><a href="grid.html">Grid</a> </li>
-      <li> <a href="list.html">List</a> </li>
-      <li> <a href="product_detail.html">Product Detail</a> </li>
-      <li> <a href="shopping_cart.html">Shopping Cart</a> </li>
-      <li><a href="checkout.html">Checkout</a>
-        <ul>
-          <li><a href="checkout_method.html">Checkout Method</a> </li>
-          <li><a href="checkout_billing_info.html">Checkout Billing Info</a> </li>
-        </ul>
-      </li>
-      <li> <a href="wishlist.html">Wishlist</a> </li>
-      <li> <a href="dashboard.html">Dashboard</a> </li>
-      <li> <a href="multiple_addresses.html">Multiple Addresses</a> </li>
-      <li> <a href="about_us.html">About us</a> </li>
-      <li><a href="blog.html">Blog</a>
-        <ul>
-          <li><a href="blog-detail.html">Blog Detail</a> </li>
-        </ul>
-      </li>
-      <li><a href="contact_us.html">Contact us</a> </li>
-      <li><a href="404error.html">404 Error Page</a> </li>
-    </ul>
-  </li>
-  <li><a href="#">Electronics</a>
-    <ul>
-      <li> <a href="#"><span>Mobiles</span></a>
-        <ul>
-          <li> <a href="#"><span>Samsung</span></a> </li>
-          <li> <a href="#"><span>Nokia</span></a> </li>
-          <li> <a href="#"><span>IPhone</span></a> </li>
-          <li> <a href="#"><span>Sony</span></a> </li>
-        </ul>
-      </li>
-      <li> <a href="#" class=""><span>Accesories</span></a>
-        <ul>
-          <li> <a href="#"><span>Mobile Memory Cards</span></a> </li>
-          <li> <a href="#"><span>Cases &amp; Covers</span></a> </li>
-          <li> <a href="#"><span>Mobile Headphones</span></a> </li>
-          <li> <a href="#"><span>Bluetooth Headsets</span></a> </li>
-        </ul>
-      </li>
-      <li> <a href="#"><span>Cameras</span></a>
-        <ul>
-          <li> <a href="#"><span>Camcorders</span></a> </li>
-          <li> <a href="#"><span>Point &amp; Shoot</span></a> </li>
-          <li> <a href="#"><span>Digital SLR</span></a> </li>
-          <li> <a href="#"><span>Camera Accesories</span></a> </li>
-        </ul>
-      </li>
-      <li> <a href="#"><span>Audio &amp; Video</span></a>
-        <ul>
-          <li> <a href="#"><span>MP3 Players</span></a> </li>
-          <li> <a href="#"><span>IPods</span></a> </li>
-          <li> <a href="#"><span>Speakers</span></a> </li>
-          <li> <a href="#"><span>Video Players</span></a> </li>
-        </ul>
-      </li>
-      <li> <a href="#"><span>Computer</span></a>
-        <ul>
-          <li> <a href="#"><span>External Hard Disk</span></a> </li>
-          <li> <a href="#"><span>Pendrives</span></a> </li>
-          <li> <a href="#"><span>Headphones</span></a> </li>
-          <li> <a href="#"><span>PC Components</span></a> </li>
-        </ul>
-      </li>
-      <li> <a href="#"><span>Medical</span></a>
-    </ul>
-  </li>
-  <li><a href="contact-us.html">Contact Us</a> </li>
-</ul>
+
 <div class="dropdown block-language-wrapper">
               <ul>
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><img src="images/english.png" alt="language"> English </a></li>

@@ -1,5 +1,19 @@
 <!-- Navbar -->
+<?php
+include_once "../C/CategorieC.php";
+include_once "../M/Categorie.php";
+ $CategoriesCore=new CategoriesCore();
+ $listecategories=$CategoriesCore->affichercategories();
+?>
+<?PHP  
 
+include_once "../C/ProduitC.php";
+include_once "../M/Produit.php";
+
+$ProduitsCore=new ProduitsCore();
+$listeProduits=$ProduitsCore->afficherProduits();
+
+?>
 <nav>
     <div class="container">
         <!-- Header Logo -->
@@ -29,7 +43,6 @@
                         <!--sub sub category-->
                     </li>
                     <li class="level1 nav-10-4"> <a href="list.php"> <span>Wishlist</span> </a> </li>
-                    <li class="level1 first parent"><a href="dashboard.php"><span>Dashboard</span></a>
                         <!--sub sub category-->
                         <ul class="level2 right-sub" style="top: 0px; left: 165px; display: none;">
                             <li class="level2 nav-2-1-1 first"><a href="account_information.php"><span>Account Information</span></a></li>
@@ -38,9 +51,7 @@
                         </ul>
                         <!--sub sub category-->
                     </li>
-                    <li class="level1"> <a href="multiple_addresses.php"> <span>Multiple Addresses</span> </a> </li>
                     <li class="level1"> <a href="about_us.php"> <span>About us</span> </a> </li>
-
                     <li class="level1"> <a href="faq.php"> <span>FAQ</span> </a> </li>
                     <li class="level1"> <a href="login.php"> <span>Login</span> </a> </li>
                     <li class="level1"> <a href="forgot_password.php"> <span>Forgot Password</span> </a> </li>
@@ -63,66 +74,13 @@
                         <div class="level0-wrapper2">
                             <div class="nav-block nav-block-center">
                                 <ul class="level0">
-                                    <li class="level1 nav-6-1 parent item"><a href="#/mobiles.php"><span>Mobiles</span></a>
-                                        <ul class="level1">
-                                            <li class="level2 nav-6-1-1"><a href="#/mobiles/samsung.php"><span>Samsung</span></a></li>
-                                            <li class="level2 nav-6-1-1"><a href="#/mobiles/iphone.php"><span>IPhone</span></a></li>
-                                            <li class="level2 nav-6-1-1"><a href="#/mobiles/sony.php"><span>Oppo</span></a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="level1 nav-6-1 parent item"><a href="#.php" class=""><span>Accesories</span></a>
-                                        <ul class="level1">
-                                            <li class="level2 nav-6-1-1"><a href="#/mobile-memory-cards.php"><span>Mobile Memory Cards</span></a></li>
-                                            <li class="level2 nav-6-1-1"><a href="#/cases-covers.php"><span>Cases &amp; Covers</span></a></li>
-                                            <li class="level2 nav-6-1-1"><a href="#/mobile-haedphones.php"><span>Mobile Headphones</span></a></li>
-                                            <li class="level2 nav-6-1-1"><a href="#/bluetooth-headsets.php"><span>Bluetooth Headsets</span></a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="level1 nav-6-1 parent item"><a href="#/cameras.php"><span>Cameras</span></a>
-                                        <ul class="level1">
-                                            <li class="level2 nav-6-1-1"><a href="#/cameras/camcorders.php"><span>Camcorders</span></a></li>
-                                            <li class="level2 nav-6-1-1"><a href="#/cameras/point-shoot.php"><span>Point &amp; Shoot</span></a></li>
-                                            <li class="level2 nav-6-1-1"><a href="#/cameras/digital-slr.php"><span>Digital SLR</span></a></li>
-                                            <li class="level2 nav-6-1-1"><a href="#camera-accesories.php"><span>Camera Accesories</span></a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="level1 nav-6-1 parent item"><a href="#/audio-video.php"><span>Audio &amp; Video</span></a>
-                                        <ul class="level1">
-                                            <li class="level2 nav-6-1-1"><a href="#/audio-video/mp3-players.php"><span>MP3 Players</span></a></li>
-                                            <li class="level2 nav-6-1-1"><a href="#/audio-video/ipods.php"><span>IPods</span></a></li>
-                                            <li class="level2 nav-6-1-1"><a href="#/audio-video/speakers.php"><span>Speakers</span></a></li>
-                                            <li class="level2 nav-6-1-1"><a href="#/audio-video/video-players.php"><span>Video Players</span></a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="level1 nav-6-1 parent item"><a href="#/computer.php"><span>Computer</span></a>
-                                        <ul class="level1">
-                                            <li class="level2 nav-6-1-1"><a href="#/external-hard-disk.php"><span>External Hard Disk</span></a></li>
-                                            <li class="level2 nav-6-1-1"><a href="#/computer/pendrives.php"><span>Pendrives</span></a></li>
-                                            <li class="level2 nav-6-1-1"><a href="#/computer/headphones.php"><span>Headphones</span></a></li>
-                                            <li class="level2 nav-6-1-1"><a href="#/computer/pc-components.php"><span>PC Components</span></a></li>
-                                        </ul>
-                                    </li>
-                                   <?php
-include_once "../C/CategorieC.php";
-include_once "../M/Categorie.php";
- $CategoriesCore=new CategoriesCore();
- $listecategories=$CategoriesCore->affichercategories();
-?>
-<?PHP  
-
-include_once "../C/ProduitC.php";
-include_once "../M/Produit.php";
-
-$ProduitsCore=new ProduitsCore();
-$listeProduits=$ProduitsCore->afficherProduits();
-
-?> <?php       
+                           <?php       
                                      foreach($listecategories as $row){
                                     ?>
-                                    <li class="level1 nav-6-1 parent item"><a href="#/computer.php"><span><?php echo $row['nom_cat'];?> </span></a>
+                                    <li class="level1 nav-6-1 parent item"><a href="#"><span><?php echo $row['nom_cat'];?> </span></a>
                                       <?PHP foreach($listeProduits as $row){ ?>  
                                     <ul class="level1">
-                                            <li class="level2 nav-6-1-1"><a href="#/external-hard-disk.php"><span><?PHP echo $row['nom']; ?></span></a></li>
+                                            <li class="level2 nav-6-1-1"><a href="#"><span><?PHP echo $row['nom']; ?></span></a></li>
                                         </ul>
                                         <?PHP } ?>
                                     <?php }?>
@@ -134,7 +92,7 @@ $listeProduits=$ProduitsCore->afficherProduits();
                     </div>
                 </div>
             </li>
-            <li class="mega-menu"><a class="level-top" href="afficherlistereclamationfront.php#"><span>Reclamation </span></a></li>
+            <li class="mega-menu"><a class="level-top" href="afficherlistereclamationfront.php"><span>Reclamation </span></a></li>
 
         </ul>
 

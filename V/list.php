@@ -7,7 +7,20 @@ include "Header.php";
 <?php
 include "Navbar.php";
 
-?><!DOCTYPE html>
+?>
+<?php
+include_once "../C/CategorieC.php";
+include_once "../M/Categorie.php";
+
+include_once "../C/ProduitC.php";
+include_once "../M/Produit.php";
+ $CategoriesCore=new CategoriesCore();
+ $listecategories=$CategoriesCore->affichercategories();
+$ProduitsCore=new ProduitsCore();
+$listeProduits=$ProduitsCore->afficherProduits();
+
+?>
+<!DOCTYPE html>
 <html lang="en">
   
   
@@ -18,7 +31,7 @@ include "Navbar.php";
         <div class="col-xs-12">
            <ul class="breadcrumb">
 	           <li><a href="#">Home</a></li>
-             <li><a href="http://localhost//projet_web/web/back%20office/store/grid.php#">Categories</a></li>
+             <li><a href="grid.php">Categories</a></li>
             </ul>
           </div>
         </div>
@@ -43,9 +56,9 @@ include "Navbar.php";
           <div class="category-products">
             <ol class="products-list" id="products-list">
           <li class="item first">
-            <div class="product-image"> <a href="http://localhost/projet_web/web/back%20office/store/product_detail.php" title="IPHONE 12 PRO MAX 128 GO"> <img class="small-image" src="products/product1.jpg" alt="IPHONE 12 PRO MAX 128 GO"> </a> </div>
+            <div class="product-image"> <a href="product_detail.php" title="IPHONE 12 PRO MAX 128 GO"> <img class="small-image" src="products/product1.jpg" alt="IPHONE 12 PRO MAX 128 GO"> </a> </div>
             <div class="product-shop">
-              <h2 class="product-name"><a href="http://localhost/projet_web/web/back%20office/store/product_detail.php" title="IPHONE 12 PRO MAX 128 GO">IPHONE 12 PRO MAX 128 GO</a></h2>
+              <h2 class="product-name"><a href="product_detail.php" title="IPHONE 12 PRO MAX 128 GO">IPHONE 12 PRO MAX 128 GO</a></h2>
               <div class="ratings">
                 <div class="rating-box">
                   <div style="width:50%" class="rating"></div>
@@ -114,21 +127,7 @@ include "Navbar.php";
                 <span class="add-to-links"> <a title="Add to Wishlist" class="button link-wishlist" href="#"><span>Add to Wishlist</span></a> <a title="Add to Compare" class="button link-compare" href="#"><span>Add to Compare</span></a> </span> </div>
             </div>
           </li>
-          <li class="item even">
-            <div class="product-image"> <a href="#/500gb-5400rpm.html" title="PC PORTABLE ASUS "> <img class="small-image" src="products/product8.png" alt="PC PORTABLE ASUS "> </a> </div>
-            <div class="product-shop">
-              <h2 class="product-name"><a href="#/500gb-5400rpm.html" title="PC PORTABLE ASUS ">PC PORTABLE ASUS TUF505DT AMD RYZEN 5 8GO 512GO SSD (TUF505DT-BQ330T)</a></h2>
-              <div class="desc std"><p>15.6 "FULL HD screen - Processor: AMD Ryzen 5-3550H (2.1GHz up to 3.7GHz, L2: 2Mo / L3: 4Mo cache memory, Quad-Core) - Operating system: Windows 10 Home - RAM memory: 8 GB - Hard disk: 512 GB SSD - Graphics card: NVIDIA GeForce GTX 1650 (4 GB of dedicated GDDR5 memory) with WiFi, Bluetooth, 1x USB Type-A 2.0, 2x USB Type-A 3.2 Gen 1 and HDMI 2.0 - Backlit Chiclet keyboard RGB - Guarantee: 2 years
-               <p> + ASUS TUF Gamer mouse. </p>
-               <a class="link-learn" title="" href="#">Learn More</a> </p>
-              </div>
-              <div class="price-box"> <span class="regular-price"> <span class="price">2 459,000 DT<span class="sub">.00</span></span> </span> </div>
-              <div class="actions">
-                <button class="button btn-cart ajx-cart" title="Add to Cart" type="button"><span>Add to Cart</span></button>
-                <span class="add-to-links"> <a title="Add to Wishlist" class="button link-wishlist" href="#"><span>Add to Wishlist</span></a> <a title="Add to Compare" class="button link-compare" href="#"><span>Add to Compare</span></a> </span> </div>
-            </div>
-          </li>
-          <li class="item odd">
+  <li class="item odd">
             <div class="product-image"> <a href="#" title="PC PORTABLE HP "> <img class="small-image" src="products/product9.png" alt="PC PORTABLE HP "> </a> </div>
             <div class="product-shop">
               <h2 class="product-name"><a href="#" title="PC PORTABLE HP ">PC PORTABLE HP 15-DW1001NK DUAL CORE 4GO 1TO - GRIS (27Z73EA)</a></h2>
@@ -180,70 +179,21 @@ include "Navbar.php";
               <div class="block-title"> Categories </div>
            <!-- BEGIN BOX-CATEGORY -->
                   <div class="box-content box-category">
-                    <ul>
+                  <ul>
+                 <!--level0--> 
+                <?php       
+               foreach($listecategories as $row){ ?> 
+               <li> <a href="#"><?php echo $row['nom_cat'];?> </a> <span class="subDropdown plus"></span>
+
+               <?PHP foreach($listeProduits as $row){ ?>  
+                  <ul class="level1" style="display:none">
+                      <li> <a href="#"> <?PHP echo $row['nom']; ?></a> </li>     
                       
-                      <li> <a href="#.html">Electronics</a> <span class="subDropdown plus"></span>
-                         <ul class="level0_482" style="display:none">
-                          <li> <a href="#/smartphones.html"> Mobiles </a> <span class="subDropdown plus"></span>
-                            <ul class="level1" style="display:none">
-                              <li> <a href="#/smartphones/samsung.html"> Samsung </a> </li>
-                              <li> <a href="#/smartphones/apple.html"> IPhone </a> </li>
-                              <li> <a href="#/smartphones/blackberry.html"> Oppo </a> </li>
-             
-                              
-                            </ul>
-                             
-                          </li>
-                          <li> <a href="#/accesories.html"> Accesories </a> <span class="subDropdown plus"></span>
-                            <ul class="level1" style="display:none">
-                              <li> <a href="#/accesories/mobile-memory-cards.html">Mobile Memory Cards </a> </li>
-                              <li> <a href="#/accesories/cases-&amp-covers.html"> Cases &amp; Covers </a> </li>
-                              <li> <a href="#/accesories/mobile-headphones.html"> Mobile Headphones </a> </li>
-                              <li> <a href="#/accesories/bluetooth-headsets.html"> Bluetooth Headsets </a> </li>
-                              
-                            </ul>
-     
-                          </li>
-                          <li> <a href="#/cameras.html"> Cameras </a> <span class="subDropdown plus"></span>
-                            <ul class="level1" style="display:none">
-                              <li> <a href="#/cameras/camcorders.html"> Camcorders </a> </li>
-                              <li> <a href="#/cameras/point-&amp;-shoot.html"> Point &amp; Shoot </a> </li>
-                              <li> <a href="#/cameras/digital-SLR.html"> Digital SLR </a> </li>
-                              <li> <a href="#/cameras/camera-accesories.html"> Camera Accesories </a> </li>
-                              
-                            </ul>
-     
-                          </li>
-                          
-                          <!--level0--> 
-                         </li>
-                         <li> <a href="#/audio-&amp;-video.html"> Audio &amp; Video </a> <span class="subDropdown plus"></span>
-                            <ul class="level1" style="display:none">
-                              <li> <a href="#/audio-&amp;-video/MP3-players.html"> MP3 Players </a> </li>
-                              <li> <a href="#/audio-&amp;-video/IPods.html"> IPods </a> </li>
-                              <li> <a href="#/audio-&amp;-video/speakers.html"> Speakers </a> </li>
-                              <li> <a href="#/audio-&amp;-video/video-players.html"> Video Players </a> </li>
-                              
-                            </ul>
-     
-                          </li>
-                         
-                         <!--level0--> 
-                          </li>
-                          <li> <a href="#/computer.html"> Computer </a> <span class="subDropdown plus"></span>
-                            <ul class="level1" style="display:none">
-                              <li> <a href="#/computer/external-hard-disk.html"> External Hard Disk </a> </li>
-                              <li> <a href="#/computer/pendrives.html"> Pendrives </a> </li>
-                              <li> <a href="#/computer/headphones.html"> Headphones </a> </li>
-                              <li> <a href="#/computer/PC-components.html"> PC Components </a> </li>
-                              
-                            </ul>
-                          </li>
-                        </ul>
-                        <!--level0--> 
-                      </li>
-                      <li> <a href="#/medical.html"> Medical </a> <span class="subDropdown plus"></span>
-                    </ul>
+                   </ul>
+                  
+                   <?PHP } ?>
+                   </li> 
+               <?php }?>
                   </div>
                   <!--box-content box-category--> 
                 </div>

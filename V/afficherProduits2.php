@@ -61,7 +61,7 @@ $listeProduits=$produitsC->listeProduits();
       <div class="col-xs-12">
         <ul class="breadcrumb">
           <li><a href="#">Home</a></li>
-          <li><a href="http://localhost/projet_web/web/back%20office/store/afficherProduits2.php">Galery</a></li>
+          <li><a href="afficherProduits2.php">Galery</a></li>
       </div>
     </div>
   </div>
@@ -134,7 +134,7 @@ foreach($listeProduits as $row){
                <p  align="center">
                <h4  align="center">
                <dl><dd><b class="f"  >Name of product :</b> <i><?PHP echo $row['nom']; ?> </i></dd> 
-                <dd><b class="f"> Name Categorie :</b><i> <?PHP echo $row['nom_cat']; ?></i></dd>
+                <dd><b class="f"> Name of Category  :</b><i> <?PHP echo $row['nom_cat']; ?></i></dd>
                  <dd><b class="f">Description :</b><i> <?PHP echo $row['description']; ?></i></dd>
                   <dd><b class="f">Price :</b><i> <?PHP echo $row['prix']; ?></i></dd>
                   <dd><b class="f">Amount :</b><i> <?PHP echo $row['quantite']; ?></i></dd>

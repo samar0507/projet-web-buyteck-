@@ -9,14 +9,11 @@ include "Navbar.php";
 ?><?php
 include_once "../C/CategorieC.php";
 include_once "../M/Categorie.php";
- $CategoriesCore=new CategoriesCore();
- $listecategories=$CategoriesCore->affichercategories();
-?>
-<?PHP  
 
 include_once "../C/ProduitC.php";
 include_once "../M/Produit.php";
-
+ $CategoriesCore=new CategoriesCore();
+ $listecategories=$CategoriesCore->affichercategories();
 $ProduitsCore=new ProduitsCore();
 $listeProduits=$ProduitsCore->afficherProduits();
 
@@ -52,53 +49,6 @@ $listeProduits=$ProduitsCore->afficherProduits();
             <!-- BEGIN BOX-CATEGORY -->
             <div class="box-content box-category">
               <ul>
-                 <li> <a href="mobiles.php"> Mobiles </a> <span class="subDropdown plus"></span>
-                      <ul class="level1" style="display:none">
-                        <li> <a href="#/mobiles/samsung.html"> Samsung </a> </li>
-                        <li> <a href="#/mobiles/apple.html"> IPhone </a> </li>
-                        <li> <a href="#/mobiles/blackberry.html"> Oppo </a> </li>
-                      </ul>
-                     </li>
-                    <li> <a href="#/accesories.html"> Accesories </a> <span class="subDropdown plus"></span>
-                      <ul class="level1" style="display:none">
-                        <li> <a href="#/accesories/mobile-memory-cards.html">Mobile Memory Cards </a> </li>
-                        <li> <a href="#/accesories/cases-&amp-covers.html"> Cases &amp; Covers </a> </li>
-                        <li> <a href="#/accesories/mobile-headphones.html"> Mobile Headphones </a> </li>
-                        <li> <a href="#/accesories/bluetooth-headsets.html"> Bluetooth Headsets </a> </li>
-                      </ul>
-                    </li>
-                    <li> <a href="#/cameras.html"> Cameras </a> <span class="subDropdown plus"></span>
-                      <ul class="level1" style="display:none">
-                        <li> <a href="#/cameras/camcorders.html"> Camcorders </a> </li>
-                        <li> <a href="#/cameras/point-&amp;-shoot.html"> Point &amp; Shoot </a> </li>
-                        <li> <a href="#/cameras/digital-SLR.html"> Digital SLR </a> </li>
-                        <li> <a href="#/cameras/camera-accesories.html"> Camera Accesories </a> </li>
-                      </ul>
-                    </li>
-                    <!--level0--> 
-                   </li>
-                   <li> <a href="#/audio-&amp;-video.html"> Audio &amp; Video </a> <span class="subDropdown plus"></span>
-                      <ul class="level1" style="display:none">
-                        <li> <a href="#/audio-&amp;-video/MP3-players.html"> MP3 Players </a> </li>
-                        <li> <a href="#/audio-&amp;-video/IPods.html"> IPods </a> </li>
-                        <li> <a href="#/audio-&amp;-video/speakers.html"> Speakers </a> </li>
-                        <li> <a href="#/audio-&amp;-video/video-players.html"> Video Players </a> </li>
-                      </ul>
-                    </li>
-                   <!--level0--> 
-                    </li>
-                    <li> <a href="#/computer.html"> Computer </a> <span class="subDropdown plus"></span>
-                      <ul class="level1" style="display:none">
-                        <li> <a href="#/computer/external-hard-disk.html"> External Hard Disk </a> </li>
-                        <li> <a href="#/computer/pendrives.html"> Pendrives </a> </li>
-                        <li> <a href="#/computer/headphones.html"> Headphones </a> </li>
-                        <li> <a href="#/computer/PC-components.html"> PC Components </a> </li>
-                      </ul>
-                    </li>
-                  <!--level0--> 
-                  <li> <a href="#/medical.html"> Medical </a> <span class="subDropdown plus"></span>
-                  <ul class="level1" style="display:none"></ul>
-                </li>
                  <!--level0--> 
                 <?php       
                foreach($listecategories as $row){ ?> 
@@ -107,13 +57,14 @@ $listeProduits=$ProduitsCore->afficherProduits();
                <?PHP foreach($listeProduits as $row){ ?>  
                   <ul class="level1" style="display:none">
                       <li> <a href="#"> <?PHP echo $row['nom']; ?></a> </li>     
+                      
                    </ul>
-
+                  
                    <?PHP } ?>
-
+                   </li> 
                <?php }?>
 
-                </li>      
+                     
             </div>
             <!--box-content box-category--> 
           </div>
