@@ -1,73 +1,97 @@
 <?php
+	class client{
+		// private $id=null;
+		private $nom=null;
+		private $prenom=null;
+        private $username=null;
+		private $bloqué=null;
+		
+		private $email=null;
+		// private $dateinscription;
+		private $passwordd=null;
+		private $noo=null;
+		// private $dateb=null;
+		function __construct( $username, $passwordd,$nom, $prenom,  $email, $noo/*, $dateb*/){
+			// $this->id=$id;
+            $this->username=$username;
+			$this->passwordd=$passwordd;
+			$this->nom=$nom;
+			$this->prenom=$prenom;
+			$this->email=$email;
+			$this->noo=$noo;
+			// $this->dateb=$dateb;
 
- class client 
- {
-     private  $id;
-     private  $Nom;
-     private  $Prenom;
-    private  $email;
-     private  $adresse;
-     private  $Tel;
-     public function __construct(int $id,int $Tel,string $Nom,string $Prenom,string $adresse,string $email)
-     {$this->id= $id;
-        $this->Tel= $Tel;
-         $this->Nom= $Nom;
-         $this->Prenom= $Prenom;
-         $this->email= $email;
-         $this->adresse= $adresse;
-        }
-     public function getid():int
-     {
-         return $this->id;
-     } 
-     public function setid():int
-     {
-        $this->id=$id;
-     } 
-     public function getNom():int
-     {
-         return $this->Nom;
-     }  
-     public function setNom():int
-     {
-        $this->Nom=$Nom;
-     } 
-     public function getPrenom():string
-     {
-         return $this->Prenom;
-     }    
-     public function setPrenom():string
-     {
-          $this->Prenom=$Prenom;
-     }
-    
-     public function getTel():string
-     {
-         return $this->Tel;
-     }   
-      public function setTel():string
-     {
-          $this->Tel=$Tel;
-     }   
+			
+			// $this->dateinscription=$dateinscription;
+		}
+		// function getid(){
+		// 	return $this->id;
+		// }
+		function getnom(){
+			return $this->nom;
+		}
 
-     public function getemail():string
-     {
-         return $this->email;
-     }   
-      public function setemail():string
-     {
-          $this->email=$email;
-     }   
-     public function getadresse():string
-     {
-         return $this->adresse;
-     }   
-      public function setadresse():string
-     {
-          $this->adresse=$adresse;
-     }
-       
-    }
- 
-    
+		function getprenom(){
+			return $this->prenom;
+		}
+        function getusername(){
+			return $this->username;
+		}
+		// function getAdresse(){
+		// 	return $this->adresse;
+		// }
+		function getemail(){
+			return $this->email;
+
+		}
+		function getpasswordd(){
+			return $this->passwordd;
+		}
+
+		function getnoo(){
+			return $this->noo;
+		}
+		function getbloqué(){
+			return $this->bloqué;
+		}
+		// function getdateb(){
+		// 	return $this->dateb;
+		// }
+		// function getDateinscription(){
+		// 	return $this->dateinscription;
+		// }
+		function setnom(string $nom){
+			$this->nom=$nom;
+		}
+		function setprenom(string $prenom){
+			$this->prenom=$prenom;
+		}
+		// function setAdresse(string $adresse){
+		// 	$this->adresse=$adresse;
+		// }
+		function setemail(string $email){
+			$this->email=$email;
+		}
+        function setusername(string $username){
+			$this->username=$username;
+		}
+        // function setid(string $id){
+		// 	$this->id=$id;
+		// }
+		function setpasswordd(string $passwordd){
+			$this->passwordd=$passwordd;
+		}
+		function setnoo(string $noo){
+			$this->noo=$noo;
+		}
+		// function setdateb(string $dateb){
+		// 	$this->dateb=$dateb;
+		// }
+		// function setdateinscription(string $dateinscription){
+		// 	$this->dateinscription=$dateinscription;
+		// }
+		
+	}
+
+
 ?>
