@@ -156,7 +156,7 @@ $categories=$CategoriesCore->triNom();
         </li>
         </li>
         <li class="nav-item">
-          <a class="nav-link  active" href="../pages/rtl.html">
+          <a class="nav-link  " href="afficherclient.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>settings</title>
@@ -173,7 +173,7 @@ $categories=$CategoriesCore->triNom();
                 </g>
               </svg>
             </div>
-            <span class="nav-link-text ms-1">RTL</span>
+            <span class="nav-link-text ms-1">Users</span>
           </a>
         </li>
         <li class="nav-item mt-3">
@@ -449,7 +449,7 @@ $categories=$CategoriesCore->triNom();
       <br>
       <br>
       <br>
-    <a href="http://localhost/projet_web/web/front%20office/BuyTech%20template/grid.html" class="button">Go to front office</a>
+    <a href="list.php" class="button">Go to front office</a>
 
     </div>
 
