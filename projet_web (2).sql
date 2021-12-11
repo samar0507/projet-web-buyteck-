@@ -203,11 +203,11 @@ CREATE TABLE `produits` (
 --
 
 INSERT INTO `produits` (`idprod`, `nom`, `int_cat`, `description`, `prix`, `quantite`, `disponibilite`, `image`) VALUES
-(45, 'IPHONE 12 PRO MAX 128 GO', 14, '6.7 Super Retina XDR OLED HDR10 display ', 5, 10, 'stock', 0x70726f64756374312e6a7067),
-(46, 'PC PORTABLE APPLE MACBOOK PRO 16', 16, '16 \"UHD 3072x1920 IPS HDR display - Touch Bar - Intel Core i9-9880H, up to 4.8 GHz, 16 MB cache ', 10, 10, 'stock', 0x70726f64756374322e6a7067),
-(47, 'Samsung Galaxy Note 20 Ultra', 14, 'The Galaxy Note20 ultra offers incomparable performance: 6.9 \"Super amoled + / 8GB memory / 256GB storage / Front camera 10.0 MP / Rear camera 12.0 MP + 16.0 MP + 108.0 MP / 4500 mAh battery ', 4, 30, 'In stock', 0x70726f64756374342e6a7067),
-(48, 'IPHONE 11 64 GO - NOIR (MHDA3AA-A)', 14, '6.1 \"Retina IPS screen - Resolution: 828 x 1792 pixels - Processor: Apple A13 Bionic Hexa-core (2x2.65 GHz Lightning + 4x1.8 GHz Thunder) - Operating system: iOS 13 - RAM memory: 4 GB - Storage: 64 GB ', 2, 3, 'In stock', 0x70726f64756374362e706e67),
-(49, 'TOSHIBA CANVIO BASICS EXTERNAL HARD DRIVE / 1TB / BLACK', 15, 'Disque dur externe de 2.5\" au design noir mat élégant - Capacité 1 To - Interface USB 3.0 - Taux de transfert de données: 5000 Mbit/s. - Compatible Winndows 7 / 8.1 / 10 et MacOS après reformatage - Couleur Noir - Garantie 1 an', 129, 37, 'In stock', 0x70726f6475637431302e706e67);
+(45, 'IPHONE 12 PRO MAX 128 GO', 14, '6.7 Super Retina XDR OLED HDR10 display ', 4679000, 10, 'stock', 0x70726f64756374312e6a7067),
+(46, 'PC PORTABLE APPLE MACBOOK PRO 16', 16, '16 \"UHD 3072x1920 IPS HDR display - Touch Bar - Intel Core i9-9880H, up to 4.8 GHz, 16 MB cache ', 9799000, 10, 'stock', 0x70726f64756374322e6a7067),
+(47, 'Samsung Galaxy Note 20 Ultra', 14, 'The Galaxy Note20 ultra offers incomparable performance: 6.9 \"Super amoled + / 8GB memory / 256GB storage / Front camera 10.0 MP / Rear camera 12.0 MP + 16.0 MP + 108.0 MP / 4500 mAh battery ', 4299000, 30, 'In stock', 0x70726f64756374342e6a7067),
+(48, 'IPHONE 11 64 GO - NOIR (MHDA3AA-A)', 14, '6.1 \"Retina IPS screen - Resolution: 828 x 1792 pixels - Processor: Apple A13 Bionic Hexa-core (2x2.65 GHz Lightning + 4x1.8 GHz Thunder) - Operating system: iOS 13 - RAM memory: 4 GB - Storage: 64 GB ', 2599000, 3, 'In stock', 0x70726f64756374362e706e67),
+(49, 'TOSHIBA CANVIO BASICS EXTERNAL HARD DRIVE / 1TB / BLACK', 15, 'Disque dur externe de 2.5\" au design noir mat élégant - Capacité 1 To - Interface USB 3.0 - Taux de transfert de données: 5000 Mbit/s. - Compatible Winndows 7 / 8.1 / 10 et MacOS après reformatage - Couleur Noir - Garantie 1 an', 129000, 37, 'In stock', 0x70726f6475637431302e706e67);
 
 -- --------------------------------------------------------
 
