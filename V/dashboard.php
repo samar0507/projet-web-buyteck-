@@ -7,11 +7,7 @@ $totaltreated=$reclamation->totalreclamationetat('etat');
 $totalwaiting=$total-$totaltreated;
 $pourcentage=$totaltreated/$total*100;
 $angle=$pourcentage*3.6;
-include_once "../C/ProduitC.php";
- include_once "../M/Produit.php";
- include_once "../config.php";
- $ProduitsCore=new ProduitsCore();
- $listeProduits=$ProduitsCore->calcul();
+
 
 ?>
 <!DOCTYPE html>
@@ -77,7 +73,7 @@ include_once "../C/ProduitC.php";
     <div class="collapse navbar-collapse  w-auto  max-height-vh-100 h-100" id="sidenav-collapse-main">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link  active" href="dashboard.php">
+          <a class="nav-link  " href="dashboard.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 45 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>shop </title>
@@ -96,6 +92,7 @@ include_once "../C/ProduitC.php";
             <span class="nav-link-text ms-1">Dashboard</span>
           </a>
         </li>
+        
         <li class="nav-item">
           <a class="nav-link  active" href="categories.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -137,7 +134,7 @@ include_once "../C/ProduitC.php";
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active " href="commandeB.php">
+          <a class="nav-link  " href="../pages/billing.html">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>credit-card</title>
@@ -153,11 +150,11 @@ include_once "../C/ProduitC.php";
                 </g>
               </svg>
             </div>
-            <span class="nav-link-text ms-1">Commandes</span>
+            <span class="nav-link-text ms-1">Billing</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  active" href="reclamation.php"> 
+          <a class="nav-link  " href="reclamation.php"> 
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>box-3d-50</title>
@@ -183,7 +180,7 @@ include_once "../C/ProduitC.php";
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  active" href="../pages/rtl.html"> 
+          <a class="nav-link  " href="../pages/rtl.html"> 
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>settings</title>
@@ -439,58 +436,60 @@ include_once "../C/ProduitC.php";
           </div>
 </div> 
 <!-- stat -->
-
-
-	<div align="center">
+<div align="center">
   <div class="row">
         <div class="col-12">
           <div class="card mb-4">
-            <div class="card-header pb-0">
-            <br>
-            <h4>Product's chart</h4> 
-              <div class="table-responsive p-0">
-           <div class="wrap-table100">
-    <table class="table align-items-center mb-0"> 
-		<th  class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps">Prices</th>
-		<th  class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps">Total Amount</th>
-    <?php 
-  
-  foreach($listeProduits as $row){
-    	 print"<tr>";
-	     echo"<td>".$row['total']."</td>"; 
-	   	 echo"<td>".$row['quantite']."</td>"; 
-
-  $dataPoints = array(
-	array("label"=> "Price", "y"=>$row['total']),
-	array("label"=> "Amount", "y"=> $row['quantite']),);
-}?> 
-<br>
-</table>
-</div>
-<br><br>
-<div id="chartContainer" style="height: 300px; width: 100%;"></div>
-<br></div></div></div></div></div>
-<!-- end stat -->
-<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-    <script>
-window.onload = function () {
-var chart = new CanvasJS.Chart("chartContainer", {
-	animationEnabled: true,
-	exportEnabled: true,
-	data: [{
-		type: "pie",
-		showInLegend: "true",
-		legendText: "{label}",
-		indexLabelFontSize: 16,
-		indexLabel: "{label} - #percent%",
-		yValueFormatString: "฿#,##0",
-		dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
-	}]
-});
-chart.render();
- 
+            <div class="card-header pb-0"><?php 
+//index.php
+$connect = mysqli_connect("localhost", "root", "", "projet_web");
+$query = "SELECT * FROM produits";
+$result = mysqli_query($connect, $query);
+$chart_data = '';
+while($row = mysqli_fetch_array($result))
+{
+ $chart_data .= "{idprod:'".$row["idprod"]."',prix:".$row["prix"].", quantite:".$row["quantite"]."}, ";
 }
-</script>
+$chart_data = substr($chart_data, 0, -2);
+?>
+
+
+<!DOCTYPE html>
+<html>
+ <head>
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+  
+ </head>
+ <body>
+ <br /><br />
+   <div class="container" style="width:900px;">
+   <h3 align="center"> Price and Amount per Id Product Data</h3>   
+ <br /><br />
+   <div id="chart"></div>
+  </div>
+ </body>
+</html>
+<script>
+Morris.Line({
+ element : 'chart',
+ data:[<?php echo $chart_data; ?>],
+ xkey:'idprod',
+ ykeys:['prix','quantite'],
+ labels:['prix','quantite'],
+ hideHover:'auto',
+ lineColors: ['#ff0059', '#262626'],
+ stacked:true
+});
+</script> </div>
+              </div>
+            </div>
+          </div>
+          </div>
+<!-- end stat -->
+
       <footer class="footer pt-3  ">
         <div class="container-fluid">
           <div class="row align-items-center justify-content-lg-between">
