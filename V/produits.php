@@ -388,9 +388,9 @@ $listeProduits=$ProduitsCore->triNom();
            <table class="table align-items-center mb-0">  
            <tr>
            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps">Id product</th>
-           <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2"> Name of product</th>
+           <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-7"> Name of product</th>
            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps">Name Categorie </th>
-           <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-7">Description</th>
+           <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-10">Description</th>
            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps">Price</th>
            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps">Amount</th>
            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps">Availablity</th>
@@ -407,7 +407,9 @@ $listeProduits=$ProduitsCore->triNom();
                    <td align="center"><?PHP echo $row['idprod']; ?></td>
                    <td align="center"><?PHP echo $row['nom']; ?></td>
                    <td align="center"><?PHP echo $row['nom_cat']; ?></td>
-                   <td align="center"><?PHP echo $row['description']; ?></td>
+                   <td align="center"><?PHP echo substr($row['description'],0,106); 
+                   echo "<br>";
+                   echo substr($row['description'],106,200); ?></p>
                    <td align="center"><?PHP echo $row['prix']; ?><a> DT</a></td>
                    <td align="center"><?PHP echo $row['quantite']; ?></td>
                    <td align="center"><?PHP echo $row['disponibilite']; ?></td>
@@ -431,7 +433,7 @@ $listeProduits=$ProduitsCore->triNom();
 </div></div>
 </div></div>
 </div>
-<a href="afficherProduits2.php">Go to the front office</a>
+<a href="list.php">Go to the front office</a>
 </form>
 <br>
 </div>

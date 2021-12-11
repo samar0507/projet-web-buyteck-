@@ -22,43 +22,117 @@ $listeProduits=$ProduitsCore->afficherProduits();
 ?>
 <!DOCTYPE html>
 <html lang="en">
-  
-  
-  <!-- Breadcrumbs -->
-  <div class="breadcrumbs">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
-           <ul class="breadcrumb">
-	           <li><a href="#">Home</a></li>
-             <li><a href="grid.php">Categories</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-   </div>
-  </div>  
-  <!-- Breadcrumbs End --> 
+
 <!-- Main Container -->
+<style>
+    .user {
+  
+    color: black; 
+    background-color: #FACFEA; /* Green */
+    border: none;
+    color: black;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px 5px;
+    cursor: pointer;
+  }
+ .bo{
+   background-color: #DD93C2;
+   padding: 10px 25px;
+   border: none;
+   color: white;  
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px 5px;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+
+    input[type=text]
+    {
+      padding: 8px 200px;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+  </style>
+<div class="breadcrumbs">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <ul class="breadcrumb">
+          <li><a href="#">Home</a></li>
+          <li><a href="afficherProduits2.php">Galery</a></li>
+      </div>
+    </div>
+  </div>
+</div>
 <section class="main-container col2-left-layout bounceInUp animated">
   <div class="container">
+    <div class="row">
+      <div class="col-main col-sm-9 col-sm-push-3">
+        <!--	///*///======    End article  ========= //*/// --> 
+      </div>
+      <div class="col-left sidebar col-sm-10 col-xs-0 col-sm-pull-15">
+        <aside class="col-left sidebar">
+          <div class="side-nav-categories">
+            <div class="block-title"> Galery </div>
+            <!--block-title--> 
+            <!-- BEGIN BOX-CATEGORY -->
+            <div class="box-content box-category">
+              <ul>  
+  <body align="center">
+ 
+  <div class="b" >
+       <form align="center" method="GET" action="afficherparcategorie2.php"   >     
+       </br>  
+    <center  >
+     <div class="boo" align="center"  >
+       <h3 > Write the name of catgeorie :</h3><br></br>
+        <input   type="text" id="nom_cat" name="nom_cat" placeholder="write..">
+    </div>
+    <br>  <br> 
+    <input  class="bo" align="center" type="submit" name="afficher le(s) produit(s)" value="Afficher " >
+    </br>
+    </center>
+
+ </form>
+</div>
+<div id ="si"><b>Sort by :</b> 
+<button type="submit" class="button"  text-align="right"> 
+
+<i><a href="triNom1.php" ><span class="user"> Name </span></a></i>
+</button>
+<button type="submit" class="button"> 
+
+<a href="triPrix1.php" ><span class="user"><i> Price</i></span></a>
+</button>
+	</div> 	
+</ul></div>
+<br><br>
     
     <div class="row">
       <div class="col-main col-sm-9 col-sm-push-3">
-
+      <?PHP
+foreach($listeProduits as $row){
+  ?> 
         <article class="col-main">
           <div class="page-title">
             <h1></h1>
           </div>
         
           <div class="toolbar">
-        
+
           <div class="category-products">
             <ol class="products-list" id="products-list">
           <li class="item first">
-            <div class="product-image"> <a href="product_detail.php" title="IPHONE 12 PRO MAX 128 GO"> <img class="small-image" src="products/product1.jpg" alt="IPHONE 12 PRO MAX 128 GO"> </a> </div>
+            <div class="product-image"> <a href="product_detail.php" title="IPHONE 12 PRO MAX 128 GO"> <img class="small-image" src="products/<?php echo $row['image']; ?>" alt=""> </a> </div>
             <div class="product-shop">
-              <h2 class="product-name"><a href="product_detail.php" title="IPHONE 12 PRO MAX 128 GO">IPHONE 12 PRO MAX 128 GO</a></h2>
+              <h2 class="product-name"><a href="product_detail.php" title="IPHONE 12 PRO MAX 128 GO"><?PHP echo $row['nom']; ?></a></h2>
               <div class="ratings">
                 <div class="rating-box">
                   <div style="width:50%" class="rating"></div>
@@ -66,111 +140,22 @@ $listeProduits=$ProduitsCore->afficherProduits();
                 <p class="rating-links"> <a href="#/review/product/list/id/167/category/35/">1 Review(s)</a> <span class="separator">|</span> <a href="#review-form">Add Your Review</a> </p>
               </div>
               <div class="desc std">
-                <p>6.7 "Super Retina XDR OLED HDR10 display - Resolution: 1284 x 2778 pixels - Processor: Apple A14 Bionic (5 nm) Hexa-core (2x3.1 GHz Firestorm + 4x1.8 GHz Icestorm) - Operating system: iOS 14.1 - RAM memory: 6 GB - Storage: 128 GB - Rear Camera: Triple Pixels: 12 MegaPixels f / 1.6 + 12 MegaPixels f / 2.2 + 12 MegaPixels f / 2.4 - Front Camera 12 MegaPixels f / 2.2 - 4K Video with Wifi , 4G and Bluetooth 5.0 - Battery: Li-Ion 3687 mAh - Face ID - Color: Blue - Warranty: 1 year <a class="link-learn" title="" href="#">Learn More</a> </p>
+                <p><?PHP echo $row['description']; ?><a class="link-learn" title="" href="#">Learn More</a> </p>
               </div>
               <div class="price-box">
                
-                <p class="special-price"> <span class="price-label"></span> <span class="price"> 5 000,000 DT </span> </p> <p class="old-price"> <span class="price-label"></span> <span class="price"> 5 299,000 DT </span> </p>
+                <p class="special-price"> <span class="price-label"></span> <span class="price">  <?PHP echo $row['prix']; ?><a> DT </a></span> </p> 
               </div>
               <div class="actions">
                 <button class="button btn-cart ajx-cart" title="Add to Cart" type="button"><span>Add to Cart</span></button>
                 <span class="add-to-links"> <a title="Add to Wishlist" class="button link-wishlist" href="#"><span>Add to Wishlist</span></a> <a title="Add to Compare" class="button link-compare" href="#"><span>Add to Compare</span></a> </span> </div>
             </div>
           </li>
-          <li class="item even">
-            <div class="product-image"> <a href="#/microsoft-natural-ergonomic-keyboard-4000.html" title="PC PORTABLE APPLE MACBOOK PRO 16"> <img class="small-image" src="products/product2.jpg" alt="PC PORTABLE APPLE MACBOOK PRO 16"> </a> </div>
-            <div class="product-shop">
-              <h2 class="product-name"><a href="#/microsoft-natural-ergonomic-keyboard-4000.html" title="PC PORTABLE APPLE MACBOOK PRO 16">PC PORTABLE APPLE MACBOOK PRO 16</a></h2>
-              <div class="desc std">
-                <p>16 "UHD 3072x1920 IPS HDR display - Touch Bar - Intel Core i9-9880H, up to 4.8 GHz, 16 MB cache - 16 GB memory - 1 TB SSD drive - AMD Radeon Pro 5500M graphics card, 4 GB dedicated memory - Wifi 6 - Jack 3.5mm - Bluetooth 5.0 - 4x Thunderbolt 3 / USB-C - Webcam + Micro - Mac OS X 10.15 Catalina - Color Gray - 1 year warranty <a class="link-learn" title="" href="#">Learn More</a></p>
-              </div>
-              <div class="price-box"> <span class="regular-price"> <span class="price">10 520,000 DT</span> </span> </div>
-              <div class="actions">
-                <button class="button btn-cart ajx-cart" title="Add to Cart" type="button"><span>Add to Cart</span></button>
-                <span class="add-to-links"> <a title="Add to Wishlist" class="button link-wishlist" href="#"><span>Add to Wishlist</span></a> <a title="Add to Compare" class="button link-compare" href="#"><span>Add to Compare</span></a> </span> </div>
-            </div>
-          </li>
-          <li class="item odd">
-            <div class="product-image"> <a href="#/30-flat-panel-tft-lcd-cinema-hd-monitor.html" title="Samsung Galaxy Note 20 Ultra"> <img class="small-image" src="products/product4.jpg" alt="Samsung Galaxy Note 20 Ultra"> </a> </div>
-            <div class="product-shop">
-              <h2 class="product-name"><a href="#/30-flat-panel-tft-lcd-cinema-hd-monitor.html" title="Samsung Galaxy Note 20 Ultra">Samsung Galaxy Note 20 Ultra</a></h2>
-              <div class="desc std"><p>The Galaxy Note20 ultra offers incomparable performance: 6.9 "Super amoled + / 8GB memory / 256GB storage / Front camera 10.0 MP / Rear camera 12.0 MP + 16.0 MP + 108.0 MP / 4500 mAh battery / 8K video <a class="link-learn" title="" href="#">Learn More</a></p>
-              </div>
-              <div class="price-box"> <span class="regular-price"> <span class="price">4 299,000 DT</span> </span> </div>
-              <div class="actions">
-                <button class="button btn-cart ajx-cart" title="Add to Cart" type="button"><span>Add to Cart</span></button>
-                <span class="add-to-links"> <a title="Add to Wishlist" class="button link-wishlist" href="#"><span>Add to Wishlist</span></a> <a title="Add to Compare" class="button link-compare" href="#"><span>Add to Compare</span></a> </span> </div>
-            </div>
-          </li>
-          <li class="item even">
-            <div class="product-image"> <a href="#/19-widescreen-flat-panel-lcd-monitor.html" title="IPHONE 11 64 GO - NOIR (MHDA3AA-A)"> <img class="small-image" src="products/product6.png" alt="IPHONE 11 64 GO - NOIR (MHDA3AA-A)"> </a> </div>
-            <div class="product-shop">
-              <h2 class="product-name"><a href="#/19-widescreen-flat-panel-lcd-monitor.html" title="IPHONE 11 64 GO - NOIR (MHDA3AA-A)">IPHONE 11 64 GO - NOIR (MHDA3AA-A)</a></h2>
-              <div class="desc std"><p>6.1 "Retina IPS screen - Resolution: 828 x 1792 pixels - Processor: Apple A13 Bionic Hexa-core (2x2.65 GHz Lightning + 4x1.8 GHz Thunder) - Operating system: iOS 13 - RAM memory: 4 GB - Storage: 64 GB - Rear Camera: Double: 12 MegaPixels + 12 MegaPixels (Aperture f / 2.4 13mm) - Front Camera 12 MegaPixel (Aperture ƒ / 2.2) Retina Flash with Wifi, 4G and Bluetooth 5.0 - Battery: Li -Ion 3110 mAh - 4K video recording - Wireless talk time: up to 17 hours - IP68 rated (maximum depth of 2 meters up to 30 minutes) - Color: Black - Warranty: 1 year.
-              <p>  Headphones & Charger adapter not included </p> <a class="link-learn" title="" href="#">Learn More</a> </p>
-            </div>
-              <div class="price-box"> <span class="regular-price"> <span class="price">2 599,000 DT</span> </span> </div>
-              <div class="actions">
-                <button class="button btn-cart ajx-cart" title="Add to Cart" type="button"><span>Add to Cart</span></button>
-                <span class="add-to-links"> <a title="Add to Wishlist" class="button link-wishlist" href="#"><span>Add to Wishlist</span></a> <a title="Add to Compare" class="button link-compare" href="#"><span>Add to Compare</span></a> </span> </div>
-            </div>
-          </li>
-          <li class="item odd">
-            <div class="product-image"> <a href="#/250gb-5400rpm.html" title="Wireless Bluetooth Headphones  "> <img class="small-image" src="products/product7.png" alt="Wireless Bluetooth Headphones  "> </a> </div>
-            <div class="product-shop">
-              <h2 class="product-name"><a href="#/250gb-5400rpm.html" title="Wireless Bluetooth Headphones  ">Celebrat A23 Wireless Bluetooth Headphones Black </a></h2>
-              <div class="desc std"><p>Excellent sound quality; Great bass; This model adapts to your anatomical parameters; The case is made of solid and reliable materials, practical for everyday use; Support TF card (maximum 32G); Bluetooth chip: JL6925F; Bluetooth version: V5.0; Transmission distance: 10m; Standby time: about 80 hours; Battery capacity: 200mAh; Charging time: about 2.5 hours; Music time: about 5 hours; Call time: about 4.5 hours. <a class="link-learn" title="" href="#">Learn More</a> </p>
-              </div>
-              <div class="price-box"> <span class="regular-price"> <span class="price">79,900 DT</span> </span> </div>
-              <div class="actions">
-                <button class="button btn-cart ajx-cart" title="Add to Cart" type="button"><span>Add to Cart</span></button>
-                <span class="add-to-links"> <a title="Add to Wishlist" class="button link-wishlist" href="#"><span>Add to Wishlist</span></a> <a title="Add to Compare" class="button link-compare" href="#"><span>Add to Compare</span></a> </span> </div>
-            </div>
-          </li>
-  <li class="item odd">
-            <div class="product-image"> <a href="#" title="PC PORTABLE HP "> <img class="small-image" src="products/product9.png" alt="PC PORTABLE HP "> </a> </div>
-            <div class="product-shop">
-              <h2 class="product-name"><a href="#" title="PC PORTABLE HP ">PC PORTABLE HP 15-DW1001NK DUAL CORE 4GO 1TO - GRIS (27Z73EA)</a></h2>
-              <div class="desc std"><p>15.6 "HD LED display - Processor: Intel Celeron N4020 (1.10 GHz up to 2.80 GHz, 4 MB cache memory, Dual-Core) - Operating system: Windows 10 Home - Memory: 4 GB - Hard drive: 1 TB - Graphics card: Intel HD Graphics, with Wi-Fi, Bluetooth, 1x USB Type-C, 2x USB Type-A, 1x HDMI 1.4b, 1x RJ-45 and SD card reader - Color: Gray - Warranty: 1 year <a class="link-learn" title="" href="#">Learn More</a> </p>
-              </div>
-              <div class="price-box"> <span class="regular-price"> <span class="price"></span> </span> </div>
-              <p class="special-price"> <span class="price-label"></span> <span class="price"> 899,000 TND DT </span> </p> <p class="old-price"> <span class="price-label"></span> <span class="price"> 999,000 DT </span> </p>
-              <div class="actions">
-                <button class="button btn-cart ajx-cart" title="Add to Cart" type="button"><span>Add to Cart</span></button>
-                <span class="add-to-links"> <a title="Add to Wishlist" class="button link-wishlist" href="#"><span>Add to Wishlist</span></a> <a title="Add to Compare" class="button link-compare" href="#"><span>Add to Compare</span></a> </span> </div>
-            </div>
-          </li>
-          <li class="item even">
-            <div class="product-image"> <a href="#/24-widescreen-flat-panel-lcd-monitor.html" title="24&quot; Widescreen LCD Monitor"> <img class="small-image" src="products/product10.png" alt="24&quot; Widescreen LCD Monitor"> </a> </div>
-            <div class="product-shop">
-              <h2 class="product-name"><a href="#/24-widescreen-flat-panel-lcd-monitor.html" title="TOSHIBA CANVIO BASICS EXTERNAL HARD DRIVE ">TOSHIBA CANVIO BASICS EXTERNAL HARD DRIVE / 1TB / BLACK</a></h2>
-              <div class="desc std"><p>Disque dur externe de 2.5" au design noir mat élégant - Capacité 1 To - Interface USB 3.0 - Taux de transfert de données: 5000 Mbit/s. - Compatible Winndows 7 / 8.1 / 10 et MacOS après reformatage - Couleur Noir - Garantie 1 an <a class="link-learn" title="" href="#">Learn More</a> </p>
-              </div>
-              <div class="price-box"> <span class="regular-price"> <span class="price">129,000 DT</span> </span> </div>
-              <div class="actions">
-                <button class="button btn-cart ajx-cart" title="Add to Cart" type="button"><span>Add to Cart</span></button>
-                <span class="add-to-links"> <a title="Add to Wishlist" class="button link-wishlist" href="#"><span>Add to Wishlist</span></a> <a title="Add to Compare" class="button link-compare" href="#"><span>Add to Compare</span></a> </span> </div>
-            </div>
-          </li>
-          <li class="item odd">
-            <div class="product-image"> <a href="#/microsoft-wireless-optical-mouse-5004.html" title="Kit de Surveillance "> <img class="small-image" src="products/product11.png" alt="Kit de Surveillance "> </a> </div>
-            <div class="product-shop">
-              <h2 class="product-name"><a href="#/microsoft-wireless-optical-mouse-5004.html" title="Kit de Surveillance ">Kit de Surveillance HIKVISION 2 Caméras + DVR – 4 channels</a></h2>
-              <div class="desc std"><p>kit Hikvision 2 MP – Superbe qualité d’image sur tous les canaux.
-                <p>Système complet Plug ‘N’ Play – Facile à utiliser et à configurer. </p>
-                <p>Application mobile pour visionner à distance n’importe où dans le monde.</p>
-                <p>Système intérieur et extérieur : vision nocturne jusqu’à 30 m.</p>
-                 <a class="link-learn" title="" href="#">Learn More</a> </p>
-              </div>
-              <div class="price-box"> <span class="regular-price"> <span class="price">530.00 DT</span> </span> </div>
-              <div class="actions">
-                <button class="button btn-cart ajx-cart" title="Add to Cart" type="button"><span>Add to Cart</span></button>
-                <span class="add-to-links"> <a title="Add to Wishlist" class="button link-wishlist" href="#"><span>Add to Wishlist</span></a> <a title="Add to Compare" class="button link-compare" href="#"><span>Add to Compare</span></a> </span> </div>
-             </div>
-          </li>
-        </ol>
+    </ol>
           </div>
-        </article>
+        </article>  <?PHP
+}
+?>
         <!--	///*///======    End article  ========= //*/// --> 
       </div>
       <div class="col-left sidebar col-sm-3 col-xs-12 col-sm-pull-9">

@@ -90,7 +90,7 @@ foreach($produits as $row){
 ?></aside>
 </section></div></div></div>
 <br>
- <div align="center"><button class="bo"><div><a href="afficherProduits2.php"> Back </a></button><div>
+ <div align="center"><button class="bo"><div><a href="list.php"> Back </a></button><div>
  <br>
  <br>
 <footer>

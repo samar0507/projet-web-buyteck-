@@ -440,9 +440,7 @@ include_once "../C/ProduitC.php";
 </div> 
 <!-- stat -->
 
-<!DOCTYPE html>
-<html>
-<body>
+
 	<div align="center">
   <div class="row">
         <div class="col-12">
@@ -473,9 +471,6 @@ include_once "../C/ProduitC.php";
 <div id="chartContainer" style="height: 300px; width: 100%;"></div>
 <br></div></div></div></div></div>
 <!-- end stat -->
-
-
-
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <script>
 window.onload = function () {

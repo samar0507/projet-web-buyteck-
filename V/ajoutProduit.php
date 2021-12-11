@@ -389,7 +389,7 @@ $listeCategories=$CategoriesCore->afficherCategories();
                  <td align="center"><input class="controle" type="text" placeholder="Enter Description.." name="description" id="description"  required></td>
                  </tr>
                  <td align="center">Price</td>
-                 <td align="center"><input class="controle" type="text" placeholder="Enter Price.."  name="prix" id="prix"   required ></td>
+                 <td align="center"><input class="controle" type="number" placeholder="Enter Price.."  name="prix" id="prix"   required ></td>
                  </tr>
                  <td align="center">Amount</td>
                  <td align="center"><input class="controle" type="text" placeholder="Enter Amount.." name="quantite" id="quantite"   required></td>

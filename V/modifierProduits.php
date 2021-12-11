@@ -426,24 +426,17 @@ $listeCategories=$CategoriesCore->afficherCategories();
         </div>
         <div>
         <label>Price</label></br>
-        <input   class="controle" type="text" min="1" max="5000" type="number" name="prix" id="prix" value="<?php echo $prix ?>">
+        <input   class="controle" type="number" min="1" max="100,000,000" type="number" name="prix" id="prix" value="<?php echo $prix ?>">
         </div>
         <div>
         <label>Amount</label></br>
-        <input   class="controle" type="text" min="0" max="1000"  type="number" name="quantite" id="quantite" value="<?php echo $quantite ?>">
+        <input   class="controle" type="text" min="0" max="10000"  type="number" name="quantite" id="quantite" value="<?php echo $quantite ?>">
         </div>
         <div>
         <label>Availablity</label></br>
         <input  class="controle"  type="text" name="disponibilite" id="disponibilite" value="<?php echo $disponibilite ?>">
         </div>
-     
-
-
-
-
-
-
-         <input type="submit" name="Update" id="Update" value="Update" href="produits.php" >
+      <input type="submit" name="Update" id="Update" value="Update" href="produits.php" >
    <br><input type="reset" value="Reset"> 
    
 </br>

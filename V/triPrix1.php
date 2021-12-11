@@ -38,8 +38,8 @@ $listeProduits=$ProduitsCore->triPrix();
       <div class="col-xs-12">
         <ul class="breadcrumb">
           <li><a href="#">Home</a></li>
-          <li><a href="http://localhost/projet_web/web/back%20office/store/afficherProduits2.php">Galery</a></li>
-          <li><a href="http://localhost/projet_web/web/back%20office/store/triPrix.php">Sort by price</a></li>
+          <li><a href="list.php">Galery</a></li>
+          <li><a href="triPrix.php">Sort by price</a></li>
       </div>
     </div>
   </div>
@@ -101,7 +101,7 @@ foreach($listeProduits as $row){
 						</div>
 </body>
 </html>
-</div><div align="center"><button class="bo" onclick="location.href='http://localhost/projet_web/web/back%20office/store/afficherProduits2.php'">Back  </button></div>
+</div><div align="center"><button class="bo" onclick="location.href='list.php'">Back  </button></div>
 <br><br><br>
 </form>
 <footer>

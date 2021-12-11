@@ -9,7 +9,7 @@ $totaltreated=$reclamation->totalreclamationetat('etat');
 $totalwaiting=$total-$totaltreated;
 
  $CategoriesCore=new CategoriesCore();
- $listecategories=$CategoriesCore->affichercategories();
+ $listecategories=$CategoriesCore->afficherCategories();
 $categories=$CategoriesCore->triNom();
 ?>
 <!DOCTYPE html>
