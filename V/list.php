@@ -147,7 +147,8 @@ foreach($listeProduits as $row){
                 <p class="special-price"> <span class="price-label"></span> <span class="price">  <?PHP echo $row['prix']; ?><a> DT </a></span> </p> 
               </div>
               <div class="actions">
-                <button class="button btn-cart ajx-cart" title="Add to Cart" type="button"><span>Add to Cart</span></button>
+                <button><a class="button btn-cart ajx-cart"" href="../C/AddToCart.php?pId=<?PHP echo $row['idprod']; ?>">Ajouter un produit</a></button> 
+
                 <span class="add-to-links"> <a title="Add to Wishlist" class="button link-wishlist" href="#"><span>Add to Wishlist</span></a> <a title="Add to Compare" class="button link-compare" href="#"><span>Add to Compare</span></a> </span> </div>
             </div>
           </li>

@@ -2,12 +2,12 @@
 
  class reclamation
  {
-     private int $id_rec;
-     private string $comment;
-     private int $id;
-     private string $date_rec;
-    private string $typer;
-     private string $etat;
+     private  $id_rec;
+     private  $comment;
+     private  $id;
+     private  $date_rec;
+    private  $typer;
+     private  $etat;
      public function __construct(int $id,string $comment,string $date_rec,string $typer,string $etat)
      {
         $this->id= $id;

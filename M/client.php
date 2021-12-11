@@ -2,12 +2,12 @@
 
  class client 
  {
-     private int $id;
-     private string $Nom;
-     private string $Prenom;
-    private string $email;
-     private string $adresse;
-     private int $Tel;
+     private  $id;
+     private  $Nom;
+     private  $Prenom;
+    private  $email;
+     private  $adresse;
+     private  $Tel;
      public function __construct(int $id,int $Tel,string $Nom,string $Prenom,string $adresse,string $email)
      {$this->id= $id;
         $this->Tel= $Tel;

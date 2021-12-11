@@ -2,9 +2,9 @@
 
  class reponse
  {
-     private int $id;
-     private string $content;
-     private int $id_reclamation;
+     private  $id;
+     private  $content;
+     private  $id_reclamation;
     
      public function __construct(int $id_reclamation,string $content )
      {$this->id_reclamation= $id_reclamation;

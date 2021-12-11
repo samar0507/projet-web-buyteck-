@@ -44,7 +44,7 @@
                             <ul class="dropdown-menu" role="menu">
                                 <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><img src="images/english.png" alt="language"> English </a></li>
                                 <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><img src="images/francais.png" alt="language"> French </a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><img src="images/german.png" alt="language"> German </a></li>
+                                
                             </ul>
                         </div>
                         <!-- End Header Language -->
@@ -60,30 +60,56 @@
                         </div>
                         <!-- End Header Currency -->
 
-
+                        <?php
+    include_once "../C/panierController.php";
+    $i=new panierController();
+    $c=$i->getCart(1);
+    ?>
+                        
                     </div>
                     <div class="col-xs-5 col-sm-6">
 
                         <div class="top-cart-contain pull-right">
                             <!-- Top Cart -->
                             <div class="mini-cart">
-                                <div data-toggle="dropdown" data-hover="dropdown" class="basket dropdown-toggle"><a href="# " >  My Cart <span class="cart_count">2</span></a></div>
+                                <div data-toggle="dropdown" data-hover="dropdown" class="basket dropdown-toggle"><a href="# " >  My Cart <span class="cart_count"><?php echo $c->rowCount(); ?></span></a></div>
                                 <div>
                                     <div class="top-cart-content" style="display: none;">
                                         <div class="actions">
                                             <button class="btn-checkout" title="Checkout" type="button" ><span>Checkout</span></button>
-                                            <a href="#" class="view-cart"  ><span>View Cart</span></a> </div>
+                                            <a href="shopping_cart.php" class="view-cart"  ><span>View Cart</span></a> </div>
                                         <!--block-subtitle-->
                                         <ul class="mini-products-list" id="cart-sidebar">
+                                        <?php 
+                                $DueAmount=0;
+                                if($c->rowCount()==0)
+                                {
+                                    echo '
+                                    <tr>
+                                        <td colspan="6"><h3>Your Cart Is Empty</h3></td>
+                                    </tr>
+                            
+                                    ';
+                                }
+                                foreach ($c as $row)
+                                {
+
+                                  $prod=$i->getProd($row["id_produit"]);
+                                    echo '  
                                             <li class="item first">
-                                                <div class="item-inner"><a class="product-image" title="timi &amp; leslie Sophia Diaper Bag, Lemon Yellow/Shadow White" href="#l"><img alt="timi &amp; leslie Sophia Diaper Bag, Lemon Yellow/Shadow White" src="products-images/p4.jpg"></a>
+                                                <div class="item-inner"><a class="product-image" title="timi &amp; leslie Sophia Diaper Bag, Lemon Yellow/Shadow White" href="#l"><img alt="timi &amp; leslie Sophia Diaper Bag, Lemon Yellow/Shadow White" src="products/'.$prod['image'].'"></a>
                                                     <div class="product-details">
-                                                        <div class="access"><a class="btn-remove1" title="Remove This Item" href="#">Remove</a> <a class="btn-edit" title="Edit item" href="#"><i class="icon-pencil"></i><span class="hidden">Edit item</span></a> </div>
-                                                        <!--access--> <strong>1</strong> x <span class="price">$179.99</span>
-                                                        <p class="product-name"><a href="#">timi &amp; leslie Sophia Diaper Bag...</a></p>
+                                                        <div class="access"><a class="btn-remove1" title="Remove This Item" href="../C/DeleteCart.php?pId='.$prod["idprod"].'">Remove</a>  </div>
+                                                        <!--access--> <strong>'.$row["qte"].'</strong> x <span class="price">TND'.$prod["prix"].'</span>
+                                                        <p class="product-name"><a href="#"> '.$prod["nom"].'</a></p>
                                                     </div>
                                                 </div>
                                             </li>
+                                            ';
+                                            $DueAmount+=$prod["prix"]*$row["qte"];
+                                      
+                                            }
+                                            ?>
                                         </ul>
                                         <!--actions-->
                                     </div>
@@ -127,13 +153,13 @@
                         <div class="toplinks">
                             <div class="links">
 
-                                <div class="myaccount"><a title="My Account" href="login.php"><span class="hidden-xs">My Account</span></a></div>
-                                <div class="check"><a title="Checkout" href="checkout.php"><span class="hidden-xs">Checkout</span></a></div>
-                                <div class="demo"><a title="Blog" href="blog.php"><span class="hidden-xs">Blog</span></a></div>
+                                <div class="myaccount"><a title="My Account" href="login.html"><span class="hidden-xs">My Account</span></a></div>
+                                <div class="check"><a title="Checkout" href="checkout.html"><span class="hidden-xs">Checkout</span></a></div>
+                                <div class="demo"><a title="Blog" href="blog.html"><span class="hidden-xs">Blog</span></a></div>
                                 <!-- Header Company -->
 
                                 <!-- End Header Company -->
-                                <div class="login"><a href="login.php"><span class="hidden-xs">Log In</span></a></div>
+                                <div class="login"><a href="login.html"><span class="hidden-xs">Log In</span></a></div>
 
                             </div>
 
