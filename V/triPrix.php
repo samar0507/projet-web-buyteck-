@@ -29,6 +29,7 @@ $listeProduits=$ProduitsCore->triPrix();
   <link id="pagestyle" href="../assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />
   <link href="../assets/css/main.css" rel="stylesheet" />
   <link rel="stylesheet"  href="vendor/DataTables/datatables.min.css">	
+  <link rel="icon" type="image/png" href="../assets/img/favicone.png">
 		<link rel="stylesheet"  href="style.css">	
 		<script src="vendor/jquery/jquery-1.11.2.min.js" type="text/javascript"></script>
 		<script src="vendor/DataTables/datatables.min.js" type="text/javascript"></script>

@@ -17,6 +17,7 @@
  <link id="pagestyle" href="../assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />
  <link href="../assets/css/main.css" rel="stylesheet" />
  <link rel="stylesheet" href="reclamationchart.css">
+ <link rel="icon" type="image/png" href="../assets/img/favicone.png">
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">
