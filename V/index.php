@@ -193,19 +193,9 @@ $listeProduits=$ProduitsCore->afficherProduits();
 									
 									style="z-index: 7; white-space: nowrap;"></div>
             </li>
-         </ul>
-          <div class="tp-static-layers"></div>
-          <div class="tp-bannertimer" style="height: 7px; background-color: rgba(255, 255, 255, 0.25);"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- SLIDE  -->
+             <!-- SLIDE  -->
   <li data-index="rs-19" data-transition="zoomout" data-slotamount="default"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000"  data-thumb="images/video-img.jpg"  data-rotate="0"  data-saveperformance="off"  data-title="HTML5 Video" data-description=""> 
-              <!-- MAIN IMAGE --> 
-              <img src="images/video-img.jpg"  alt=""> 
               <!-- LAYERS --> 
-              
               <!-- BACKGROUND VIDEO LAYER -->
               <div class="rs-background-video-layer" 
 									data-forcerewind="on" 
@@ -263,7 +253,7 @@ $listeProduits=$ProduitsCore->afficherProduits();
 
 									data-elementdelay="0.05" 
 									
-									style="z-index: 6; white-space: nowrap;">Hot deals</div>
+									style="z-index: 6; white-space: nowrap;"></div>
               
               <!-- LAYER NR. 3 -->
               <div class="tp-caption NotGeneric-SubTitle   tp-resizeme rs-parallaxlevel-0" 
@@ -285,7 +275,7 @@ $listeProduits=$ProduitsCore->afficherProduits();
 									data-responsive_offset="on" 
 
 									
-									style="z-index: 7; white-space: nowrap;">Lorem ipsum dolor sit amet, consectetur </div>
+									style="z-index: 7; white-space: nowrap;"> </div>
               
               <!-- LAYER NR. 4 -->
               <div class="tp-caption NotGeneric-Icon   tp-resizeme rs-parallaxlevel-0" 
@@ -311,6 +301,14 @@ $listeProduits=$ProduitsCore->afficherProduits();
 									style="z-index: 8; white-space: nowrap;"><i class="pe-7s-ball"></i> </div>
             </li>
             <!-- SLIDE  -->
+         </ul>
+          <div class="tp-static-layers"></div>
+          <div class="tp-bannertimer" style="height: 7px; background-color: rgba(255, 255, 255, 0.25);"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
   <!-- end Slider -->
   
   <div class="promo-section">
@@ -388,7 +386,7 @@ foreach($listeProduits as $row){
      <div class="box-timer">
                       <div class="countbox_1 timer-grid"></div>
                     </div>
-                    <a href="#" class="shop-now">Shop Now</a> </div>
+                    <a href="list.php" class="shop-now">Shop Now</a> </div>
   </div>
   <!--Promotion Banner End--> 
 
