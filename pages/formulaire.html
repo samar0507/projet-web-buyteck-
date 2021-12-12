@@ -1,9 +1,3 @@
-<?php
-	include '../C/clientC.php';
-	$clientC=new clientC();
-	$listeclients=$clientC->afficherclients(); 
-?>
-
 <!--
 =========================================================
 * Soft UI Dashboard - v1.0.3
@@ -19,7 +13,7 @@
 
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 -->
-
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -33,13 +27,13 @@
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
   <!-- Nucleo Icons -->
-  <link href="css/nucleo-icons.css" rel="stylesheet" />
-  <link href="css/nucleo-svg.css" rel="stylesheet" />
+  <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-  <link href="css/nucleo-svg.css" rel="stylesheet" />
+  <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- CSS Files -->
-  <link id="pagestyle" href="css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />
+  <link id="pagestyle" href="../assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">
@@ -197,7 +191,7 @@
                 </g>
               </svg>
             </div>
-            <span class="nav-link-text ms-1">Log Out</span>
+            <span class="nav-link-text ms-1">Sign In</span>
           </a>
         </li>
         <li class="nav-item">
@@ -261,9 +255,10 @@
           </div>
           <ul class="navbar-nav  justify-content-end">
             <li class="nav-item d-flex align-items-center">
-            <form  action="./deconnexion.php" method="post">
-    <input class="btn btn-purple mt-5" type="submit" value="Déconnexion">
-    </form>
+              <a href="javascript:;" class="nav-link text-body font-weight-bold px-0">
+                <i class="fa fa-user me-sm-1"></i>
+                <span class="d-sm-inline d-none">Sign In</span>
+              </a>
             </li>
             <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
               <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
@@ -357,82 +352,75 @@
       </div>
     </nav>
     <!-- End Navbar -->
-    <div class="container-fluid py-4">
-      <div class="row">
-        <div class="col-12">
-          <div class="card mb-4">
-            <div class="card-header pb-0">
-              <h5>Users</h5>
+    <div class="formu">
+        <form onsubmit="verif()" method="post" name='f'>
+          <p>
+          <h3> My Account </h3>
+          </p>
+          <br>
+          <fieldset>
+            <table>
+  
+              <tr>
+                <td> First Name : </td>
+                <td> <input type="text" name="nom">  </td>
+                
+              </tr>
+  
+  
+              <tr>
+                <td> Last Name : </td>
+                <td> <input type="text" name="prenom" value="">
+              </tr>
+              </td>
+              <tr>
+                <tr>
+                  <td> User Name : </td>
+                  <td> <input type="text" name="username" value="">
+                </tr>
+                </td>
+                <tr>
+                <td> E-MAIL : </td>
+                <td> <input type="text" name="email" value=""> </td>
+              </tr>
+  
+  
+              <tr>
+                <td> Password : </td>
+                <td> <input type="password" name="passwordd"></td>
+              </tr>
+  
+  
+              
+              <tr>
+                <td> Phone Number </td>
+                <td> <input type="text" name="noo" value='' ><span class="validity"></span> </td>
+              </tr>
+  
+              <tr>
+                <td> Date of birth </td>
+                <td> <input type="date" name="date" min='01_10_2021'> </td>
+              </tr>
+              
             </div>
-            <div class="card-body px-0 pt-0 pb-2">
-              <div class="table-responsive p-0">
-                <table class="table align-items-center mb-0">
-                  <thead>
-                    <tr>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">user</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Function</th>
-         
-                      <th class="text-secondary opacity-7"></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                  <?php
-				foreach($listeclients as $client){
-		        	?>
-                    <tr>
-                      <td>
-                        <div class="d-flex px-2 py-1">
-                          <div>
-                            <img src="../assets/img/user.jpg" class="avatar avatar-sm me-3" alt="user3">
-                          </div>
-                          <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm"><?php echo $client['nom']; ?> <br> <?php echo $client['prenom']; ?></h6>
-                            <p class="text-xs text-secondary mb-0"><?php echo $client['email']; ?></p>
-                          </div>
-                        </div>
-                      </td>
-                      <td>
-                        <p class="text-xs font-weight-bold mb-0">Executive</p>
-                        <p class="text-xs text-secondary mb-0">Claims management</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                      <form method="POST" action="modifierclient.php">
-                      <div class="ms-auto text-end">
-                      <button id="Modifier" name="Modifier" type="submit" class="btn btn-link text-info text-gradient px-3 mb-0"><span>Edit</span></button>
-                      <!-- <input type="submit" name="Modifier" value="Modifier"> -->
-						<input type="hidden"  value=<?PHP echo $client['username']; ?> name="username">
-                            <!-- <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i class="far fa-trash-alt me-2"></i>Delete</a>
-                            <a class="btn btn-link text-dark px-3 mb-0" href="formulaire.html"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a> -->
-                          </div>
-                        </form>
-                      </td>
-        <td>
-                     <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="supprimerclient.php?username=<?php echo $client['username']; ?>"><i class="far fa-trash-alt me-2"></i>Delete</a>
-                     <?php if($client['bloqué']==0){ ?>
-                     <a class="btn btn-link text-warning text-gradient px-3 mb-0" href="adminblock.php?username=<?php echo $client['username']; ?>"><i class="far fa-update-alt me-2"></i>Bloquer</a>
-                     <?php }else if($client['bloqué']==1){  ?>
-                      <a class="btn btn-link text-success text-gradient px-3 mb-0" href="admindebloque.php?username=<?php echo $client['username']; ?>"><i class="far fa-update-alt me-2"></i>Debloquer</a>
-                      <?php  }?>
-                    </td>
-                      <td class="align-middle text-center">
-                        <!-- <span class="text-secondary text-xs font-weight-bold">19/09/17</span> -->
-                      </td>
-                      <!-- <td class="align-middle">
-                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                          Edit
-                        </a>
-                      </td> -->
-                    </tr>
-                    
-                  </tbody>
-                  <?php
-				}
-			      ?>
-                </table>
-              </div>
-            </div>
+  
+  
+  
+  
+  
+            </table>
+  
+          </fieldset>
+          <br> 
+  
+        </fieldset>
+          <div class="buttons-set">
+            <button id="send2" name="" type="submit" class="button login" href='../login.html'><span>Submit</span></button>
+            <button id="send2" name="" type="submit" class="button login"><span>Cancel</span></button>
+  
           </div>
-        </div>
+  
+        </form>
       </div>
       
       <footer class="footer pt-3  ">

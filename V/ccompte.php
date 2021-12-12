@@ -1,6 +1,6 @@
 <?php
-include_once '../Model/client.php';
-include_once '../Controler/clientC.php';
+include_once '../M/client.php';
+include_once '../C/clientC.php';
 
 $error = "";
 

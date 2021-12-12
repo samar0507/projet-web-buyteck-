@@ -1,6 +1,6 @@
 <?php
 	include '../config.php';
-	include_once '../Model/client.php';
+	include_once '../M/client.php';
 	class clientC {
 		function afficherclients(){
 			$sql="SELECT * FROM client";

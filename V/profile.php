@@ -1,9 +1,3 @@
-<?php
-	include '../C/clientC.php';
-	$clientC=new clientC();
-	$listeclients=$clientC->afficherclients(); 
-?>
-
 <!--
 =========================================================
 * Soft UI Dashboard - v1.0.3
@@ -19,7 +13,7 @@
 
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 -->
-
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -33,16 +27,16 @@
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
   <!-- Nucleo Icons -->
-  <link href="css/nucleo-icons.css" rel="stylesheet" />
-  <link href="css/nucleo-svg.css" rel="stylesheet" />
+  <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-  <link href="css/nucleo-svg.css" rel="stylesheet" />
+  <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- CSS Files -->
-  <link id="pagestyle" href="css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />
+  <link id="pagestyle" href="../assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />
 </head>
 
-<body class="g-sidenav-show  bg-gray-100">
+<body class="g-sidenav-show bg-gray-100">
   <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 " id="sidenav-main">
     <div class="sidenav-header">
       <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
@@ -54,8 +48,8 @@
     <hr class="horizontal dark mt-0">
     <div class="collapse navbar-collapse  w-auto  max-height-vh-100 h-100" id="sidenav-collapse-main">
       <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link  " href="../pages/dashboard.html">
+      <li class="nav-item">
+          <a class="nav-link  active" href="dashboard.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 45 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>shop </title>
@@ -75,7 +69,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  active" href="../pages/tables.html">
+          <a class="nav-link  active" href="categories.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>office</title>
@@ -91,11 +85,31 @@
                 </g>
               </svg>
             </div>
-            <span class="nav-link-text ms-1">Tables</span>
+            <span class="nav-link-text ms-1">Categories</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="../pages/billing.html">
+          <a class="nav-link  active" href="produits.php">
+            <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+              <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <title>office</title>
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g transform="translate(-1869.000000, -293.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                    <g transform="translate(1716.000000, 291.000000)">
+                      <g id="office" transform="translate(153.000000, 2.000000)">
+                        <path class="color-background opacity-6" d="M12.25,17.5 L8.75,17.5 L8.75,1.75 C8.75,0.78225 9.53225,0 10.5,0 L31.5,0 C32.46775,0 33.25,0.78225 33.25,1.75 L33.25,12.25 L29.75,12.25 L29.75,3.5 L12.25,3.5 L12.25,17.5 Z"></path>
+                        <path class="color-background" d="M40.25,14 L24.5,14 C23.53225,14 22.75,14.78225 22.75,15.75 L22.75,38.5 L19.25,38.5 L19.25,22.75 C19.25,21.78225 18.46775,21 17.5,21 L1.75,21 C0.78225,21 0,21.78225 0,22.75 L0,40.25 C0,41.21775 0.78225,42 1.75,42 L40.25,42 C41.21775,42 42,41.21775 42,40.25 L42,15.75 C42,14.78225 41.21775,14 40.25,14 Z M12.25,36.75 L7,36.75 L7,33.25 L12.25,33.25 L12.25,36.75 Z M12.25,29.75 L7,29.75 L7,26.25 L12.25,26.25 L12.25,29.75 Z M35,36.75 L29.75,36.75 L29.75,33.25 L35,33.25 L35,36.75 Z M35,29.75 L29.75,29.75 L29.75,26.25 L35,26.25 L35,29.75 Z M35,22.75 L29.75,22.75 L29.75,19.25 L35,19.25 L35,22.75 Z"></path>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <span class="nav-link-text ms-1">Products</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link  active" href="commandeB.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>credit-card</title>
@@ -111,11 +125,11 @@
                 </g>
               </svg>
             </div>
-            <span class="nav-link-text ms-1">Billing</span>
+            <span class="nav-link-text ms-1">Commandes</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="../pages/virtual-reality.html">
+          <a class="nav-link active " href="reclamation.php"> 
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>box-3d-50</title>
@@ -132,35 +146,40 @@
                 </g>
               </svg>
             </div>
-            <span class="nav-link-text ms-1">Virtual Reality</span>
+            <span class="nav-link-text ms-1">Reclamations</span> 
+            <?php if ($totalwaiting!= '0'){?>
+              <span class="badge" ><?php echo ($totalwaiting)?></span>     
+              <?php 
+              }
+              ?>
           </a>
         </li>
+
         <li class="nav-item">
-          <a class="nav-link  " href="../pages/rtl.html">
+          <a class="nav-link  active" href="afficherclient.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-              <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <title>settings</title>
+              <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <title>office</title>
                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                  <g transform="translate(-2020.000000, -442.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                  <g transform="translate(-1869.000000, -293.000000)" fill="#FFFFFF" fill-rule="nonzero">
                     <g transform="translate(1716.000000, 291.000000)">
-                      <g transform="translate(304.000000, 151.000000)">
-                        <polygon class="color-background opacity-6" points="18.0883333 15.7316667 11.1783333 8.82166667 13.3333333 6.66666667 6.66666667 0 0 6.66666667 6.66666667 13.3333333 8.82166667 11.1783333 15.315 17.6716667"></polygon>
-                        <path class="color-background opacity-6" d="M31.5666667,23.2333333 C31.0516667,23.2933333 30.53,23.3333333 30,23.3333333 C29.4916667,23.3333333 28.9866667,23.3033333 28.48,23.245 L22.4116667,30.7433333 L29.9416667,38.2733333 C32.2433333,40.575 35.9733333,40.575 38.275,38.2733333 L38.275,38.2733333 C40.5766667,35.9716667 40.5766667,32.2416667 38.275,29.94 L31.5666667,23.2333333 Z"></path>
-                        <path class="color-background" d="M33.785,11.285 L28.715,6.215 L34.0616667,0.868333333 C32.82,0.315 31.4483333,0 30,0 C24.4766667,0 20,4.47666667 20,10 C20,10.99 20.1483333,11.9433333 20.4166667,12.8466667 L2.435,27.3966667 C0.95,28.7083333 0.0633333333,30.595 0.00333333333,32.5733333 C-0.0583333333,34.5533333 0.71,36.4916667 2.11,37.89 C3.47,39.2516667 5.27833333,40 7.20166667,40 C9.26666667,40 11.2366667,39.1133333 12.6033333,37.565 L27.1533333,19.5833333 C28.0566667,19.8516667 29.01,20 30,20 C35.5233333,20 40,15.5233333 40,10 C40,8.55166667 39.685,7.18 39.1316667,5.93666667 L33.785,11.285 Z"></path>
+                      <g id="office" transform="translate(153.000000, 2.000000)">
+                        <path class="color-background opacity-6" d="M12.25,17.5 L8.75,17.5 L8.75,1.75 C8.75,0.78225 9.53225,0 10.5,0 L31.5,0 C32.46775,0 33.25,0.78225 33.25,1.75 L33.25,12.25 L29.75,12.25 L29.75,3.5 L12.25,3.5 L12.25,17.5 Z"></path>
+                        <path class="color-background" d="M40.25,14 L24.5,14 C23.53225,14 22.75,14.78225 22.75,15.75 L22.75,38.5 L19.25,38.5 L19.25,22.75 C19.25,21.78225 18.46775,21 17.5,21 L1.75,21 C0.78225,21 0,21.78225 0,22.75 L0,40.25 C0,41.21775 0.78225,42 1.75,42 L40.25,42 C41.21775,42 42,41.21775 42,40.25 L42,15.75 C42,14.78225 41.21775,14 40.25,14 Z M12.25,36.75 L7,36.75 L7,33.25 L12.25,33.25 L12.25,36.75 Z M12.25,29.75 L7,29.75 L7,26.25 L12.25,26.25 L12.25,29.75 Z M35,36.75 L29.75,36.75 L29.75,33.25 L35,33.25 L35,36.75 Z M35,29.75 L29.75,29.75 L29.75,26.25 L35,26.25 L35,29.75 Z M35,22.75 L29.75,22.75 L29.75,19.25 L35,19.25 L35,22.75 Z"></path>
                       </g>
                     </g>
                   </g>
                 </g>
               </svg>
             </div>
-            <span class="nav-link-text ms-1">RTL</span>
+            <span class="nav-link-text ms-1">Users</span>
           </a>
         </li>
         <li class="nav-item mt-3">
           <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="../pages/profile.html">
+          <a class="nav-link  active" href="profile.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 46 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>customer-support</title>
@@ -197,7 +216,7 @@
                 </g>
               </svg>
             </div>
-            <span class="nav-link-text ms-1">Log Out</span>
+            <span class="nav-link-text ms-1">Sign In</span>
           </a>
         </li>
         <li class="nav-item">
@@ -241,54 +260,58 @@
       <a class="btn bg-gradient-primary mt-4 w-100" href="https://www.creative-tim.com/product/soft-ui-dashboard-pro?ref=sidebarfree" type="button">Upgrade to pro</a>
     </div>
   </aside>
-  <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg ">
+  <div class="main-content position-relative bg-gray-100 max-height-vh-100 h-100">
     <!-- Navbar -->
-    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" navbar-scroll="true">
-      <div class="container-fluid py-1 px-3">
+    <nav class="navbar navbar-main navbar-expand-lg bg-transparent shadow-none position-absolute px-4 w-100 z-index-2">
+      <div class="container-fluid py-1">
+        
         <nav aria-label="breadcrumb">
-          <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a></li>
-            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Tables</li>
+          <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 ps-2 me-sm-6 me-5">
+            <li class="breadcrumb-item text-sm"><a class="text-white opacity-5" href="javascript:;">Pages</a></li>
+            <li class="breadcrumb-item text-sm text-white active" aria-current="page">Profile</li>
           </ol>
-          <h6 class="font-weight-bolder mb-0">Tables</h6>
+          <h6 class="text-white font-weight-bolder ms-2">Profile</h6>
         </nav>
-        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+        <div class="collapse navbar-collapse me-md-0 me-sm-4 mt-sm-0 mt-2" id="navbar">
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
             <div class="input-group">
               <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
               <input type="text" class="form-control" placeholder="Type here...">
             </div>
           </div>
-          <ul class="navbar-nav  justify-content-end">
+          <ul class="navbar-nav justify-content-end">
             <li class="nav-item d-flex align-items-center">
-            <form  action="./deconnexion.php" method="post">
-    <input class="btn btn-purple mt-5" type="submit" value="Déconnexion">
-    </form>
+              <a href="javascript:;" class="nav-link text-white font-weight-bold px-0">
+                <i class="fa fa-user me-sm-1"></i>
+                <span class="d-sm-inline d-none">Sign In</span>
+              </a>
             </li>
-            <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
-              <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
-                <div class="sidenav-toggler-inner">
-                  <i class="sidenav-toggler-line"></i>
-                  <i class="sidenav-toggler-line"></i>
-                  <i class="sidenav-toggler-line"></i>
-                </div>
+            <li class="nav-item d-xl-none ps-3 pe-0 d-flex align-items-center">
+              <a href="javascript:;" class="nav-link text-white p-0">
+                <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
+                  <div class="sidenav-toggler-inner">
+                    <i class="sidenav-toggler-line bg-white"></i>
+                    <i class="sidenav-toggler-line bg-white"></i>
+                    <i class="sidenav-toggler-line bg-white"></i>
+                  </div>
+                </a>
               </a>
             </li>
             <li class="nav-item px-3 d-flex align-items-center">
-              <a href="javascript:;" class="nav-link text-body p-0">
+              <a href="javascript:;" class="nav-link text-white p-0">
                 <i class="fa fa-cog fixed-plugin-button-nav cursor-pointer"></i>
               </a>
             </li>
             <li class="nav-item dropdown pe-2 d-flex align-items-center">
-              <a href="javascript:;" class="nav-link text-body p-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+              <a href="javascript:;" class="nav-link text-white p-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="fa fa-bell cursor-pointer"></i>
               </a>
-              <ul class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4" aria-labelledby="dropdownMenuButton">
+              <ul class="dropdown-menu dropdown-menu-end px-2 py-3 ms-n4" aria-labelledby="dropdownMenuButton">
                 <li class="mb-2">
                   <a class="dropdown-item border-radius-md" href="javascript:;">
                     <div class="d-flex py-1">
                       <div class="my-auto">
-                        <img src="../assets/img/team-2.jpg" class="avatar avatar-sm  me-3 ">
+                        <img src="../assets/img/team-2.jpg" class="avatar avatar-sm me-3">
                       </div>
                       <div class="d-flex flex-column justify-content-center">
                         <h6 class="text-sm font-weight-normal mb-1">
@@ -306,7 +329,7 @@
                   <a class="dropdown-item border-radius-md" href="javascript:;">
                     <div class="d-flex py-1">
                       <div class="my-auto">
-                        <img src="../assets/img/small-logos/logo-spotify.svg" class="avatar avatar-sm bg-gradient-dark  me-3 ">
+                        <img src="../assets/img/small-logos/logo-spotify.svg" class="avatar avatar-sm bg-gradient-dark me-3">
                       </div>
                       <div class="d-flex flex-column justify-content-center">
                         <h6 class="text-sm font-weight-normal mb-1">
@@ -323,7 +346,7 @@
                 <li>
                   <a class="dropdown-item border-radius-md" href="javascript:;">
                     <div class="d-flex py-1">
-                      <div class="avatar avatar-sm bg-gradient-secondary  me-3  my-auto">
+                      <div class="avatar avatar-sm bg-gradient-secondary me-3 my-auto">
                         <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                           <title>credit-card</title>
                           <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -357,84 +380,319 @@
       </div>
     </nav>
     <!-- End Navbar -->
+    <div class="container-fluid">
+      <div class="page-header min-height-300 border-radius-xl mt-4" style="background-image: url('../assets/img/curved-images/curved0.jpg'); background-position-y: 50%;">
+        <span class="mask bg-gradient-primary opacity-6"></span>
+      </div>
+      <div class="card card-body blur shadow-blur mx-4 mt-n6 overflow-hidden">
+        <div class="row gx-4">
+          <div class="col-auto">
+            <div class="avatar avatar-xl position-relative">
+              <img src="../assets/img/bruce-mars.jpg" alt="profile_image" class="w-100 border-radius-lg shadow-sm">
+            </div>
+          </div>
+          <div class="col-auto my-auto">
+            <div class="h-100">
+              <h5 class="mb-1">
+                Kamel Fridhi
+              </h5>
+              <p class="mb-0 font-weight-bold text-sm">
+                CEO / Co-Founder
+              </p>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
     <div class="container-fluid py-4">
       <div class="row">
-        <div class="col-12">
-          <div class="card mb-4">
-            <div class="card-header pb-0">
-              <h5>Users</h5>
+        <div class="col-12 col-xl-4">
+          <div class="card h-100">
+            <div class="card-header pb-0 p-3">
+              <h6 class="mb-0">Platform Settings</h6>
             </div>
-            <div class="card-body px-0 pt-0 pb-2">
-              <div class="table-responsive p-0">
-                <table class="table align-items-center mb-0">
-                  <thead>
-                    <tr>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">user</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Function</th>
-         
-                      <th class="text-secondary opacity-7"></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                  <?php
-				foreach($listeclients as $client){
-		        	?>
-                    <tr>
-                      <td>
-                        <div class="d-flex px-2 py-1">
-                          <div>
-                            <img src="../assets/img/user.jpg" class="avatar avatar-sm me-3" alt="user3">
-                          </div>
-                          <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm"><?php echo $client['nom']; ?> <br> <?php echo $client['prenom']; ?></h6>
-                            <p class="text-xs text-secondary mb-0"><?php echo $client['email']; ?></p>
-                          </div>
+            <div class="card-body p-3">
+              <h6 class="text-uppercase text-body text-xs font-weight-bolder">Account</h6>
+              <ul class="list-group">
+                <li class="list-group-item border-0 px-0">
+                  <div class="form-check form-switch ps-0">
+                    <input class="form-check-input ms-auto" type="checkbox" id="flexSwitchCheckDefault" checked>
+                    <label class="form-check-label text-body ms-3 text-truncate w-80 mb-0" for="flexSwitchCheckDefault">Email me when someone follows me</label>
+                  </div>
+                </li>
+                <li class="list-group-item border-0 px-0">
+                  <div class="form-check form-switch ps-0">
+                    <input class="form-check-input ms-auto" type="checkbox" id="flexSwitchCheckDefault1">
+                    <label class="form-check-label text-body ms-3 text-truncate w-80 mb-0" for="flexSwitchCheckDefault1">Email me when someone answers on my post</label>
+                  </div>
+                </li>
+                <li class="list-group-item border-0 px-0">
+                  <div class="form-check form-switch ps-0">
+                    <input class="form-check-input ms-auto" type="checkbox" id="flexSwitchCheckDefault2" checked>
+                    <label class="form-check-label text-body ms-3 text-truncate w-80 mb-0" for="flexSwitchCheckDefault2">Email me when someone mentions me</label>
+                  </div>
+                </li>
+              </ul>
+              <h6 class="text-uppercase text-body text-xs font-weight-bolder mt-4">Application</h6>
+              <ul class="list-group">
+                <li class="list-group-item border-0 px-0">
+                  <div class="form-check form-switch ps-0">
+                    <input class="form-check-input ms-auto" type="checkbox" id="flexSwitchCheckDefault3">
+                    <label class="form-check-label text-body ms-3 text-truncate w-80 mb-0" for="flexSwitchCheckDefault3">New launches and projects</label>
+                  </div>
+                </li>
+                <li class="list-group-item border-0 px-0">
+                  <div class="form-check form-switch ps-0">
+                    <input class="form-check-input ms-auto" type="checkbox" id="flexSwitchCheckDefault4" checked>
+                    <label class="form-check-label text-body ms-3 text-truncate w-80 mb-0" for="flexSwitchCheckDefault4">Monthly product updates</label>
+                  </div>
+                </li>
+                <li class="list-group-item border-0 px-0 pb-0">
+                  <div class="form-check form-switch ps-0">
+                    <input class="form-check-input ms-auto" type="checkbox" id="flexSwitchCheckDefault5">
+                    <label class="form-check-label text-body ms-3 text-truncate w-80 mb-0" for="flexSwitchCheckDefault5">Subscribe to newsletter</label>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-xl-4">
+          <div class="card h-100">
+            <div class="card-header pb-0 p-3">
+              <div class="row">
+                <div class="col-md-8 d-flex align-items-center">
+                  <h6 class="mb-0">Profile Information</h6>
+                </div>
+                <div class="col-md-4 text-end">
+                  <a href="javascript:;">
+                    <i class="fas fa-user-edit text-secondary text-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Profile"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="card-body p-3">
+              <p class="text-sm">
+                Hi, I’m Kamel Fridhi, Decisions: If you can’t decide, the answer is no. If two equally difficult paths, choose the one more painful in the short term (pain avoidance is creating an illusion of equality).
+              </p>
+              <hr class="horizontal gray-light my-4">
+              <ul class="list-group">
+                <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Full Name:</strong> &nbsp; Kamel Fridhi</li>
+                <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Mobile:</strong> &nbsp; (+216) 12 123 123</li>
+                <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Email:</strong> &nbsp; Kamel.fridhi@esprit.tn</li>
+                <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Location:</strong> &nbsp; TUNISIA</li>
+                <li class="list-group-item border-0 ps-0 pb-0">
+                  <strong class="text-dark text-sm">Social:</strong> &nbsp;
+                  <a class="btn btn-facebook btn-simple mb-0 ps-1 pe-2 py-0" href="https://www.facebook.com/profile.php?id=100014962712182">
+                    <i class="fab fa-facebook fa-lg"></i>
+                  </a>
+                  <a class="btn btn-twitter btn-simple mb-0 ps-1 pe-2 py-0" href="javascript:;">
+                    <i class="fab fa-twitter fa-lg"></i>
+                  </a>
+                  <a class="btn btn-instagram btn-simple mb-0 ps-1 pe-2 py-0" href="javascript:;">
+                    <i class="fab fa-instagram fa-lg"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="col-12 col-xl-4">
+          <div class="card h-100">
+            <div class="card-header pb-0 p-3">
+              <h6 class="mb-0">Conversations</h6>
+            </div>
+            <div class="card-body p-3">
+              <ul class="list-group">
+                <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2">
+                  <div class="avatar me-3">
+                    <img src="../assets/img/kal-visuals-square.jpg" alt="kal" class="border-radius-lg shadow">
+                  </div>
+                  <div class="d-flex align-items-start flex-column justify-content-center">
+                    <h6 class="mb-0 text-sm">Sophie B.</h6>
+                    <p class="mb-0 text-xs">Hi! I need more information..</p>
+                  </div>
+                  <a class="btn btn-link pe-3 ps-0 mb-0 ms-auto" href="javascript:;">Reply</a>
+                </li>
+                <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2">
+                  <div class="avatar me-3">
+                    <img src="../assets/img/marie.jpg" alt="kal" class="border-radius-lg shadow">
+                  </div>
+                  <div class="d-flex align-items-start flex-column justify-content-center">
+                    <h6 class="mb-0 text-sm">Anne Marie</h6>
+                    <p class="mb-0 text-xs">Awesome work, can you..</p>
+                  </div>
+                  <a class="btn btn-link pe-3 ps-0 mb-0 ms-auto" href="javascript:;">Reply</a>
+                </li>
+                <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2">
+                  <div class="avatar me-3">
+                    <img src="../assets/img/ivana-square.jpg" alt="kal" class="border-radius-lg shadow">
+                  </div>
+                  <div class="d-flex align-items-start flex-column justify-content-center">
+                    <h6 class="mb-0 text-sm">Ivanna</h6>
+                    <p class="mb-0 text-xs">About files I can..</p>
+                  </div>
+                  <a class="btn btn-link pe-3 ps-0 mb-0 ms-auto" href="javascript:;">Reply</a>
+                </li>
+                <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2">
+                  <div class="avatar me-3">
+                    <img src="../assets/img/team-4.jpg" alt="kal" class="border-radius-lg shadow">
+                  </div>
+                  <div class="d-flex align-items-start flex-column justify-content-center">
+                    <h6 class="mb-0 text-sm">Peterson</h6>
+                    <p class="mb-0 text-xs">Have a great afternoon..</p>
+                  </div>
+                  <a class="btn btn-link pe-3 ps-0 mb-0 ms-auto" href="javascript:;">Reply</a>
+                </li>
+                <li class="list-group-item border-0 d-flex align-items-center px-0">
+                  <div class="avatar me-3">
+                    <img src="../assets/img/team-3.jpg" alt="kal" class="border-radius-lg shadow">
+                  </div>
+                  <div class="d-flex align-items-start flex-column justify-content-center">
+                    <h6 class="mb-0 text-sm">Nick Daniel</h6>
+                    <p class="mb-0 text-xs">Hi! I need more information..</p>
+                  </div>
+                  <a class="btn btn-link pe-3 ps-0 mb-0 ms-auto" href="javascript:;">Reply</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 mt-4">
+          <div class="card mb-4">
+            <div class="card-header pb-0 p-3">
+              <h6 class="mb-1">Projects</h6>
+              <p class="text-sm">Architects design houses</p>
+            </div>
+            <div class="card-body p-3">
+              <div class="row">
+                <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+                  <div class="card card-blog card-plain">
+                    <div class="position-relative">
+                      <a class="d-block shadow-xl border-radius-xl">
+                        <img src="../assets/img/home-decor-1.jpg" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                      </a>
+                    </div>
+                    <div class="card-body px-1 pb-0">
+                      <p class="text-gradient text-dark mb-2 text-sm">Project #2</p>
+                      <a href="javascript:;">
+                        <h5>
+                          Modern
+                        </h5>
+                      </a>
+                      <p class="mb-4 text-sm">
+                        As Uber works through a huge amount of internal management turmoil.
+                      </p>
+                      <div class="d-flex align-items-center justify-content-between">
+                        <button type="button" class="btn btn-outline-primary btn-sm mb-0">View Project</button>
+                        <div class="avatar-group mt-2">
+                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Elena Morison">
+                            <img alt="Image placeholder" src="../assets/img/team-1.jpg">
+                          </a>
+                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Milly">
+                            <img alt="Image placeholder" src="../assets/img/team-2.jpg">
+                          </a>
+                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Nick Daniel">
+                            <img alt="Image placeholder" src="../assets/img/team-3.jpg">
+                          </a>
+                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Peterson">
+                            <img alt="Image placeholder" src="../assets/img/team-4.jpg">
+                          </a>
                         </div>
-                      </td>
-                      <td>
-                        <p class="text-xs font-weight-bold mb-0">Executive</p>
-                        <p class="text-xs text-secondary mb-0">Claims management</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                      <form method="POST" action="modifierclient.php">
-                      <div class="ms-auto text-end">
-                      <button id="Modifier" name="Modifier" type="submit" class="btn btn-link text-info text-gradient px-3 mb-0"><span>Edit</span></button>
-                      <!-- <input type="submit" name="Modifier" value="Modifier"> -->
-						<input type="hidden"  value=<?PHP echo $client['username']; ?> name="username">
-                            <!-- <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i class="far fa-trash-alt me-2"></i>Delete</a>
-                            <a class="btn btn-link text-dark px-3 mb-0" href="formulaire.html"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a> -->
-                          </div>
-                        </form>
-                      </td>
-        <td>
-                     <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="supprimerclient.php?username=<?php echo $client['username']; ?>"><i class="far fa-trash-alt me-2"></i>Delete</a>
-                     <?php if($client['bloqué']==0){ ?>
-                     <a class="btn btn-link text-warning text-gradient px-3 mb-0" href="adminblock.php?username=<?php echo $client['username']; ?>"><i class="far fa-update-alt me-2"></i>Bloquer</a>
-                     <?php }else if($client['bloqué']==1){  ?>
-                      <a class="btn btn-link text-success text-gradient px-3 mb-0" href="admindebloque.php?username=<?php echo $client['username']; ?>"><i class="far fa-update-alt me-2"></i>Debloquer</a>
-                      <?php  }?>
-                    </td>
-                      <td class="align-middle text-center">
-                        <!-- <span class="text-secondary text-xs font-weight-bold">19/09/17</span> -->
-                      </td>
-                      <!-- <td class="align-middle">
-                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                          Edit
-                        </a>
-                      </td> -->
-                    </tr>
-                    
-                  </tbody>
-                  <?php
-				}
-			      ?>
-                </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+                  <div class="card card-blog card-plain">
+                    <div class="position-relative">
+                      <a class="d-block shadow-xl border-radius-xl">
+                        <img src="../assets/img/home-decor-2.jpg" alt="img-blur-shadow" class="img-fluid shadow border-radius-lg">
+                      </a>
+                    </div>
+                    <div class="card-body px-1 pb-0">
+                      <p class="text-gradient text-dark mb-2 text-sm">Project #1</p>
+                      <a href="javascript:;">
+                        <h5>
+                          Scandinavian
+                        </h5>
+                      </a>
+                      <p class="mb-4 text-sm">
+                        Music is something that every person has his or her own specific opinion about.
+                      </p>
+                      <div class="d-flex align-items-center justify-content-between">
+                        <button type="button" class="btn btn-outline-primary btn-sm mb-0">View Project</button>
+                        <div class="avatar-group mt-2">
+                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Nick Daniel">
+                            <img alt="Image placeholder" src="../assets/img/team-3.jpg">
+                          </a>
+                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Peterson">
+                            <img alt="Image placeholder" src="../assets/img/team-4.jpg">
+                          </a>
+                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Elena Morison">
+                            <img alt="Image placeholder" src="../assets/img/team-1.jpg">
+                          </a>
+                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Milly">
+                            <img alt="Image placeholder" src="../assets/img/team-2.jpg">
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+                  <div class="card card-blog card-plain">
+                    <div class="position-relative">
+                      <a class="d-block shadow-xl border-radius-xl">
+                        <img src="../assets/img/home-decor-3.jpg" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                      </a>
+                    </div>
+                    <div class="card-body px-1 pb-0">
+                      <p class="text-gradient text-dark mb-2 text-sm">Project #3</p>
+                      <a href="javascript:;">
+                        <h5>
+                          Minimalist
+                        </h5>
+                      </a>
+                      <p class="mb-4 text-sm">
+                        Different people have different taste, and various types of music.
+                      </p>
+                      <div class="d-flex align-items-center justify-content-between">
+                        <button type="button" class="btn btn-outline-primary btn-sm mb-0">View Project</button>
+                        <div class="avatar-group mt-2">
+                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Peterson">
+                            <img alt="Image placeholder" src="../assets/img/team-4.jpg">
+                          </a>
+                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Nick Daniel">
+                            <img alt="Image placeholder" src="../assets/img/team-3.jpg">
+                          </a>
+                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Milly">
+                            <img alt="Image placeholder" src="../assets/img/team-2.jpg">
+                          </a>
+                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Elena Morison">
+                            <img alt="Image placeholder" src="../assets/img/team-1.jpg">
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+                  <div class="card h-100 card-plain border">
+                    <div class="card-body d-flex flex-column justify-content-center text-center">
+                      <a href="javascript:;">
+                        <i class="fa fa-plus text-secondary mb-3"></i>
+                        <h5 class=" text-secondary"> New project </h5>
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      
+      </div> -->
       <footer class="footer pt-3  ">
         <div class="container-fluid">
           <div class="row align-items-center justify-content-lg-between">
@@ -445,7 +703,7 @@
                 </script>,
                 made with <i class="fa fa-heart"></i> by
                 <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Creative Tim</a>
-                for a better web.
+                BuyTech.
               </div>
             </div>
             <div class="col-lg-6">
@@ -468,7 +726,7 @@
         </div>
       </footer>
     </div>
-  </main>
+  </div>
   <div class="fixed-plugin">
     <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
       <i class="fa fa-cog py-2"> </i>
@@ -513,12 +771,6 @@
         </div>
         <p class="text-sm d-xl-none d-block mt-2">You can change the sidenav type just on desktop view.</p>
         <!-- Navbar Fixed -->
-        <div class="mt-3">
-          <h6 class="mb-0">Navbar Fixed</h6>
-        </div>
-        <div class="form-check form-switch ps-0">
-          <input class="form-check-input mt-1 ms-auto" type="checkbox" id="navbarFixed" onclick="navbarFixed(this)">
-        </div>
         <hr class="horizontal dark my-sm-4">
         <a class="btn bg-gradient-dark w-100" href="https://www.creative-tim.com/product/soft-ui-dashboard-pro">Free Download</a>
         <a class="btn btn-outline-dark w-100" href="https://www.creative-tim.com/learning-lab/bootstrap/license/soft-ui-dashboard">View documentation</a>

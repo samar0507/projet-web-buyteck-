@@ -2,7 +2,7 @@
 session_start();
 if($_SESSION['username']){
   if($_SESSION['role']=='user'){
-    header('location:../index.php');
+    header('location:index.php');
   }else{
     header('location:../pages/compteClient.php');
   }
@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       header("location:../pages/compteClient.php");
     }else if($client["Role"] == "user"){
         if($client["bloqué"] == 0){
-         header("location:../index.php");
+         header("location:index.php");
       }else {	header("location:bloquer.php");}
       }
     }
