@@ -239,7 +239,7 @@ if (
 
     <!-- Main Container -->
     <br> <br> <br> <br>
-    <script src="../formu.js"> </script>
+    <script src="js/formu.js"> </script>
     <div class="formu">
       <form action="" onsubmit="verif()" method="post" name='f'>
       
