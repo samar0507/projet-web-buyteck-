@@ -209,6 +209,7 @@ if (
 
                     <!-- End Header Company -->
                     <div class="login"><a href="login.php"><span class="hidden-xs">Log In</span></a></div>
+                    
 
                   </div>
 
@@ -228,72 +229,10 @@ if (
     <nav>
       <div class="container">
         <!-- Header Logo -->
-        <div class="logo"><a title="Datson" href="index.php"><img alt="Datson" src="../images/logo2.png"></a></div>
+        <div class="logo"><a title="BuyTech" href="index.php"><img alt="Datson" src="images/logo.png"></a></div>
         <!-- End Header Logo -->
 
-        <div class="mm-toggle-wrap">
-          <div class="mm-toggle"><i class="fa fa-reorder"></i><span class="mm-label">Menu</span> </div>
-        </div>
-
-        <ul class="nav hidden-xs menu-item menu-item-left">
-          <li class="level0 parent drop-menu active"><a href="login.php"><span>Home</span></a>
-
-          </li>
-          <li class="level0 parent drop-menu"><a href="#"><span>Pages</span> </a>
-            <ul class="level1" style="display: none;">
-              <li class="level1 first"><a href="grid.html"><span>Grid</span></a></li>
-              <li class="level1 nav-10-2"> <a href="list.html"> <span>List</span> </a> </li>
-              <li class="level1 nav-10-3"> <a href="product_detail.html"> <span>Product Detail</span> </a> </li>
-              <li class="level1 nav-10-4"> <a href="shopping_cart.php"> <span>Shopping Cart</span> </a> </li>
-              <li class="level1 first parent"><a href="checkout.html"><span>Checkout</span></a>
-                <!--sub sub category-->
-                <ul class="level2 right-sub" style="top: 0px; left: 165px; display: none;">
-                  <li class="level2 nav-2-1-1 first"><a href="checkout_method.html"><span>Checkout Method</span></a>
-                  </li>
-                  <li class="level2 nav-2-1-5 last"><a href="checkout_billing_info.html"><span>Checkout Billing
-                        Info</span></a></li>
-                </ul>
-                <!--sub sub category-->
-              </li>
-              <li class="level1 nav-10-4"> <a href="wishlist.html"> <span>Wishlist</span> </a> </li>
-              <li class="level1 first parent"><a href="dashboard.html"><span>Dashboard</span></a>
-                <!--sub sub category-->
-                <ul class="level2 right-sub" style="top: 0px; left: 165px; display: none;">
-                  <li class="level2 nav-2-1-1 first"><a href="account_information.html"><span>Account
-                        Information</span></a></li>
-                  <li class="level2 nav-2-1-5 last"><a href="address_book.html"><span>Address Book</span></a></li>
-                  <li class="level2 nav-2-1-1 first"><a href="contact_information.html"><span>Contact
-                        Information</span></a></li>
-                </ul>
-                <!--sub sub category-->
-              </li>
-              <li class="level1"> <a href="multiple_addresses.html"> <span>Multiple Addresses</span> </a> </li>
-              <li class="level1"> <a href="about_us.html"> <span>About us</span> </a> </li>
-
-              <li class="level1"> <a href="faq.html"> <span>FAQ</span> </a> </li>
-              <li class="level1"> <a href="login.php"> <span>Login</span> </a> </li>
-              <li class="level1"> <a href="forgot_password.html"> <span>Forgot Password</span> </a> </li>
-              <li class="level1"> <a href="quick_view.html"> <span>Quick view </span> </a> </li>
-              <li class="level1 first parent"><a href="blog.html"><span>Blog</span></a>
-                <ul class="level2 right-sub" style="top: 0px; left: 165px; display: none;">
-                  <li class="level2 nav-2-1-1 first"><a href="blog_detail.html"><span>Blog Detail</span></a></li>
-                </ul>
-              </li>
-              <li class="level1"><a href="contact_us.html"><span>Contact us</span></a> </li>
-              <li class="level1"><a href="404error.html"><span>404 Error Page</span></a> </li>
-            </ul>
-          </li>
-
-
-        </ul>
-        <ul class="nav hidden-xs menu-item menu-item-right">
-
-          <li class="mega-menu"><a class="level-top" href="grid.html"><span>Furniture</span></a>
-
-          </li>
-          <li class="level0 nav-8 level-top"><a href="grid.html" class="level-top"><span>Kids</span></a></li>
-
-        </ul>
+        
       </div>
     </nav>
     <!-- end nav -->
@@ -472,7 +411,7 @@ if (
           </div>
         </div>
         <div class="container">
-          <div class="col-sm-12 col-xs-12 footer-logo"><img alt="Datson" src="../images/logo2.png"></div>
+          <div class="col-sm-12 col-xs-12 footer-logo"><img alt="Datson" src="images/logo.png"></div>
           <address>
             <i class="fa fa-map-marker"></i>ThemesGround, 789 Main rd, Anytown, CA 12345 USA <i class="fa fa-mobile"></i><span> +(888) 123-4567</span> <i class="fa fa-envelope"></i><span>
               superb@themesground.com</span>
