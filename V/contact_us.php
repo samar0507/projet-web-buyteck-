@@ -1,4 +1,5 @@
 <?php
+session_start();
     include_once '../M/reclamationp.php';
     include_once '../C/reclamationC.php';
     use PHPMailer\PHPMailer\PHPMailer;
@@ -46,7 +47,7 @@
           
               // Sender and recipient settings
               $mail->setFrom('samar.hamdi@esprit.com', 'Client');
-              $mail->addAddress('samar05.hamdi@gmail.com', 'TEST');
+              $mail->addAddress($_SESSION["email"], 'TEST');
               $mail->addReplyTo('samar05.hamdi@gmail.com', 'Sender Name'); // to set the reply to
           
               // Setting the email content
@@ -130,7 +131,7 @@ header('Location:afficherlistereclamationfront.php');
                   <fieldset>
                   <form action="" method="POST" >
             <tr>
-            <td><input type='hidden' name='id' id='id' value="5"></td>
+            <td><input type='hidden' name='id' id='id' value="<?php echo $_SESSION["id"]  ?>"></td>
             <td><input type='hidden' name='date_rec' id='date_rec' value='<?php echo $date?>'></td>
             <td><input type='hidden' name='etat' id='etat' value=' waiting'></td>
         

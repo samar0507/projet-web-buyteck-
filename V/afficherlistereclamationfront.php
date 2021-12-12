@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "Header.php";
 ?>
 <body class="inner-page">
@@ -59,7 +60,8 @@ $listereponse=$reponseC->afficherreponse();
     <div class="main container">
       <div class="reclamation">
         <section class="col-main col-sm-9">
-          <div class="page-title">
+          <?php if(!empty($_SESSION["id"])){ ?>  
+        <div class="page-title">
           <div class="content">
                   <p>Consult reclamations</p><br><br>
   
@@ -81,6 +83,15 @@ $listereponse=$reponseC->afficherreponse();
                 </div>
               </div>
             </fieldset>
+            
+            <?php }else{?>
+              <p>
+
+
+        <h1 style="text-align: -webkit-center; color:black ;  margin-top: 22%; margin-right: -24%;" > Please login to proceed!!</h1>
+
+        </p>
+        <?php }?>
         </div>
 
     </section>

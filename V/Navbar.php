@@ -17,7 +17,7 @@ $listeProduits=$ProduitsCore->afficherProduits();
 <nav>
     <div class="container">
         <!-- Header Logo -->
-        <div class="logo"><a title="Datson" href="index.php"><img alt="Datson" src="images/logo.png"></a></div>
+        <div class="logo"><a title="BuyTech" href="index.php"><img alt="Datson" src="images/logo.png"></a></div>
         <!-- End Header Logo -->
 
         <div class="mm-toggle-wrap">
