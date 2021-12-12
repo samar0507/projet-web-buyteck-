@@ -106,7 +106,7 @@
         }	
 	}
 	function rechercherAVANCER($char){
-		$sql=" SELECT nom_cat From  categories  where nom_cat LIKE '$char%'";
+		$sql=" SELECT nom_cat From  categories  where nom_cat LIKE '%$char%'";
 		$db = config::getConnexion();
 		try{
 		$liste=$db->query($sql);
