@@ -17,7 +17,7 @@ $listeProduits=$ProduitsCore->afficherProduits();
 <nav>
     <div class="container">
         <!-- Header Logo -->
-        <div class="logo"><a title="BuyTech" href="index.php"><img alt="Datson" src="images/logo.png"></a></div>
+        <div class="logo"><a title="Datson" href="index.php"><img alt="Datson" src="images/logo.png"></a></div>
         <!-- End Header Logo -->
 
         <div class="mm-toggle-wrap">
@@ -74,11 +74,9 @@ $listeProduits=$ProduitsCore->afficherProduits();
                         <div class="level0-wrapper2">
                             <div class="nav-block nav-block-center">
                                 <ul class="level0">
-                           <?php       
-                                     foreach($listecategories as $row){
-                                    ?>
+                           <?php foreach($listecategories as $row){ ?> 
+                              <?PHP foreach($listeProduits as $row){ ?> 
                                     <li class="level1 nav-6-1 parent item"><a href="#"><span><?php echo $row['nom_cat'];?> </span></a>
-                                      <?PHP foreach($listeProduits as $row){ ?>  
                                     <ul class="level1">
                                             <li class="level2 nav-6-1-1"><a href="#"><span><?PHP echo $row['nom']; ?></span></a></li>
                                         </ul>

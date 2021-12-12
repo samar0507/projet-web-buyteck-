@@ -50,21 +50,16 @@ $listeProduits=$ProduitsCore->afficherProduits();
             <div class="box-content box-category">
               <ul>
                  <!--level0--> 
-                <?php       
-               foreach($listecategories as $row){ ?> 
-               <li> <a href="#"><?php echo $row['nom_cat'];?> </a> <span class="subDropdown plus"></span>
-
+                <?php foreach($listecategories as $row){ ?>  
                <?PHP foreach($listeProduits as $row){ ?>  
-                  <ul class="level1" style="display:none">
-                      <li> <a href="#"> <?PHP echo $row['nom']; ?></a> </li>     
-                      
-                   </ul>
-                  
-                   <?PHP } ?>
+               <li class="level1 nav-6-1 parent item"> <a href="#"><?php echo $row['nom_cat'];?> </a> <span class="subDropdown plus"></span>
+                   <ul class="level1">
+                        <li class="level2 nav-6-1-1"><a href="#"><span><?PHP echo $row['nom']; ?></span></a></li>
+                          </ul>
                    </li> 
                <?php }?>
-
-                     
+               <?PHP } ?>
+               </ul>      
             </div>
             <!--box-content box-category--> 
           </div>

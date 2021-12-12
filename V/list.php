@@ -169,18 +169,11 @@ foreach($listeProduits as $row){
                  <!--level0--> 
                 <?php       
                foreach($listecategories as $row){ ?> 
-               <li> <a href="#"><?php echo $row['nom_cat'];?> </a> <span class="subDropdown plus"></span>
-
-               <?PHP foreach($listeProduits as $row){ ?>  
-                  <ul class="level1" style="display:none">
-                      <li> <a href="#"> <?PHP echo $row['nom']; ?></a> </li>     
-                      
-                   </ul>
-                  
-                   <?PHP } ?>
-                   </li> 
+               
+               <li> <a href="#"><?php echo $row['nom_cat'];?> </a> 
+               </li> 
                <?php }?>
-                  </div>
+            </div>
                   <!--box-content box-category--> 
                 </div>
                 <div class="block block-layered-nav">
