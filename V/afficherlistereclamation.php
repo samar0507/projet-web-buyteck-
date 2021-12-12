@@ -9,7 +9,7 @@ $reponseC=new reponseC();
 $listereponse=$reponseC->afficherreponse();
 
 $clientC=new clientC();
-$listeclient=$clientC->afficherclient();
+$listeclient=$clientC->afficherclients();
 ?>
 
 <!DOCTYPE html>
@@ -383,7 +383,7 @@ $listeclient=$clientC->afficherclient();
 
                   <?php
                   	$reclamation = $reclamationC->recupererreclamation($_POST['id_rec']);
-				$client = $clientC->recupererclient($reclamation['id']);
+				$client = $clientC->recupererclientid($reclamation['id']);
         $reponse = $reponseC->recupererreponse($reclamation['id_rec']);
 		?>
                   
@@ -391,12 +391,12 @@ $listeclient=$clientC->afficherclient();
       
       <tr> 
         <td>Client name</td>
-        <td><?php echo  $client['Nom']; ?></td>
+        <td><?php echo  $client['nom']; ?></td>
         </tr> 
       
 <tr id="more" style="visibility:collapse;">
         <td> Client surname </td>
-        <td><?php echo  $client['Prenom']; ?></td>
+        <td><?php echo  $client['prenom']; ?></td>
         </tr> 
         <tr id="more1" style="visibility:collapse;">
         <td>Client email</td> 

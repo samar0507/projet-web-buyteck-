@@ -2,17 +2,6 @@
 	include_once '../config.php';
 	include_once '../M/client.php';
 	class clientC {
-		function afficherclients(){
-			$sql="SELECT * FROM client";
-			$db = config::getConnexion();
-			try{
-				$liste = $db->query($sql);
-				return $liste;
-			}
-			catch(Exception $e){
-				die('Erreur:'. $e->getMessage());
-			}
-		}
 		function afficherlisteclient()
     {
         $sql="SELECT * FROM client WHERE id=:id";
@@ -26,19 +15,19 @@
             die('Erreur:'.$e->getMessage());
         }
     }
-    function afficherclient()
-{
-    $sql="SELECT * FROM client";
-    $db=config::getConnexion();
-    try{
-        $liste=$db->query($sql);
-        return $liste;
-       }
-    catch(Exception $e)
-    {
-        die('Erreur:'.$e->getMessage());
-    }
-}
+		function afficherclients(){
+			$sql="SELECT * FROM client";
+			$db = config::getConnexion();
+			try{
+				$liste = $db->query($sql);
+				return $liste;
+			}
+			catch(Exception $e){
+				die('Erreur:'. $e->getMessage());
+			}
+		}
+		
+  
 		function supprimerclient($username){
 			$sql="DELETE FROM client WHERE username=:username";
 			$db = config::getConnexion();
@@ -80,6 +69,20 @@
 				$query=$db->prepare($sql);
 				$query->execute();
 
+				$client=$query->fetch();
+				return $client;
+			}
+			catch (Exception $e){
+				die('Erreur: '.$e->getMessage());
+			}
+		}
+		function recupererclientid($id){
+			$sql="SELECT * from client where id=$id";
+			$db = config::getConnexion();
+			try{
+				$query=$db->prepare($sql);
+				$query->execute();
+		
 				$client=$query->fetch();
 				return $client;
 			}
