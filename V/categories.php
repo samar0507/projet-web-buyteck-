@@ -352,7 +352,7 @@ $categories=$CategoriesCore->triNom();
     <br>
      <br>
      <button onclick="location.href='ajoutCategorie.php'">Add categories </button>
-     <button onclick="location.href='rechercherListeCategorie.html'">Search categories</button>
+     <button onclick="location.href='rechercherListeCategorie1.php'">Search categories</button>
      <button onclick="location.href='imprimerCategorie.php'">Print categories</button>
 
      <br>
