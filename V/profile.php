@@ -1,18 +1,13 @@
-<!--
-=========================================================
-* Soft UI Dashboard - v1.0.3
-=========================================================
+<?PHP 
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://www.creative-tim.com/license)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
+include_once "../C/CategorieC.php";
+include_once "../M/Categorie.php";
+include '../C/reclamationC.php';
+$reclamation= new reclamationC;
+$total=$reclamation->totalreclamation();
+$totaltreated=$reclamation->totalreclamationetat('etat');
+$totalwaiting=$total-$totaltreated;
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,6 +29,8 @@
   <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- CSS Files -->
   <link id="pagestyle" href="../assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />
+  <link rel="stylesheet" href="reclamationchart.css">
+
 </head>
 
 <body class="g-sidenav-show bg-gray-100">
