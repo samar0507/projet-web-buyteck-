@@ -64,7 +64,7 @@ if (
 
   <!-- Favicons Icon -->
 
-  <title>Superb premium HTML5 &amp; CSS3 template</title>
+  <title>BuyTech</title>
 
   <!-- Mobile Specific -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
