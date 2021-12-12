@@ -1,6 +1,11 @@
 <?php
 include "HeaderB.php";
 include_once "../config.php";
+include '../C/reclamationC.php';
+$reclamation= new reclamationC;
+$total=$reclamation->totalreclamation();
+$totaltreated=$reclamation->totalreclamationetat('etat');
+$totalwaiting=$total-$totaltreated;
 
 include "../C/commandesController.php";
 $i=new CommandesController();
@@ -8,6 +13,7 @@ $c=$i->getDetailCommande($_GET["num_commande"]);
 ?>
 
 <body class="g-sidenav-show  bg-gray-100">
+<link rel="stylesheet" href="reclamationchart.css">
 <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 " id="sidenav-main">
     <div class="sidenav-header">
       <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
@@ -118,6 +124,11 @@ $c=$i->getDetailCommande($_GET["num_commande"]);
               </svg>
             </div>
             <span class="nav-link-text ms-1">Reclamations</span>
+            <?php if ($totalwaiting!= '0'){?>
+              <span class="badge" ><?php echo ($totalwaiting)?></span>     
+              <?php 
+              }
+              ?>
           </a>
         </li>
         <li class="nav-item">

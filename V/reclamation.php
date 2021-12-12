@@ -377,7 +377,6 @@ $listereclamation=$reclamationC->afficherreclamation();
         <th>Date reclamation</th> 
         <th>Type</th> 
         <th>Etat</th> 
-        <th>consulter</th>
        
 </tr>
 </thead>
@@ -392,13 +391,13 @@ foreach($listereclamation as $reclamation){
     <td><?php echo  $reclamation['etat']; ?></td>
     <td>
         <form method="POST" action="afficherlistereclamation.php">
-            <input type="submit" name="Treat" value="consult">
+            <input type="submit" name="Treat" class="btn btn-link text-success text-gradient px-3 mb-0" value="consult">
             <input type="hidden" value=<?php echo $reclamation['id_rec']; ?>
             name="id_rec">
 </form>
 </td>
 <td>
-					<a href="supprimerreclamation.php?id_rec=<?php echo $reclamation['id_rec']; ?>">delete</a>
+					<button class="btn btn-link text-danger text-gradient px-3 mb-0" href="supprimerreclamation.php?id_rec=<?php echo $reclamation['id_rec']; ?>"><span>delete</span></button>
 				</td>
 </tr>
 <?php } ?>

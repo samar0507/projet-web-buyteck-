@@ -2,6 +2,12 @@
 	include '../C/clientC.php';
 	$clientC=new clientC();
 	$listeclients=$clientC->afficherclients(); 
+  include '../C/reclamationC.php';
+$reclamation= new reclamationC;
+$total=$reclamation->totalreclamation();
+$totaltreated=$reclamation->totalreclamationetat('etat');
+$totalwaiting=$total-$totaltreated;
+
 ?>
 
 <!--
@@ -40,6 +46,7 @@
   <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- CSS Files -->
   <link id="pagestyle" href="../assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />
+  <link rel="stylesheet" href="reclamationchart.css">
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">
