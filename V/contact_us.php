@@ -1,13 +1,3 @@
-
-<?php
-include "Header.php";
-?>
-<body class="inner-page">
-<div id="page"> 
-<?php
-include "Navbar.php";
-
-?>
 <?php
     include_once '../M/reclamationp.php';
     include_once '../C/reclamationC.php';
@@ -82,6 +72,7 @@ header('Location:afficherlistereclamationfront.php');
 
     $date = date('y-m-d');
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
