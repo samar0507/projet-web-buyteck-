@@ -392,8 +392,6 @@ $listeProduits=$ProduitsCore->triNom();
            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps">Amount</th>
            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps">Availablity</th>
            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-5">Picture</th>
-           <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Delete</th>
-           <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Update</th>
 
 
                  <?PHP
@@ -414,12 +412,13 @@ $listeProduits=$ProduitsCore->triNom();
                     height="250" src="products/<?php echo $row['image']; ?>" /></br> 
                     <td ><form method="POST" 
                    action="supprimerProduit.php">
-                 <input type="submit" class="delete" name="Delete" value="Delete">
+                   <i class="far fa-trash-alt me-2"></i>
+                 <input type="submit"  name="Delete" value="Delete" class="btn btn-link text-danger text-gradient px-3 mb-0">
                  <input type="hidden" value="<?PHP echo $row['idprod']; ?>" name="idprod">
                  </form>
                  </td>  
                <div>
-                 <td align="center"><a class="lien" href="modifierProduits.php?idprod=<?PHP echo $row['idprod']; ?>" >Update</a></td>
+                 <td align="center"><a class="btn btn-link text-success text-gradient px-3 mb-0"  href="modifierProduits.php?idprod=<?PHP echo $row['idprod']; ?>" >Update</a></td>
                   </div>
               
                   <?PHP
