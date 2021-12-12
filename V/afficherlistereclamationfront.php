@@ -55,12 +55,14 @@ $listereponse=$reponseC->afficherreponse();
 <body class="contacts-index-index rtl inner-page">
 <div id="page"> 
   
-  <!-- Main Container -->
+  <!-- Main Container --> 
   <section class="main-container col2-right-layout">
+    
+  <?php if(!empty($_SESSION["id"])){ ?> 
     <div class="main container">
       <div class="reclamation">
         <section class="col-main col-sm-9">
-          <?php if(!empty($_SESSION["id"])){ ?>  
+          
         <div class="page-title">
           <div class="content">
                   <p>Consult reclamations</p><br><br>
@@ -84,14 +86,7 @@ $listereponse=$reponseC->afficherreponse();
               </div>
             </fieldset>
             
-            <?php }else{?>
-              <p>
-
-
-        <h1 style="text-align: -webkit-center; color:black ;  margin-top: 22%; margin-right: -24%;" > Please login to proceed!!</h1>
-
-        </p>
-        <?php }?>
+            
         </div>
 
     </section>
@@ -109,8 +104,16 @@ $listereponse=$reponseC->afficherreponse();
         </div>
       </aside>
     </div>
- 
+    <?php }else{?>
+              <p>
+
+
+        <h1 style="text-align: -webkit-center; color:black ;  margin-top: 22%; margin-right: -1%;" > Please login to proceed!!</h1>
+
+        </p>
+        <?php }?>
 </section>
+
   <!-- Main Container End --> 
   
   <!-- Brand logo starts  -->
