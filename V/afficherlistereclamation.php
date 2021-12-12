@@ -403,12 +403,9 @@ $listeclient=$clientC->afficherclients();
         <td><?php echo  $client['email']; ?></td>
         </tr> 
         <tr id="more2" style="visibility:collapse;">
-        <td>Client adresse</td> 
-        <td><?php echo  $client['adresse']; ?></td>
+        <td>Client username</td> 
+        <td><?php echo  $client['username']; ?></td>
         </tr> 
-        <tr id="more3" style="visibility:collapse;">
-        <td>Client phone number</td>
-        <td><?php echo  $client['Tel']; ?></td> 
        
 </tr>
       <tr>  
