@@ -380,8 +380,6 @@ $categories=$CategoriesCore->triNom();
            <tr>
            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Id categorie</th>
            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Name of categorie</th>
-           <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Update</th>
-           <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Delete</th>
             </tr>
            <?php       
               foreach($categories as $row){
@@ -392,10 +390,12 @@ $categories=$CategoriesCore->triNom();
 	</form>
   
   <div>
- <td align="center"><a class="lien" href="modifierCategorie.php?int_cat=<?PHP echo $row['int_cat']; ?>" >Update</a></td>
+ <td align="center"><a class="btn btn-link text-success text-gradient px-3 mb-0"  href="modifierCategorie.php?int_cat=<?PHP echo $row['int_cat']; ?>" >Update</a></td>
   </div>
-	<td align="center"><form method="POST"  action="supprimerCategorie.php">
-	<input type="submit" class="delete" name="Delete" value="Delete">
+
+	<td align="center"><form method="POST"  action="supprimerCategorie.php" >
+	<i class="far fa-trash-alt me-2"></i>
+  <input type="submit"name="Delete" value="Delete" class="btn btn-link text-danger text-gradient px-3 mb-0">
 	<input type="hidden" value="<?PHP echo $row['int_cat']; ?>" name="int_cat">
 	</form>
 	</td> 
