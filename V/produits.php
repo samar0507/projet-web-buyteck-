@@ -356,7 +356,7 @@ $listeProduits=$ProduitsCore->triNom();
     <br>
      <br>
      <button onclick="location.href='ajoutProduit.php'">Add products </button>
-     <button onclick="location.href='rechercherListeProduits.php'">Search products </button>
+     <button onclick="location.href='rechercherListeProduits.html'">Search products </button>
      <button onclick="location.href='imprimerProduits.php'">Print products</button>
      <button onclick="location.href='triPrix.php'">Sort products by price</button>
      <br>
