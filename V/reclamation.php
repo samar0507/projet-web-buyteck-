@@ -397,7 +397,7 @@ foreach($listereclamation as $reclamation){
 </form>
 </td>
 <td>
-					<button class="btn btn-link text-danger text-gradient px-3 mb-0" href="supprimerreclamation.php?id_rec=<?php echo $reclamation['id_rec']; ?>"><span>delete</span></button>
+					<a class="btn btn-link text-danger text-gradient px-3 mb-0" href="supprimerreclamation.php?id_rec=<?php echo $reclamation['id_rec']; ?>"><i class="far fa-trash-alt me-2"></i><span>delete</span></a>
 				</td>
 </tr>
 <?php } ?>
