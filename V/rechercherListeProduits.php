@@ -24,8 +24,12 @@ $totalwaiting=$total-$totaltreated;
  <link id="pagestyle" href="../assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />
  <link href="../assets/css/main.css" rel="stylesheet" />
  <link rel="stylesheet" href="reclamationchart.css">
+<<<<<<< HEAD
+ <link rel="icon" type="image/png" href="../assets/img/favicone.png">
+=======
  <link rel="stylesheet" href="reclamationchart.css">
   
+>>>>>>> 32b7c40b4d1e22d0e727c874fb2e37507b117f28
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">

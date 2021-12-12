@@ -22,6 +22,7 @@ $totalwaiting=$total-$totaltreated;
  <!-- CSS Files -->
  <link id="pagestyle" href="../assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />
  <link href="../assets/css/main.css" rel="stylesheet" />
+ <link rel="icon" type="image/png" href="../assets/img/favicone.png">
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">
