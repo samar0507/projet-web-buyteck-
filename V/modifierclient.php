@@ -60,7 +60,7 @@ if (
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <link rel="icon" type="image/png" href="../assets/img/favicone.png">
   <title>
     BuyTech
   </title>
@@ -280,13 +280,7 @@ if (
           </ol>
           <h6 class="font-weight-bolder mb-0">Tables</h6>
         </nav>
-        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
-          <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-            <div class="input-group">
-              <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
-              <input type="text" class="form-control" placeholder="Type here...">
-            </div>
-          </div>
+         
           <ul class="navbar-nav  justify-content-end">
           <form  action="deconnexion.php" method="post">
     <input class="btn btn-purple mt-5" type="submit" value="Déconnexion">
