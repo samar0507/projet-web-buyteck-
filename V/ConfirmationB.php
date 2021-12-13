@@ -1,12 +1,13 @@
 <?php
 include "Header.php";
-include_once "../../config/config.php";
+include_once "../config.php";
 
-include "../../controller/commandesController.php";
+include "../C/commandesController.php";
 $i=new CommandesController();
 $c=$i->getCommande2($_GET['num']);
 
 ?>
+
 
 
 
